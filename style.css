@@ -1,0 +1,78 @@
+/*
+Theme Name: Pivot&Pilot
+Author: Tim Lu
+Version: 1.0;
+*/
+@font-face {
+  font-family: Walsheim;
+  src: url("./dist/fonts/GT-Walsheim-Regular.woff"); }
+* {
+  color: #443cff;
+  font-family: Walsheim; }
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #443cff; }
+
+h1 {
+  font-size: 24px; }
+  @media (min-width: 425px) {
+    h1 {
+      font-size: 36px; } }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 48px; } }
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 60px; } }
+  @media (min-width: 1440px) {
+    h1 {
+      font-size: 72px; } }
+
+li {
+  list-style-type: none; }
+
+#landing-container {
+  height: 100vh; }
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  justify-content: center;
+  width: 100%; }
+
+@media (min-width: 768px) {
+  .landing h1 {
+    max-width: 75%; } }
+
+.landing-alternate {
+  pointer-events: none;
+  opacity: 0; }
+
+#primary-menu {
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 15px; }
+
+#primary-menu h1,
+#primary-menu li,
+#primary-menu ul {
+  display: inline-block; }
+
+#switch-landing {
+  cursor: pointer;
+  margin-top: 36px; }
+  @media (min-width: 1024px) {
+    #switch-landing {
+      margin-top: 48px; } }
+  @media (min-width: 1440px) {
+    #switch-landing {
+      margin-top: 60px; } }
+
+/*# sourceMappingURL=style.css.map */
