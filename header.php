@@ -8,3 +8,4 @@
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
+<?php echo get_template_part('partials/menu', 'menu'); ?>

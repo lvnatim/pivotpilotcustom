@@ -40,4 +40,21 @@ jQuery(document).ready(function($){
 
     }, 'xml');
   });
+
+  $('.filter-submenu-button').on('click', function(){
+    const term_id = $(this).data('termId');
+    const filter_name = $(this).data('filterName');
+    $.ajax({
+        url: my_ajax_object.ajax_url,
+        data: {
+            'action':'filter',
+            'term_id': term_id,
+            'taxonomy': filter_name, 
+        },
+        success:function(data){
+          $('#filter-posts-container').html(data);
+        },
+        error: function(){}
+      });
+  });
 })

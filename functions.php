@@ -102,10 +102,14 @@ function asset_pipeline(){
   wp_register_script('filter', get_template_directory_uri() . '/dist/js/filter.js', array( 'jquery' ));
   wp_register_script('showcase', get_template_directory_uri() . '/dist/js/showcase.js', array('jquery'));
   wp_register_script('landing', get_template_directory_uri() . '/dist/js/landing.js', array('jquery'));
+  wp_register_script('gradient', get_template_directory_uri() . '/dist/js/gradient.js', array('jquery'));
   wp_enqueue_script('index');
   wp_enqueue_script('filter');
   wp_enqueue_script('showcase');
   wp_enqueue_script('landing');
+  if(is_page( 'blog' )){ 
+    wp_enqueue_script('gradient'); 
+  }
   wp_localize_script( 'index', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 }
 
@@ -113,8 +117,16 @@ function remove_admin_login_header() {
   remove_action('wp_head', '_admin_bar_bump_cb');
 }
 
+function filter(){
+  $template = get_template_part( 'partials/filter', 'filter');
+  echo $template;
+  die();
+}
+
 add_action('init', 'register_custom_clients_and_taxonomies');
 add_action('get_header', 'remove_admin_login_header');
 add_action( 'wp_enqueue_scripts', 'asset_pipeline' );
+add_action( 'wp_ajax_filter', 'filter');
+add_action( 'wp_ajax_nopriv_filter', 'filter');
 
 ?>

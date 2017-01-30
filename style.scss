@@ -28,6 +28,11 @@ a {
   color: $blue;
 }
 
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
 html,body{
   width: 100%;
   height: 100%;
@@ -114,6 +119,74 @@ footer * {
   opacity: 0;
 }
 
+.blog-post{
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+  padding: 30px 0;
+}
+
+.blog-post-category-icon{
+  margin-left: -25px;
+  height: 50px;
+  position:absolute;
+  width: 50px;
+  @media(min-width:425px){height:75px;width:75px;margin-left:-37.5px;}
+  @media(min-width:768px){height:100px;width:100px;margin-left:-50px;}
+  @media(min-width:1024px){}
+  @media(min-width:1200px){}
+}
+
+#blog-post-container{
+  padding-bottom: 30px;
+}
+
+.blog-post-date{
+  font-style: italic;
+  margin-bottom: 6px;
+  @media(min-width:768px){margin-bottom:12px;}
+}
+
+.blog-post-image-container{
+  max-width: 70%;
+  position:relative;
+}
+
+.blog-post-title{
+  margin-bottom: 6px;
+  @media(min-width:768px){margin-bottom:12px;}
+}
+
+.blog-post-terms{
+  margin-top: 6px;
+  @media(min-width:768px){margin-top: 12px;}
+}
+
+.blog-post-terms .title{
+  color: $blue;
+  font-family: arno-pro;
+  @media(min-width:425px){font-size: 12px;}
+  @media(min-width:768px){font-size: 14px;}
+  @media(min-width:1200px){font-size: 18px;}
+}
+
+.blog-post-terms .title:not(:last-of-type):after{
+  content: " | ";
+}
+
+#blog-search-bar{
+  margin-top: 80px;
+  text-align: right;
+}
+
+.blog-search-filters .title{
+  color: $blue;
+}
+
+.blog-search-filters .title:not(:last-of-type):after{
+  content: " | "
+}
+
 .big-icons-container{
   align-items: center;
   display:flex;
@@ -139,6 +212,10 @@ footer * {
   padding: 0 15px;
   position: relative;
   width: calc(100vw - 30px);
+}
+
+.client.filter{
+  width: 100%;
 }
 
 .client-container{
@@ -258,7 +335,7 @@ footer * {
 }
 
 #filter-posts-container{
-  padding: 60px 0px;
+  padding: 48px 0px;
 }
 
 #filter-posts-container .client-container{
@@ -274,7 +351,8 @@ footer * {
 
 .filter-submenu-button{
   cursor: pointer;
-  padding: 12px 24px;
+  padding: 12px 12px;
+  @media(min-width:1024px){padding: 12px 24px;}
 }
 
 .filter-submenu-container{
@@ -542,7 +620,14 @@ footer * {
 }
 
 .primary-menu li{
+  font-size: 16px;
   padding: 0 6px;
+  &:first-of-type{
+    padding-left:12px;
+  }
+  &Llast-of-type{
+    padding-right:12px;
+  }
 }
 
 .primary-menu:not(.primary-menu-mobile):hover{
@@ -638,6 +723,15 @@ footer * {
 #section-landing{
   margin-top:74px;
   @media(min-width:768px){margin-top:0;}
+}
+
+#section-portfolio{
+  margin-top: 120px;
+  padding-bottom: 48px;
+}
+
+#section-portfolio * {
+  color: inherit;
 }
 
 #section-statistics{

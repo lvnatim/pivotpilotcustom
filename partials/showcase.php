@@ -24,13 +24,13 @@ $posts = get_posts(
       </div>
       <div id="showcase-container">
         <?php foreach($posts as $post): ?>
-        <?php $terms = get_the_terms($post, 'services'); ?>
         <div class="client-container">
           <div class="client"/>
             <img class="img-responsive" src="<?php echo get_the_post_thumbnail_url($post); ?>"/>
             <div class="client-overlay">
               <h3 class="client-excerpt"><?php echo $post->post_excerpt ?></h3>
               <ul class="client-terms">
+                <?php $terms = get_the_terms($post, 'services'); ?>
                 <?php foreach($terms as $term): ?>
                 <li><?php echo $term->name ?></li>
                 <?php endforeach?>
