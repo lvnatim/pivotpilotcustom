@@ -3,6 +3,11 @@ $args = array();
 $term_id = $_REQUEST['term_id'];
 $taxonomy = $_REQUEST['taxonomy'];
 
+if($_GET['id']){
+  $term_id = $_GET['id'];
+  $taxonomy = 'services';
+}
+
 if($term_id){
 $args = array(
     array(
@@ -28,6 +33,7 @@ $filtered_posts = get_posts(
      <div class="client-container">
         <div class="client filter" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID) ?>')">
         <a href="<?php echo get_permalink($post); ?>" class="client-overlay">
+          <div class="client-overlay-color"></div>
           <h1 class="client-excerpt"><?php echo $post->post_excerpt ?></h1>
           <ul class="client-terms">
             <?php $terms = get_the_terms($post, 'services') ?>

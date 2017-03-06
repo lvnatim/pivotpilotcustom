@@ -45,6 +45,48 @@ function register_custom_clients_and_taxonomies(){
   );
 
   $labels = array(
+    'name'          =>  'Team Members',
+    'singular_name' =>  'Team Member',
+    'add_new'       =>  _x('Add New Member', 'Member'),
+    'add_new_item'  =>  'Add Team Member',
+    'edit_item'     =>  'Edit Team Member',
+    'new_item'      =>  'New Team Member',
+    'view_item'     =>  'View Team Member',
+    'search_items'  =>  'Search Bios',
+    'not_found'     =>  'No Team Members Found',
+    'not_found_in_trash' => 'No Team Members found in Trash',
+    'all_items'     =>  'View All Members',
+    'archives'      =>  'Team Members',
+    'insert_into_item'  =>  'Insert Into Team Members\'s Biography',
+    'uploaded_to_this_item' => 'Uploaded to this Team Member\'s Biography',
+    'menu_name'     =>  'Team Bios',
+    'name_admin_bar'=>  'Team Members'
+  );
+
+  register_post_type('members',
+    array(
+      'description' => 'Biography\'s for each team member',
+      'has_archive' => false,
+      'labels'      => $labels,
+      'menu_position' => 3,
+      'public'      => true,
+      'publicly_queryable' =>true,
+      'rewrite'     => array(
+        'slug'      => 'members'
+        ),
+      'supports'    => array(
+        'title',
+        'editor',
+        'thumbnail',
+        'excerpt',
+        'custom-fields',
+        ),
+      'show_ui'     => true,
+      'taxonomies'  => array('post_tag')
+    )
+  );
+
+  $labels = array(
     'name'              => _x( 'Industries', 'taxonomy general name', 'textdomain' ),
     'singular_name'     => _x( 'Industry', 'taxonomy singular name', 'textdomain' ),
     'search_items'      => __( 'Search Industries', 'textdomain' ),
@@ -98,19 +140,34 @@ function register_custom_clients_and_taxonomies(){
 function asset_pipeline(){
   wp_enqueue_style('bootstrap', get_template_directory_uri() . '/dist/bootstrap/css/bootstrap.css');
   wp_enqueue_style('style', get_stylesheet_uri());
-  wp_register_script('index', get_template_directory_uri() . '/index.js', array( 'jquery' ));
-  wp_register_script('filter', get_template_directory_uri() . '/dist/js/filter.js', array( 'jquery' ));
-  wp_register_script('showcase', get_template_directory_uri() . '/dist/js/showcase.js', array('jquery'));
-  wp_register_script('landing', get_template_directory_uri() . '/dist/js/landing.js', array('jquery'));
-  wp_register_script('gradient', get_template_directory_uri() . '/dist/js/gradient.js', array('jquery'));
-  wp_enqueue_script('index');
-  wp_enqueue_script('filter');
-  wp_enqueue_script('showcase');
-  wp_enqueue_script('landing');
+  wp_register_script('jquery-min', get_template_directory_uri() . '/dist/js/jquery-3.1.1.min.js', array(), null, true);
+  wp_register_script('index', get_template_directory_uri() . '/index.js', array(), null, true);
+  wp_register_script('filter', get_template_directory_uri() . '/dist/js/filter.js', array(), null, true);
+  wp_register_script('filter-blog', get_template_directory_uri() . '/dist/js/filter-blog.js', array(), null, true);
+  wp_register_script('portfolio', get_template_directory_uri() . '/dist/js/portfolio.js', array(), null, true);
+  wp_register_script('showcase', get_template_directory_uri() . '/dist/js/showcase.js', array(), null, true);
+  wp_register_script('landing', get_template_directory_uri() . '/dist/js/landing.js', array(), null, true);
+  wp_register_script('gradient', get_template_directory_uri() . '/dist/js/gradient.js', array(), null, true);
+  wp_register_script('slider', get_template_directory_uri() . '/dist/js/slider.js', array(), null, true);
+  wp_localize_script( 'index', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+  wp_localize_script( 'filter', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+  wp_enqueue_script('jquery-min'); 
   if(is_page( 'blog' )){ 
     wp_enqueue_script('gradient'); 
+    wp_enqueue_script('filter-blog');
   }
-  wp_localize_script( 'index', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+  if(is_page( 'services' )){ 
+    wp_enqueue_script('filter'); 
+  }
+  if(is_page( 'about' )){
+    wp_enqueue_script('slider'); 
+  }
+  if(is_home()){
+    wp_enqueue_script('landing');
+    wp_enqueue_script('showcase');
+  }
+  wp_enqueue_script('index');
+  wp_enqueue_script('portfolio');
 }
 
 function remove_admin_login_header() {
@@ -123,10 +180,35 @@ function filter(){
   die();
 }
 
+function filter_description(){
+  $term_id = $_REQUEST['term_id'];
+  echo get_term($term_id)->description;
+  die();
+}
+
+function return_term_description(){
+  $term_id = $_REQUEST['term_id'];
+  $description = term_description($term_id, 'services');
+  echo $description;
+  die();
+}
+
+function filter_blog(){
+  $template = get_template_part( 'partials/filter_blog', 'filter_blog');
+  echo $template;
+  die();
+}
+
 add_action('init', 'register_custom_clients_and_taxonomies');
 add_action('get_header', 'remove_admin_login_header');
 add_action( 'wp_enqueue_scripts', 'asset_pipeline' );
 add_action( 'wp_ajax_filter', 'filter');
 add_action( 'wp_ajax_nopriv_filter', 'filter');
+add_action( 'wp_ajax_filter_description', 'filter_description');
+add_action( 'wp_ajax_nopriv_filter_description', 'filter_description');
+add_action( 'wp_ajax_return_term_description', 'return_term_description');
+add_action( 'wp_ajax_nopriv_return_term_description', 'return_term_description');
+add_action( 'wp_ajax_filter_blog', 'filter_blog');
+add_action( 'wp_ajax_nopriv_filter_blog', 'filter_blog');
 
 ?>

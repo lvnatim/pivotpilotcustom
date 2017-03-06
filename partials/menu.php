@@ -1,4 +1,4 @@
-<div class="primary-menu-mobile-links-container">
+<div id="section-mobile-menu" class="primary-menu-mobile-links-container">
   <div id="mobile-menu-closed" class="mobile-menu">
     <span></span>
     <span></span>
@@ -14,7 +14,7 @@
   </ul>
 </div> 
 
-<div class="container-fluid">
+<div id="section-menu" class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
       <div class="primary-menu">
