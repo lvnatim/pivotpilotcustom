@@ -1,0 +1,91 @@
+.hamburger{
+  bottom: 2px;
+  position: relative;
+  width: 24px;
+}
+
+.hamburger > span{
+  background: $blue;
+  display: block;
+  margin-top: 7px;
+  position: relative;
+  height: 1px;
+  width: 100%;
+}
+
+.hamburger.alternate > span {
+  background: white;
+}
+
+.hamburger.state-closed > span{
+ &:first-of-type{
+  top: 8px;
+  transform: rotateZ(45deg);
+ }
+ &:nth-of-type(2){
+  transform: rotateZ(45deg);
+ }
+ &:last-of-type{
+  top: -8px;
+  transform: rotateZ(-45deg);
+ }
+}
+
+#mobile-menu{
+  align-items: center;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  position: fixed;
+    left: 0;
+    top: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+#mobile-menu-logo{
+  align-items: center;
+  display: flex;
+}
+
+#mobile-menu-logo > h1{
+  font-size: 32px;
+}
+
+#mobile-menu-logo > img{
+  bottom: 1px;
+  height: 25px;
+  padding-left: 5px;
+  padding-right: 3px;
+  position: relative;
+}
+
+#mobile-menu-sidebar{
+  background: $blue;
+  padding-left: 15px;
+  padding-top: 15px;
+  position: fixed;
+  width: 100%;
+    bottom: 0;
+    top: 0;
+    left: 100%;
+  transition: 1s;
+}
+
+#mobile-menu-sidebar.state-opened{
+  left: 60px;
+}
+
+#mobile-menu-sidebar a{
+  color: white;
+}
+
+#mobile-menu-sidebar li{
+  display: block;
+  padding: 3px 0px;
+}
+
+#mobile-menu-sidebar > ul{
+  padding: 15px 0px;
+}
