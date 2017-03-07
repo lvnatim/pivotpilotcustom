@@ -194,6 +194,19 @@ footer section {
       margin-left: -20px;
       padding: 0; } }
 
+.filter-selector {
+  background: tomato;
+  border: 1px solid black;
+  width: 100%; }
+
+.category-dropdown {
+  background: peachpuff;
+  border: 1px solid black;
+  width: 100%; }
+  .category-dropdown ul li {
+    border: 1px solid black;
+    display: block; }
+
 * {
   color: #443cff;
   font-family: Walsheim; }
@@ -787,16 +800,20 @@ section.light-purple-background {
       height: 250px; } }
 
 #filter-posts-container .client-excerpt {
-  font-size: 30px;
+  font-size: 16px;
   top: 300px; }
 
 #filter-posts-container .client-terms li {
-  color: white; }
+  color: #443cff;
+  font-family: Walsheim;
+  font-size: 10px; }
 
 #filter-posts-container .client-excerpt,
 #filter-posts-container .client-terms {
-  color: white;
-  margin: 0; }
+  color: #443cff;
+  font-family: Walsheim;
+  line-height: 1.3;
+  margin: 10px 0 5px 0; }
 
 #filter-posts-container .client-overlay {
   height: 100%;
@@ -821,17 +838,21 @@ section.light-purple-background {
   left: 0;
   right: 0; }
 
+.filter-select-bar {
+  border-bottom: 2px solid #443cff; }
+  .filter-select-bar p {
+    font-family: Walsheim; }
+
 .filter-submenu-button {
   cursor: pointer;
+  display: block;
   font-family: Walsheim;
-  padding: 12px 12px;
   position: relative; }
   @media (min-width: 1024px) {
     .filter-submenu-button {
       padding: 12px 24px; } }
 
 .filter-submenu-button.active:after {
-  border-bottom: 1px solid #443cff;
   content: "";
   display: block;
   position: absolute;
@@ -873,9 +894,10 @@ section.light-purple-background {
       width: calc(100% - 48px); } }
 
 .filter-submenu-container {
+  display: block;
   opacity: 0;
   pointer-events: none;
-  position: absolute;
+  position: relative;
   transition: 1s;
   white-space: nowrap; }
 

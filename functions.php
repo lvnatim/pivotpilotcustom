@@ -159,13 +159,12 @@ function asset_pipeline(){
   wp_enqueue_script('slick');
   if(is_page( 'blog' )){ 
     wp_enqueue_script('gradient'); 
-    wp_enqueue_script('filter-blog');
   }
-  if(is_page( 'services' )){ 
-    wp_enqueue_script('filter'); 
+  if(is_page( 'services' )){
+    wp_enqueue_script('filter');
   }
   if(is_page( 'about' )){
-    wp_enqueue_script('slider'); 
+    wp_enqueue_script('slider');
   }
   if(is_home()){
     wp_enqueue_script('landing');
