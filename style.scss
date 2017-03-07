@@ -14,6 +14,8 @@ $purple: #cecdfd;
 $light-purple: #eeeefe;
 $white: #f0efff;
 
+@import 'services';
+
 *{
   color: $blue;
   font-family: Walsheim;
@@ -37,7 +39,7 @@ html,body{
   width: 100%;
   height: 100%;
   margin: 0px;
-  padding: 0px; 
+  padding: 0px;
 }
 
 h1{
@@ -721,18 +723,22 @@ box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.15);
 }
 
 #filter-posts-container .client-excerpt{
-  font-size: 30px;
+  font-size: 16px;
   top: 300px;
 }
 
 #filter-posts-container .client-terms li{
-  color: white;
+  color: $blue;
+  font-family: Walsheim;
+  font-size: 10px;
 }
 
 #filter-posts-container .client-excerpt,
 #filter-posts-container .client-terms, {
-  color: white;
-  margin: 0;
+  color: $blue;
+  font-family: Walsheim;
+  line-height: 1.3;
+  margin: 10px 0 5px 0;
 }
 
 #filter-posts-container .client-overlay{
@@ -764,16 +770,28 @@ box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.15);
   right: 0;
 }
 
+.filter-select-bar {
+  border-bottom: 2px solid $blue;
+  p {
+    font-family: Walsheim;
+  }
+}
+
+ul.filter-submenu {
+  // display: none;
+}
+
 .filter-submenu-button{
   cursor: pointer;
+  display: block;
   font-family: Walsheim;
-  padding: 12px 12px;
+  // padding: 12px 12px;
   position: relative;
   @media(min-width:1024px){padding: 12px 24px;}
 }
 
 .filter-submenu-button.active:after{
-  border-bottom: 1px solid $blue;
+  // border-bottom: 1px solid $blue;
   content: "";
   display: block;
   position: absolute;
@@ -829,9 +847,10 @@ box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.15);
 }
 
 .filter-submenu-container{
+  display: block;
   opacity: 0;
   pointer-events: none;
-  position: absolute;
+  position: relative;
   transition: 1s;
   white-space: nowrap;
 }
@@ -992,7 +1011,7 @@ box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.15);
     a.service-title-container:hover {
       text-decoration: underline;
     }
-  } 
+  }
 }
 .landing-alternate > .services-container a.service-title-container {
   cursor: pointer;
@@ -1240,7 +1259,7 @@ box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.15);
   overflow: hidden;
   max-height: 0;
   padding-top: 0;
-  padding-bottom: 0; 
+  padding-bottom: 0;
   transition: 0.3s linear;
   transition-delay: 0s;
   width: 100%;
@@ -1658,7 +1677,7 @@ box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.15);
 .title{
   color: white;
   font-family: Walsheim;
-  font-size: 11px;  
+  font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }

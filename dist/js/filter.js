@@ -32,7 +32,7 @@ $('.filter-submenu-button').on('click', function(){
     data: {
         'action':'filter',
         'term_id': term_id,
-        'taxonomy': filter_name, 
+        'taxonomy': filter_name,
     },
     success:function(data){
       $('#filter-posts-container').html(data);
