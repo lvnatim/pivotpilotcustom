@@ -14,6 +14,9 @@ $purple: #cecdfd;
 $light-purple: #eeeefe;
 $white: #f0efff;
 
+$submenu-1: #8F8DFC;
+$submenu-2: #B5B3FD;
+
 @import 'archive';
 @import 'menu';
 @import 'slick';
@@ -139,7 +142,7 @@ section {
 }
 
 section.first-section{
-  padding-top: 110px; 
+  padding-top: 110px;
 }
 
 section.first-section.no-padding-top{
