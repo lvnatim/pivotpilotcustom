@@ -24,6 +24,10 @@ $submenu-2: #B5B3FD;
 @import 'services';
 @import 'single-post';
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 *{
   color: $blue;
   font-family: Walsheim;
@@ -140,6 +144,10 @@ section {
 
 section.first-section{
   padding-top: 110px;
+}
+
+section.first-section.no-padding-top{
+  padding-top: 65px;
 }
 
 section.radial-background{
@@ -618,35 +626,6 @@ section.light-purple-background{
 
 .filter-menu{
   white-space: nowrap;
-}
-
-.filter-menu-button{
-  cursor: pointer;
-  padding: 12px 48px;
-  transition: 0.3s;
-}
-
-.filter-menu-button:not(.active):hover{
--webkit-box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.15);
--moz-box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.15);
-box-shadow: inset 0px 0px 30px 5px rgba(0,0,0,0.15);
-}
-
-.filter-menu-button:first-of-type{
-  margin-left: -15px;
-  padding-left: 39px;
-}
-
-.filter-menu-button:nth-of-type(odd){
-  background-color: $light-purple;
-}
-
-.filter-menu-button:nth-of-type(even){
-  background-color: $purple;
-}
-
-.filter-menu-button:last-of-type{
-  width: 100%;
 }
 
 #filter-menu-container{

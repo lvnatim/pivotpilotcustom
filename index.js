@@ -10,31 +10,172 @@ $('.search-bar').on('click', function(){
   $(this).toggleClass('state-opened');
 });
 
-// $('.filter-blog').on('click', function(e){
-//   e.preventDefault();
-//   const term_id = $(this).data('termId');
-//   $.ajax({
-//     url: my_ajax_object.ajax_url,
-//     data: {
-//         'action':'filter_blog',
-//         'term_id': term_id, 
-//     },
-//     success:function(data){
-//       $('#blog-post-container').html(data);
-//     },
-//     error: function(){}
-//   });
-// })
+$('.filter-blog').on('click', function(e){
+  e.preventDefault();
+  const term_id = $(this).data('termId');
+  $.ajax({
+    url: my_ajax_object.ajax_url,
+    data: {
+        'action':'filter_blog',
+        'term_id': term_id,
+    },
+    success:function(data){
+      $('#dynamic-content').html(data);
+    },
+    error: function(){}
+  });
+});
 
-// $('#mobile-menu-open').on('click', function(){
-//     if($(this).data('controls') === 'menu'){
-//         $(".primary-menu-mobile-links-container").toggleClass('active');
-//     }
-// });
+$('#dynamic-content').on('click', '.previous', function(e){
+  e.preventDefault();
+  const curpage = parseInt($('#curpage').html());
+  const maxpage = parseInt($('#maxpage').html());
+  const category = $(this).data('category');
+  const pagenum = curpage - 1;
 
-//     $('#mobile-menu-closed').on('click', function(){
-//         $(".primary-menu-mobile-links-container").toggleClass('active');
-//     });
+  if(curpage > 1){
+    $.ajax({
+      url: my_ajax_object.ajax_url,
+      data: {
+          'action':'filter_blog',
+          'term_id': category,
+          'pagenum': pagenum
+      },
+      success:function(data){
+        $('#dynamic-content').html(data);
+      },
+      error: function(){}
+    });
+  }
+});
+
+$('#dynamic-content').on('click', '.next', function(e){
+  e.preventDefault();
+  const curpage = parseInt($('#curpage').html());
+  const maxpage = parseInt($('#maxpage').html());
+  const category = $(this).data('category');
+  const pagenum = curpage + 1;
+  if(curpage < maxpage){
+    $.ajax({
+      url: my_ajax_object.ajax_url,
+      data: {
+          'action':'filter_blog',
+          'term_id': category,
+          'pagenum': pagenum,
+      },
+      success:function(data){
+        $('#dynamic-content').html(data);
+      },
+      error: function(){}
+    });
+  }
+});
+
+$('#dynamic-content').on('click', '.dropdown', function(e){
+  e.preventDefault();
+  const category = $(this).data('category');
+  const pagenum = $(this).data('pagenum');
+  $.ajax({
+    url: my_ajax_object.ajax_url,
+    data: {
+        'action':'filter_blog',
+        'term_id': category,
+        'pagenum': pagenum,
+    },
+    success:function(data){
+      $('#dynamic-content').html(data);
+    },
+    error: function(){}
+  });
+});
+
+$('.filter-services').on('click', function(e){
+  e.preventDefault();
+  const category = $(this).data('category');
+  const taxonomy = $(this).data('taxonomy');
+  $.ajax({
+    url: my_ajax_object.ajax_url,
+    data: {
+        'action':'filter',
+        'category': category,
+        'taxonomy': taxonomy,
+    },
+    success:function(data){
+      $('#dynamic-content-services').html(data);
+    },
+    error: function(){}
+  });
+});
+
+$('#dynamic-content-services').on('click', '.previous', function(e){
+  e.preventDefault();
+  const curpage = parseInt($('#curpage').html());
+  const maxpage = parseInt($('#maxpage').html());
+  const category = $(this).data('category');
+  const taxonomy = $(this).data('taxonomy');
+  const pagenum = curpage - 1;
+
+  if(curpage > 1){
+    $.ajax({
+      url: my_ajax_object.ajax_url,
+      data: {
+          'action':'filter',
+          'category': category,
+          'pagenum': pagenum,
+          'taxonomy': taxonomy,
+      },
+      success:function(data){
+        $('#dynamic-content-services').html(data);
+      },
+      error: function(){}
+    });
+  }
+});
+
+$('#dynamic-content-services').on('click', '.next', function(e){
+  e.preventDefault();
+  const curpage = parseInt($('#curpage').html());
+  const maxpage = parseInt($('#maxpage').html());
+  const category = $(this).data('category');
+  const taxonomy = $(this).data('taxonomy');
+  const pagenum = curpage + 1;
+  if(curpage < maxpage){
+    $.ajax({
+      url: my_ajax_object.ajax_url,
+      data: {
+          'action':'filter',
+          'category': category,
+          'pagenum': pagenum,
+          'taxonomy': taxonomy,
+      },
+      success:function(data){
+        $('#dynamic-content-services').html(data);
+      },
+      error: function(){}
+    });
+  }
+});
+
+$('#dynamic-content-services').on('click', '.dropdown', function(e){
+  e.preventDefault();
+  const category = $(this).data('category');
+  const pagenum = $(this).data('pagenum');
+  const taxonomy = $(this).data('taxonomy');
+  $.ajax({
+    url: my_ajax_object.ajax_url,
+    data: {
+        'action':'filter',
+        'category': category,
+        'pagenum': pagenum,
+        'taxonomy': taxonomy,
+    },
+    success:function(data){
+      $('#dynamic-content-services').html(data);
+    },
+    error: function(){}
+  });
+});
+
 
 $('img.svg').each(function(){
   var $img = jQuery(this);

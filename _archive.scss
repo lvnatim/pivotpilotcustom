@@ -4,10 +4,22 @@
   font-family: arno-pro;
 }
 
+.filter-section[data-taxonomy="industries"]{
+  background: #cecdfd;
+}
+
+.filter-section .search-bar{
+  margin-top: 7.5px;
+}
+
 .search-bar{
   border-bottom: 1px solid $blue;
   font-family: arno-pro;
   position: relative;
+}
+
+.search-bar * {
+  text-transform: capitalize;
 }
 
 .search-bar > div{
@@ -16,10 +28,11 @@
   padding: 7.5px 0;
 }
 
-.search-bar > div:after{
-  content: "v";
+.search-bar > div > .img-responsive{
+  height: 10px;
   position: absolute;
-  right: 15px;
+    right: 0;
+    top: 15px;
 }
 
 .search-bar > ul {
@@ -35,7 +48,6 @@
 }
 
 .search-bar > ul > li {
-  background: $light-purple;
   border-bottom: 1px solid $blue;
   display: block;
   padding: 7.5px 0;
@@ -44,14 +56,7 @@
 }
 
 .blog-post{
-  padding-top: 30px;
   text-align: center;
-}
-
-.blog-post > h3{
-  margin: 0 auto;
-  padding: 7.5px 0;
-  width: 80%;
 }
 
 .blog-post > p{
@@ -59,8 +64,106 @@
   margin-bottom: 12.5px;
 }
 
+.blog-post > h3{
+  font-weight: 600;
+  width: 80%;
+}
+
+.client-post > div > li:not(:last-of-type):after {
+  content: ", ";
+}
+
+.post{
+  padding-top: 30px;
+}
+
+.post > h3{
+  margin: 0 auto;
+  padding: 7.5px 0;
+}
+
 .post > .image-cont{
   background-size: cover;
   background-position: center;
+  display: block;
   height: 200px;
+  position: relative;
+}
+
+.post > .image-cont > img {
+  background-color: #8f8aff;
+  border-radius: 50%;
+  padding: 10px;
+  position: absolute;
+    right: 15px;
+    bottom: 15px;
+  height: 40px;
+  width: 40px;
+}
+
+.pagination{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+
+.pagination > a {
+  align-items: center;
+  background: #8f8aff;
+  border-radius: 50%;
+  display: inline-flex;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
+}
+
+.pagination > .pagenums {
+  border: 1px solid;
+  border-bottom: 0;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+
+.pagination > .pagenums > .pagenums-dropdown{
+  border-top: 1px solid;
+  margin-top: 5px;
+  margin-left: -15px;
+  margin-right: -15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.pagination > .pagenums:hover > .pagenums-dropdown{
+  max-height: 200px;
+}
+
+.pagination > .pagenums > .pagenums-dropdown > a {
+  border-bottom: 1px solid;
+  display: block;
+  padding: 5px 15px;
+}
+
+.filter-menu {
+  margin-left: -15px;
+  margin-right: -15px;
+  overflow: hidden;
+}
+
+.filter-menu > a{
+  background: $light-purple;
+  display: inline-block;
+  padding: 15px 75px 15px 15px;
+  transition: 0.3s;
+}
+
+.filter-menu > a:nth-of-type(even){
+  background: #cecdfd;
+}
+
+.filter-menu > a:last-of-type{
+  width: 100%;
 }

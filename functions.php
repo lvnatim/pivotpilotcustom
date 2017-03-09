@@ -184,18 +184,18 @@ function filter(){
   die();
 }
 
-function filter_description(){
-  $term_id = $_REQUEST['term_id'];
-  echo get_term($term_id)->description;
-  die();
-}
+// function filter_description(){
+//   $term_id = $_REQUEST['term_id'];
+//   echo get_term($term_id)->description;
+//   die();
+// }
 
-function return_term_description(){
-  $term_id = $_REQUEST['term_id'];
-  $description = term_description($term_id, 'services');
-  echo $description;
-  die();
-}
+// function return_term_description(){
+//   $term_id = $_REQUEST['term_id'];
+//   $description = term_description($term_id, 'services');
+//   echo $description;
+//   die();
+// }
 
 function filter_blog(){
   $template = get_template_part( 'partials/filter_blog', 'filter_blog');
