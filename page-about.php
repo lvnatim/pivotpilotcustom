@@ -1,6 +1,13 @@
 <?php get_header(); ?>
 
-<div id="section-about" class="container-fluid">
+<section class="first-section">
+  <img class="img-responsive" src="<?php the_field('slider_image_one') ?>"/>
+  <h1>We like to call ourselves visual communicators ... it sounds fancy</h1>
+  <p><?php echo $post->post_content; ?><p>
+</section>
+
+
+<!-- <div id="section-about" class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
       <div class="about-landing">
@@ -52,6 +59,6 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <?php get_footer(); ?>
