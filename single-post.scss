@@ -1,0 +1,416 @@
+.blog-post div.responsive-container {
+  position: relative;
+  padding-bottom: 50%;
+  width: 100%;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:before {
+    background: url("http://www.clipartbest.com/cliparts/bcy/xxg/bcyxxgeoi.png") no-repeat;
+    background-position: 50% 50%;
+    background-size: 20%;
+    content: "";
+    height: 100%;
+    pointer-events: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 1001;
+  }
+  &.clicked:before {
+    z-index: -1;
+  }
+}
+
+blockquote {
+  border-left: none;
+  margin: 60px 0 -30px 0;
+  padding: 0;
+  position: relative;
+  &:before {
+      background-color: #ecebfe;
+      content: "";
+      height: 100px;
+      margin-top: -10%;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
+  &:after {
+    bottom: 200px;
+    content: url("http://localhost:8888/pnp/wp-content/uploads/2017/02/TwitterLogo_small.png");
+    left: 20px;
+    position: relative;
+  }
+}
+
+.blog-post-container .blog-post {
+  padding: 100px 0 0 0 ;
+  img {
+    border: none !important;
+    height: auto;
+    width: 100%;
+  }
+}
+
+.blog-post-container .blog-post {
+  h1 {
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    max-width: 80%;
+  }
+  h5 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    text-align: left;
+    width: 100%;
+  }
+  h6 {
+    margin-bottom: 50px;
+    &:before{
+      height: 70px;
+      position: absolute;
+      width: 25%;
+      background-color: #ecebfe;
+      content: "";
+      z-index: -1;
+    }
+  }
+  p {
+    margin: 20px 0 15px 0;
+  }
+  em {
+    font-family: arno-pro;
+  }
+}
+
+.blog-post-carousel {
+    display: flex;
+    height: 300px;
+    justify-content: space-around;
+    margin: 50px 0 0 0;
+    overflow: scroll;
+  }
+
+ .blog-post-carousel-post {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    margin: 0 20px;
+    width: 300px;
+    img {
+      flex-shrink: 0;
+      margin-bottom: 10px;
+      // width: 100%;
+      height: 100%;
+    }
+    h5 {
+      width: 100%;
+    }
+  }
+
+.gallery-item {
+  margin: 7.5px 0;
+}
+
+.responsive-container {
+  height: 150px;
+  margin: 7.5px 0;
+  width: 100%;
+  iframe {
+    height: auto;
+    width: 100%
+  }
+  // &:after {
+  //   content: url("http://localhost:8888/pnp/wp-content/uploads/2017/02/microphone-01.png");
+  //   background-color: white;
+  //   border: 6px solid #3225ff;
+  //   border-radius: 50%;
+  //   bottom: 130px;
+  //   display: flex;
+  //   align-items: center;
+  //   height: 100px;
+  //   justify-content: center;
+  //   margin: auto;
+  //   pointer-events: auto;
+  //   position: relative;
+  //   width: 100px;
+  //   z-index: 1000;
+  // }
+}
+
+.share-bar {
+    right: 0;
+    top: 20vh;
+    .share-icon {
+      align-items: center;
+      background: #8e8cfc;
+      display: flex;
+      justify-content: center;
+      height: 50px;
+      position: fixed;
+      right: 0;
+      top: 20vh;
+      width: 50px;
+      z-index: 2001;
+      .social-media-bar-icon-share {
+        height: 25px;
+        width: auto;
+      }
+    }
+    .social-media-bar {
+      align-items: center;
+      display: none;
+      flex-direction: column-reverse;
+      height: 200px;
+      justify-content: space-between;
+      padding-bottom: 5px;
+      padding-top: 50px;
+      position: fixed;
+      right: 0;
+      top: 20vh;
+      width: 50px;
+      z-index: 2000;
+      .social-icons {
+        align-items: center;
+        background: none;
+        border-bottom: 3px solid #8e8cfc;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .social-media-bar-icon {
+          margin: 10px auto;
+          height: 35px;
+          width: auto;
+          color: #8e8cfc;
+        }
+      }
+    }
+  }
+
+.blog-post-categories {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 50px;
+  width: 100%;
+  h3:after {
+    content: "|";
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  h3:last-of-type:after {
+    content: "" !important;
+    margin-left: 30px;
+  }
+}
+
+.blog-post-categories-desktop {
+  display: none;
+}
+
+ol {
+  padding-left: 0;
+}
+
+ol > li {
+  color: #8F8EFC;
+  font-family: Walsheim;
+  list-style: georgian inside !important;
+  list-style-type: decimal !important;
+  list-style-position: inside !important;
+  margin: 10px 0;
+  div {
+    color: #8F8EFC;
+    margin: 10px 0;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+
+
+
+
+@media (min-width: 768px) {
+
+  blockquote {
+    margin: 50px 0 -50px 0 ;
+    padding: 0 10px;
+    z-index: 1000;
+    &:before {
+      height: 150px;
+      left: 15%;
+      margin-top: -2%;
+      width: 400px;
+    }
+    &:after {
+      content: url("http://localhost:8888/pnp/wp-content/uploads/2017/02/TwitterLogo_small.png");
+      position: relative;
+      left: 90%;
+      top: -200px;
+    }
+  }
+
+  .blog-circle-play-button {
+    align-items: center;
+    background-color: white;
+    border: 6px solid #3225ff;
+    border-radius: 50%;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    width: 100px;
+    img {
+      display: flex;
+    }
+  }
+
+  .blog-post-container .blog-post {
+    align-items: center;
+    padding: 100px 0 0 0;
+    width: 66%;
+    h1 {
+      font-size: 48px;
+      max-width: 66%;
+    }
+    h4 {
+      font-style: italic;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+    h5 {
+      margin: 30px 0 10px 0;
+
+      font-family: helvetica;
+      font-weight: bold;
+      font-size: 8pt;
+
+    }
+    li {
+      margin: 10px 0;
+      color: #8F8EFC;
+      font-family: Walsheim;
+    }
+    li div {
+      color: #8F8EFC;
+      font-family: Walsheim;
+      margin: 10px 0;
+    }
+    li a {
+      text-decoration: underline;
+    }
+    img {
+      margin: 0 auto -15px auto;
+    }
+    ol {
+      padding-left: 0;
+    }
+    em {
+      font-size: 11pt;
+      font-weight: bold;
+    }
+  }
+
+  .blog-post-categories-mobile {
+    display: none;
+  }
+
+  .blog-post-carousel-post {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    margin: 0 20px;
+    width: 300px;
+    img {
+      flex-shrink: 0;
+      margin-bottom: 10px;
+      min-width: 100%;
+      min-height: 100%;
+    }
+    h5 {
+      width: 100%;
+    }
+  }
+
+  .blog-post-categories-desktop {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    h3:after {
+      content: "|";
+      margin-left: 15px;
+    }
+    h3:last-of-type:after {
+      content: "" !important;
+    }
+  }
+
+  .blog-post-category {
+    font-size: 16px;
+    margin: 30px 5px 40px -5px;
+  }
+
+  .blog-post-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 100px;
+  }
+
+  .blog-post-title {
+    margin: 0 auto;
+    max-width: 66%;
+  }
+
+  .gallery {
+    padding-top: 30px;
+    padding-bottom: 15px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    br {
+      display: none;
+    }
+    .wp-caption-text {
+      display: none;
+    }
+    .gallery-item {
+      display: inline-block;
+      float: none !important;
+      margin-top: 0 !important;
+      margin-bottom: 15px;
+      &:nth-of-type(1) {
+        padding-right: 7.5px;
+        width: 50% !important;
+      }
+      &:nth-of-type(2) {
+        padding-left: 7.5px;
+        width: 50% !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+    blockquote {
+    &:before {
+      left: -10%;
+      top: -10%;
+    }
+  }
+}
