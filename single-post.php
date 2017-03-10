@@ -1,17 +1,16 @@
 <?php $terms = get_the_category($post->ID) ?>
 
 <?php echo get_header(); ?>
-<?php echo get_template_part('partials/menu', 'menu'); ?>
 
 <div class="share-bar">
   <div class="share-icon">
-      <img src="http://localhost:8888/pnp/wp-content/uploads/2017/02/share.png" class="social-media-bar-icon-share">
+      <img src="http://da7yjqciamcnr.cloudfront.net/images/tmd-office/share-icon.png" class="social-media-bar-icon-share">
   </div>
   <div class="social-media-bar">
     <div class="social-icons">
-      <a href="http://twitter.com/pivotandpilot" target="_blank"><img src="http://localhost:8888/pnp/wp-content/uploads/2017/02/TwitterLogo_small.png" class="social-media-bar-icon"></a>
-      <a href="http://instagram.com/pivotandpilot" target="_blank"><img src="http://localhost:8888/pnp/wp-content/uploads/2017/02/TwitterLogo_small.png" class="social-media-bar-icon"></a>
-      <a href="https://www.linkedin.com/company/pivot-&-pilot-creative" target="_blank"><img src="http://localhost:8888/pnp/wp-content/uploads/2017/02/TwitterLogo_small.png" class="social-media-bar-icon"></a>
+      <a href="http://twitter.com/pivotandpilot" target="_blank"><img src="https://image.flaticon.com/icons/png/512/8/8800.png" class="social-media-bar-icon"></a>
+      <a href="http://instagram.com/pivotandpilot" target="_blank"><img src="https://image.flaticon.com/icons/png/512/8/8800.png" class="social-media-bar-icon"></a>
+      <a href="https://www.linkedin.com/company/pivot-&-pilot-creative" target="_blank"><img src="https://image.flaticon.com/icons/png/512/8/8800.png" class="social-media-bar-icon"></a>
     </div>
   </div>
 </div>
