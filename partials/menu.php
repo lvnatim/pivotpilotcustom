@@ -20,17 +20,49 @@
     </div>
 
     <ul>
-      <li id="menu-services">
-        <h1>services</h1>
-        <ul class="submenu-1">
-          <li id="menu-branding">
-          <h1>branding &amp; logo design</h1>
-            <ul class="submenu-2">
-              <li><a href="http://google.com"><h1>branded stationary</h1></a></li>
-              <li><h1>brand development</h1></li>
+      <li class="inner-button">
+        <h1>Services</h1>
+        <ul class="inner-menu">
+          <li class="inner-inner-button">
+            <h1>Branding &amp; Logo</h1>
+            <ul class="inner-inner-menu">
+              <li><a><h1>Branded Stationary</h1></a></li>
+              <li><a><h1>Brand Development</h1></a></li>
             </ul>
           </li>
-          <li id="menu-website"><h1>website design</h1>
+          <li class="inner-inner-button">
+            <h1>Website</h1>
+            <ul class="inner-inner-menu">
+              <li><a><h1>Website Build</h1></a></li>
+              <li><a><h1>Google Adwords & SEO</h1></a></li>
+              <li><a><h1>Interactive Animation</h1></a></li>
+            </ul>
+          </li>
+          <li class="inner-inner-button">
+            <h1>Print & Packaging</h1>
+            <ul class="inner-inner-menu">
+              <li><a><h1>Branded Stationary</h1></a></li>
+              <li><a><h1>Marketing Materials</h1></a></li>
+              <li><a><h1>Product Packaging</h1></a></li>
+            </ul>
+          </li>
+          <li class="inner-inner-button">
+            <h1>Digital Marketing</h1>
+            <ul class="inner-inner-menu">
+              <li><a><h1>Social Media Campaigns</h1></a></li>
+              <li><a><h1>Corporate Videos</h1></a></li>
+              <li><a><h1>Google Adwords & SEO</h1></a></li>
+            </ul>
+          </li>
+          <li class="inner-inner-button">
+            <h1>Film & Animation</h1>
+            <ul class="inner-inner-menu">
+              <li><a><h1>Corporate Videos</h1></a></li>
+              <li><a><h1>Interactive Animation</h1></a></li>
+            </ul>
+          </li>
+
+<!--           <li id="menu-website"><h1>website</h1>
             <ul class="submenu-2">
               <li><h1>website build</h1></li>
               <li><h1>Google Adwords &amp; SEO</h1></li>
@@ -56,55 +88,17 @@
               <li><h1>corporate videos</h1></li>
               <li><h1>interactive animation</h1></li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </li>
-      <li><a href="<?php echo get_site_url() . '/portfolio' ?>"><h1>portfolio</h1></a></li>
-      <li><a href="<?php echo get_site_url() . '/blog' ?>"><h1>blog</h1></a></li>
-      <li><a href="<?php echo get_site_url() . '/about' ?>"><h1>about</h1></a></li>
-      <li><a href="<?php echo get_site_url() . '/contact' ?>"><h1>contact</h1></a></li>
-      <li><a href="<?php echo get_site_url() . '/shop' ?>"><h1>shop</h1></a></li>
+      <li><a href="<?php echo get_site_url() . '/portfolio' ?>"><h1>Portfolio</h1></a></li>
+      <li><a href="<?php echo get_site_url() . '/blog' ?>"><h1>Blog</h1></a></li>
+      <li><a href="<?php echo get_site_url() . '/about' ?>"><h1>About</h1></a></li>
+      <li><a href="<?php echo get_site_url() . '/contact' ?>"><h1>Contact</h1></a></li>
+      <li><a href="<?php echo get_site_url() . '/shop' ?>"><h1>Shop</h1></a></li>
     </ul>
   </div>
 </div>
-<script>
-
-jQuery(document).ready(function($){
-  $('#menu-services').on('click', function() {
-    $(this).toggleClass('active');
-  });
-
-  $('#menu-branding').on('click', function(event) {
-    event.stopPropagation();
-    $('#menu-services *').not(this).removeClass('active');
-    $(this).toggleClass('active');
-  });
-
-  $('#menu-website').on('click', function(event) {
-    event.stopPropagation();
-    $('#menu-services *').not(this).removeClass('active');
-    $(this).toggleClass('active');
-  });
-
-  $('#menu-print').on('click', function(event) {
-    event.stopPropagation();
-    $('#menu-services *').not(this).removeClass('active');
-    $(this).toggleClass('active');
-  });
-
-  $('#menu-digital').on('click', function(event) {
-    event.stopPropagation();
-    $('#menu-services *').not(this).removeClass('active');
-    $(this).toggleClass('active');
-  });
-
-  $('#menu-film').on('click', function(event) {
-    event.stopPropagation();
-    $('#menu-services *').not(this).removeClass('active');
-    $(this).toggleClass('active');
-  });
-});
-</script>
 
 
 

@@ -1,0 +1,80 @@
+.about-section{
+  background: -moz-linear-gradient(top, #443cff 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(top, #443cff 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, #443cff 0%, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#443cff', endColorstr='#00ffffff',GradientType=0 );
+}
+
+.about-section h1{
+  width: 100%;
+}
+
+.about-section h1.about-excerpt {
+  margin-top: -15px;
+  position: relative;
+  z-index: 1;
+}
+
+.alternate-content{
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+    top: 0;
+}
+
+.alternate-content *{
+  color: white;
+}
+
+.alternate-content > p:first-child{
+  margin-top: 0;
+}
+
+.alternate-content > ul {
+  margin-top: 10px;
+}
+
+.alternate-content > ul > .button{
+  margin-top: 0;
+  letter-spacing: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-transform: none;
+  &:nth-of-type(odd){
+    background: #8f8aff;
+  }
+  &:nth-of-type(even){
+    background: #7c77ff;
+  }
+}
+
+.alternate-content{
+  transition: opacity 0.3s linear 0s, max-height 0.3s linear 0.3s;
+}
+
+.default-content{
+  overflow: hidden;
+  max-height: 95px;
+  transition: opacity 0.3s linear 0.3s, max-height 0.3s linear 0s;
+}
+
+.dynamic-content-cont{
+  position: relative;
+  transition: 1s linear;
+}
+
+section.state-alternate{
+  background: $blue !important;
+}
+
+section.state-alternate .default-content{
+  max-height: 0px;
+  opacity: 0;
+  transition: opacity 0.3s linear 0s, max-height 0.3s linear 0.3s;
+}
+
+section.state-alternate .alternate-content{
+  max-height: 400px;
+  opacity: 1;
+  transition: opacity 0.6s linear 0.9s, max-height 0.3s linear 0.6s;
+}

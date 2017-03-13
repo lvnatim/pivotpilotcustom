@@ -1,12 +1,58 @@
+.fade-slide-container > .slick-dots{
+  align-items: flex-end;
+  display:flex;
+  flex-direction: column;
+    top:10px;
+    bottom: auto;
+}
+
+#featured-team-members{
+  padding-top: 45px;
+}
+
+#featured-team-members .slide {
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+}
+
+#featured-team-members .slide-image-cont{
+  height: auto;
+  margin-bottom: 7.5px;
+  padding-top: 100%;
+}
+
+
 #featured-case-studies{
   margin-top: 15px;
-  margin-left: -15px;
-  margin-right: -15px;
+}
+
+.slick-dotted.slick-slider{
+  margin-bottom: 0;
+}
+
+.slick-dots li {
+  margin: 0px 10px;
+}
+
+.slick-dots li button:before{
+  color: white;
+  font-size: 15px;
+  opacity: 1;
+}
+
+.slick-dots li.slick-active button:before{
+  color: $blue;
+  opacity: 1;
 }
 
 .slide{
   margin-left: 3.75px;
   margin-right: 3.75px;
+}
+
+.slide-container{
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .slide-image-cont {
@@ -16,7 +62,19 @@
   height: 175px;
 }
 
+.slide-inner-cont h1{
+  font-size: 30px;
+  font-weight: 900;
+  &:first-of-type{margin-top: 10px;}
+  &:last-of-type{margin-bottom: 10px;}
+}
+
 .slide-inner-cont h3{
   padding-top: 7.5px;
   padding-bottom: 2.5px;
 }
+
+.slide-inner-cont p.title{
+  color: $blue;
+  margin: 0;
+} 

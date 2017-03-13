@@ -40,8 +40,13 @@
   position: fixed;
     left: 0;
     top: 0;
+  transition: 1s;
   width: 100%;
   z-index: 10000;
+}
+
+#mobile-menu.state-hidden{
+  top: -100%;
 }
 
 #mobile-menu-logo{
@@ -80,6 +85,12 @@
 #mobile-menu-sidebar a,
 #mobile-menu-sidebar h1{
   color: white;
+  font-family: Walsheim;
+  text-transform: lowercase;
+}
+
+#mobile-menu-sidebar h1 {
+  font-size: 20px;
 }
 
 #mobile-menu-sidebar li{
@@ -91,57 +102,50 @@
   padding: 15px 0px;
 }
 
-#mobile-menu-sidebar > ul > li {
-
-}
-
-#mobile-menu-sidebar > ul > li > ul {
+#mobile-menu-sidebar .inner-menu {
+  background: #7c77ff;
   max-height: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: -15px;
+  padding-left: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   overflow: hidden;
-  padding-top: 0;
-  padding-bottom: 0;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
-#mobile-menu-sidebar > ul > li.active > ul {
-  max-height: 400px;
-  padding: 5px 0 5px 15px;
+#mobile-menu-sidebar .inner-button.active .inner-menu {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  max-height: 600px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  overflow: hidden;
 }
 
-#mobile-menu-sidebar > ul > li > ul > li > ul {
+#mobile-menu-sidebar .inner-inner-menu {
+  background: #8f8aff;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: -15px;
   max-height: 0;
+  padding-left: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   overflow: hidden;
-  padding-top: 0;
-  padding-bottom: 0;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
-#mobile-menu-sidebar > ul > li > ul > li.active > ul {
-  max-height: 400px;
-  padding: 5px 0 5px 15px;
+#mobile-menu-sidebar .inner-inner-button.active .inner-inner-menu {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  max-height: 250px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  overflow: hidden;
 }
 
-.submenu-1 {
-  background: $submenu-1;
-  margin-left: -15px;
-  padding: 5px 0 5px 15px;
+#mobile-menu-sidebar .inner-inner-button:last-of-type.active .inner-inner-menu{
+  margin-bottom: -17px;
 }
-
-#menu-services h1,
-.submenu-1 h1 {
-  color: white;
-  font-family: Walsheim;
-}
-
-.submenu-2 {
-  background: $submenu-2;
-  display: block;
-  margin-left: -15px;
-  padding: 5px 0 5px 15px;
-}
-
-
-
-
-
-

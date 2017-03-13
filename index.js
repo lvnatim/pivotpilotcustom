@@ -1,3 +1,7 @@
+$('#change-landing').on('click', function(){
+  $(this).parent().toggleClass('state-alternate');
+});
+
 $('#mobile-open').on('click', function(){
   $('#mobile-menu-sidebar').addClass('state-opened');
 });
@@ -8,6 +12,21 @@ $('#mobile-close').on('click', function(){
 
 $('.search-bar').on('click', function(){
   $(this).toggleClass('state-opened');
+});
+
+$('.inner-button > h1').on('click', function(){
+  if($(this).parent().hasClass('active')){
+    $('.inner-inner-button').removeClass('active');
+    $(this).parent().toggleClass('active');
+  } else {
+    $(this).parent().toggleClass('active');
+  }
+});
+
+$('.inner-inner-button > h1').on('click', function(){
+  const el = $(this).parent();
+  $('.inner-inner-button').not(el).removeClass('active');
+  el.toggleClass('active');
 });
 
 $('.filter-blog').on('click', function(e){
@@ -182,6 +201,7 @@ $('img.svg').each(function(){
   var imgID = $img.attr('id');
   var imgClass = $img.attr('class');
   var imgURL = $img.attr('src');
+  var style = $img.attr('style');
 
   jQuery.get(imgURL, function(data) {
       // Get the SVG tag, ignore the rest
@@ -194,6 +214,11 @@ $('img.svg').each(function(){
       // Add replaced image's classes to the new SVG
       if(typeof imgClass !== 'undefined') {
           $svg = $svg.attr('class', imgClass+' replaced-svg');
+      }
+
+      // Add replaced image's styles to the new SVG
+      if(typeof imgClass !== 'undefined') {
+          $svg = $svg.attr('style', style);
       }
 
       // Remove any invalid XML tags as per http://validator.w3.org
@@ -209,6 +234,49 @@ $('img.svg').each(function(){
 
 }, 'xml');
 
+});
 
 
+$('.fade-slide-container').slick({
+  adaptiveHeight: true,
+  arrows: false,
+  dots: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear'
+});
+
+$('#featured-case-studies').slick({
+  arrows: false,
+  centerMode: true,
+  centerPadding: '11.25px',
+  infinite: false,
+  initialSlide: 1,
+  slidesToShow: 1
+});
+
+$('#featured-team-members').slick({
+  arrows: false,
+  centerMode: true,
+  centerPadding: '22.5px',
+  infinite: true,
+  initialSlide: 2,
+  slidesToShow: 1
+});
+
+ var lastScrollTop = 0;
+$(window).scroll(function(event){
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+    // downscroll code
+    if(st > 150){
+      $('#mobile-menu').addClass('state-hidden');
+    }
+
+   } else {
+    // upscroll code
+    $('#mobile-menu').removeClass('state-hidden');
+   }
+   lastScrollTop = st;
 });

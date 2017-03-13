@@ -1,8 +1,23 @@
 <?php get_header(); ?>
 
 <section class="first-section radial-background">
-  <h1>We use strategic design to help our clients grow.</h1>
-  <a class="button">How Exactly?</a>
+  <div class="dynamic-content-cont">
+    <div class="default-content">
+      <h1>We use strategic design to help our clients grow.</h1>
+    </div>
+    <div class="alternate-content">
+      <p>Beautiful designs are useless without substance. For this reason, we research your competition and industry gaps before we design and create marketing strategies to help your company stand out in a competitive market.</p>
+      <p>Our services include:</p>
+      <ul>
+        <a class="button"><h3>Branding & Logo</h3></a>
+        <a class="button"><h3>Web Development & SEO</h3></a>
+        <a class="button"><h3>Film & Animation</h3></a>
+        <a class="button"><h3>Print & Packaging</h3></a>
+        <a class="button"><h3>Online Marketing & Adwords</h3></a>
+      </ul>
+    </div>
+  </div>
+  <a id="change-landing" class="button">How Exactly?</a>
 </section>
 
 <section class="light-purple-background">
@@ -33,7 +48,7 @@ $posts = get_posts(
 
 <section>
   <a class="button alternate no-margin-top">Featured Case Studies</a>
-  <div id="featured-case-studies">
+  <div id="featured-case-studies" class="slide-container">
     <?php foreach($posts as $post): ?>
     <div class="slide">
       <div class="slide-inner-cont">
