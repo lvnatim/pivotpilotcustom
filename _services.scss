@@ -1,15 +1,136 @@
-.filter-selector {
-  background: tomato;
-  border: 1px solid black;
+
+.services-icons-slider h2 {
+  font-size: 16px;
+}
+
+.services-icon-post {
+  background: $light-purple;
+  height: 175px;
+  margin: 20px 7px;
+  padding: 10px 30px;
+  text-align: center;
+  width: 120px;
+  img {
+    margin: 10px 0;
+    width: 60px;
+  }
+  h3 {
+    font-size: 12px;
+  }
+}
+
+.services-icons-slider {
+  display: flex;
+  justify-content: space-around;
+  overflow: scroll;
+  padding: 0 0 0 220px;
   width: 100%;
 }
 
-.category-dropdown {
-  background: peachpuff;
-  border: 1px solid black;
-  width: 100%;
-  ul li {
-    border: 1px solid black;
-    display: block;
+.more-info-plus {
+  background: $service-plus;
+  height: 20px;
+  width: 20px;
+  margin: 10px auto;
+  border-radius: 50%;
+  p {
+    color: $light-purple;
+    font-size: 14px;
   }
 }
+
+.selected-logos {
+  img {
+    margin: 15px 0;
+  }
+}
+
+.service-info {
+  margin: 20px 0;
+  h1 {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+}
+
+.service-overlay {
+  background-color: $blue;
+  opacity: 0;
+  transition: opacity 0.5s;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  padding: 15px;
+  top: 0;
+  width: 100%;
+  z-index: 10002;
+  pointer-events: none;
+}
+
+.service-overlay.active {
+  opacity:0.95;
+  pointer-events: auto;
+}
+
+#service-overlay-exit {
+  display: inline-flex;
+  flex-direction: column;
+  float: right;
+  justify-content: space-around;
+  margin: 10px;
+  position: relative;
+  pointer-events: auto;
+  span {
+    height: 25px;
+    position: fixed;
+    width: 1px;
+    z-index: 100010;
+  }
+  span:nth-of-type(1) {
+    background: white;
+    color: white;
+    transform: rotateZ(45deg);
+  }
+  span:nth-of-type(2) {
+    background: white;
+    color: white;
+    transform: rotateZ(-45deg);
+  }
+}
+
+
+.service-overlay-content {
+  pointer-events: none;
+  z-index: 100000;
+  padding-top: 50px;
+  * {
+    color: white;
+  }
+  img {
+    width: 100px;
+    margin: 20px 0;
+  }
+  h1 {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    margin: 10px 0;
+    text-align: left;
+  }
+  h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  p {
+    font-size: 16px;
+    text-align: left;
+  }
+  i {
+    font-family: arno-pro;
+  }
+}
+
+
+
+
+
