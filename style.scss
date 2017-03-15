@@ -12,13 +12,18 @@ Version: 1.0;
 $blue: #443cff;
 $purple: #cecdfd;
 $light-purple: #eeeefe;
+$white: #f0efff;
+
 
 $service-plus: #9DA0FF;
 
-$white: #f0efff;
+$mobile-submenu-1: #8F8DFC;
+$mobile-submenu-2: #B5B3FD;
 
-$submenu-1: #8F8DFC;
-$submenu-2: #B5B3FD;
+$desktop-submenu-1: #8f8dfc;
+$desktop-submenu-1-hover: #7d7afb;
+$desktop-submenu-2: #b4b3fd;
+$desktop-submenu-2-hover: #a19ffc;
 
 @import 'archive';
 @import 'menu';

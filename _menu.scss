@@ -42,6 +42,9 @@
     top: 0;
   width: 100%;
   z-index: 10000;
+  @media(min-width:768px){
+    display: none;
+  }
 }
 
 #mobile-menu-logo{
@@ -122,7 +125,7 @@
 }
 
 .submenu-1 {
-  background: $submenu-1;
+  background: $mobile-submenu-1;
   margin-left: -15px;
   padding: 5px 0 5px 15px;
 }
@@ -134,14 +137,110 @@
 }
 
 .submenu-2 {
-  background: $submenu-2;
+  background: $mobile-submenu-2;
   display: block;
   margin-left: -15px;
   padding: 5px 0 5px 15px;
 }
 
 
+// Services dropdown/submenu for desktop only
 
+#services-dropdown .level-1 {
+  display: none;
+}
+
+#services-dropdown .level-1.active {
+  background: $desktop-submenu-1;
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  left: 0;
+  justify-content: center;
+  padding: 0 100px;
+  position: relative;
+  width: 100%;
+  h1 {
+    color: white;
+    font-family: Walsheim;
+    font-size: 10px;
+    line-height: 60px;
+    width: 100%;
+  }
+}
+
+#services-dropdown .level-2 {
+  display: none;
+}
+
+#services-dropdown .level-2.active {
+  background: $desktop-submenu-2;
+  display: flex;
+  height: 60px;
+  left: 0;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0 150px;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+}
+
+.level-1-dropdown-button {
+  cursor: default;
+  text-align: center;
+  width: 150px;
+  &:hover {
+    background: $desktop-submenu-1-hover;
+  }
+  &.active:after {
+    border-bottom: 12px solid $desktop-submenu-2;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    bottom: 0;
+    content: "";
+    height: 0;
+    margin-left: -10px;
+    position: absolute;
+    width: 0;
+  }
+}
+
+.level-1-dropdown-button.active {
+  background: $desktop-submenu-1-hover;
+}
+
+
+.level-2-dropdown-button {
+  width: 250px;
+  h1 {
+    cursor: default;
+  }
+  &:hover {
+    background: $desktop-submenu-2-hover;
+    color: white;
+  }
+}
+
+.placeholder-menu {
+  background: honeydew;
+  height: 60px;
+  position: relative;
+  top: 0;
+  width: 100%;
+  &.active:after {
+    border-bottom: 12px solid $desktop-submenu-1;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    bottom: 0;
+    content: "";
+    height: 0;
+    left: 25%;
+    margin-left: -10px;
+    position: absolute;
+    width: 0;
+  }
+}
 
 
 
