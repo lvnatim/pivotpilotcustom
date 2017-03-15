@@ -1,91 +1,104 @@
-<?php get_header(); ?>
+<?php echo get_header(); ?>
 
 <?php
 
+parse_str($_SERVER['QUERY_STRING'], $query);
+$category = $query['category'] ? $query['category'] : 4;
+
+$term = get_term($category);
+$service_excerpt = get_field('service_excerpt', 'term_' . $term->term_id);
+$service_name = $term->name;
+$service_description = $term->description;
+$service_tagline = get_field('service_tagline', 'services_' . $category);
 
 ?>
 
-
-<div id="filter-section" class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12">
-      <div id="filter-menu-container" data-selected-filter="services">
-
-
-        <ul class="filter-menu">
-          <li class="filter-menu-button title blue active" data-filter="services">Services</li>
-          <li class="filter-menu-button title blue" data-filter="industries">Industries</li>
-        </ul>
-
-
-
-<?php /*
-
-        <div class="filter-selector">
-          <p class="categoryname">Industries</p>
-        </div>
-        <?php $terms = get_terms('industries', array('hide_empty'=>false)); ?>
-        <div class="category-dropdown filter-submenu-container" data-filter="industries">
-          <ul>
-            <li data-term-id="0" class="filter-submenu-button">Show All</li>
-          <?php foreach($terms as $term): ?>
-            <li data-filter-name="industries" data-term-id="<?php echo $term->term_id ?>"><?php echo $term->name ?></li>
-          <?php endforeach ?>
-          </ul>
-        </div>
-
-
-
-        <div class="filter-selector">
-          <p class="categoryname">Services</p>
-        </div>
-        <?php $terms = get_terms('services', array('hide_empty'=>false)); ?>
-        <div class="category-dropdown filter-submenu-container" data-filter="services">
-          <ul>
-            <li data-term-id="0" class="filter-submenu-button">Show All</li>
-          <?php foreach($terms as $term): ?>
-            <li data-filter-name="services" data-term-id="<?php echo $term->term_id ?>"><?php echo $term->name ?></li>
-          <?php endforeach ?>
-          </ul>
-        </div>
-
-*/ ?>
-
-
-        <div class="filter-submenu-container" data-filter="services">
-          <div class="filter-select-bar">
-            <p>All Services</p>
-          </div>
-          <ul class="filter-submenu">
-            <?php $terms = get_terms('services', array('hide_empty'=>false)); ?>
-            <li class="filter-submenu-button active" data-term-id="0">Show All</li>
-            <?php foreach($terms as $term): ?>
-            <li class="filter-submenu-button" data-filter-name="services" data-term-id="<?php echo $term->term_id ?>"><?php echo $term->name ?></li>
-            <?php endforeach ?>
-          </ul>
-        </div>
-
-        <div class="filter-submenu-container" data-filter="industries">
-          <div class="filter-select-bar">
-            <p>All Industries</p>
-          </div>
-          <ul class="filter-submenu">
-            <?php $terms = get_terms('industries', array('hide_empty'=>false)); ?>
-            <li class="filter-submenu-button" data-term-id="0">Show All</li>
-            <?php foreach($terms as $term): ?>
-            <li class="filter-submenu-button" data-filter-name="industries"  data-term-id="<?php echo $term->term_id ?>"><?php echo $term->name ?></li>
-            <?php endforeach ?>
-          </ul>
-        </div>
-
-
-
-        <!-- <div id="filter-description">Click/hover on any of the terms to change the description and filter the posts.</div> -->
-        <div id="filter-posts-container" class="row">
-        <?php get_template_part('partials/filter', 'filter'); ?>
-        </div>
-      </div>
-    </div>
+<section class="first-section last-section">
+  <div class="service-info">
+    <h1><?php echo $snippet_excerpt ?></h1>
+    <h1><?php echo $service_name ?></h1>
+    <h3><?php echo $service_tagline ?></h3>
+    <p><?php echo $service_description ?></p>
   </div>
-</div>
-<?php get_footer(); ?>
+  <h3>Why does it matter?</h3>
+  <div class="services-icons-slider">
+
+  <?php
+  $currentNumber = 1;
+  for ($i = 1; $i < 7; $i++) {
+
+    $snippet_excerpt = get_field('snippet_excerpt_' . $currentNumber, 'services_' . $category);
+    $snippet_description = get_field('snippet_description_' . $currentNumber, 'services_' . $category);
+    $snippet_icon = get_field('snippet_icon_' . $currentNumber, 'services_' . $category);
+    $snippet_icon_inverse = get_field('snippet_icon_inverse_' . $currentNumber, 'services_' . $category);
+    // $selected_logo = get_field('selected_logo_' . $currentNumber, 'services_' . $category);
+    // $selected_logo_link = get_field('link_for_selected_logo_' . $currentNumber, 'services_' . $category);
+
+    if (strlen($snippet_description) > 0 ) {
+        echo "<div class='services-icon-post'>
+        <img src=" . $snippet_icon . ">
+        <h3>" . $snippet_excerpt . "</h3>
+        <div class='more-info-plus'>
+          <p>+</p>
+        </div>
+        <div class='service-overlay'>
+          <div id='service-overlay-exit'>
+            <span></span>
+            <span></span>
+          </div>
+          <div class='service-overlay-content'>
+            <img class='img-responsive' src='" . $snippet_icon_inverse . "'>
+            <h1>" . $service_name . "</h1>
+            <h3>" . $snippet_excerpt . "</h3>
+            <p> " . $snippet_description . "</p>
+          </div>
+        </div>
+      </div>";
+    }
+    $currentNumber += 1;
+  }
+  ?>
+  </div>
+
+  <div class="selected-logos">
+    <h3>Selected Logos</h3>
+
+    <?php
+      $image_counter= 1;
+      for ($i = 1; $i < 7; $i++) {
+      $selected_logo = get_field('selected_logo_' . $image_counter, 'services_' . $category);
+      $selected_logo_link = get_field('link_for_selected_logo_' . $image_counter, 'services_' . $category);
+      echo "<a href='" . $selected_logo_link .  "''><img class='img-responsive' src=" . $selected_logo . "></a>";
+      $image_counter += 1;
+      }
+    ?>
+
+  </div>
+</section>
+
+<?php echo get_footer(); ?>
+
+<script>
+jQuery(document).ready(function($){
+  $('.more-info-plus').on('click', function() {
+    $(this).next().addClass('active');
+  });
+
+  // Currently clicking anywhere on overlay removes 'active' class.
+
+  $('.service-overlay').on('click', function() {
+    console.log("you're clicking me");
+    $('.service-overlay').removeClass('active');
+  })
+});
+</script>
+
+
+
+
+
+
+
+
+
+

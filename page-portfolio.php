@@ -27,7 +27,7 @@ $args = array(
 );
 
 $posts_array = get_posts($args);
-$displayed_posts = array_slice($posts_array, $offset, 2); 
+$displayed_posts = array_slice($posts_array, $offset, 2);
 $total_posts = ceil(count($posts_array) / 2.0) ;
 
 $next_query_str = '';
@@ -35,14 +35,14 @@ $prev_query_str = '';
 
 if($pagenum < $total_posts && $pagenum > 0){
   $taxonomy_str = '?taxonomy=' . $taxonomy;
-  $page_num_str = '&pagenum=' . ($pagenum + 1); 
+  $page_num_str = '&pagenum=' . ($pagenum + 1);
   $category_query_str = $category ? '&category=' . $category : '';
   $next_query_str = $taxonomy_str . $category_query_str . $page_num_str;
 }
 
 if($pagenum <= $total_posts && $pagenum > 1){
   $taxonomy_str = '?taxonomy=' . $taxonomy;
-  $page_num_str = '&pagenum=' . ($pagenum - 1); 
+  $page_num_str = '&pagenum=' . ($pagenum - 1);
   $category_query_str = $category ? '&category=' . $category : '';
   $prev_query_str = $taxonomy_str . $category_query_str . $page_num_str;
 }
@@ -90,7 +90,7 @@ function generate_dropdown_str($num){
           <?php endforeach?>
           </div>
         </div>
-      <?php endforeach ?>  
+      <?php endforeach ?>
     </div>
 
     <div class="pagination">
@@ -105,10 +105,10 @@ function generate_dropdown_str($num){
         </div>
         <ul class="pagenums-dropdown">
           <?php foreach(range(1, $total_posts) as $number): ?>
-          <a 
-            class="dropdown" 
-            href="<?php echo generate_dropdown_str($number) ?>" 
-            data-category="<?php echo $category ?>" 
+          <a
+            class="dropdown"
+            href="<?php echo generate_dropdown_str($number) ?>"
+            data-category="<?php echo $category ?>"
             data-pagenum="<?php echo $number ?>"
             data-taxonomy="<?php echo $taxonomy ?>"
           >

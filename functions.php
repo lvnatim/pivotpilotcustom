@@ -44,6 +44,50 @@ function register_custom_clients_and_taxonomies(){
     )
   );
 
+  // Trying to add Portfolio
+
+  // $labels = array(
+  //   'name'          => 'Services',
+  //   'singular_name' => 'Service',
+  //   'add_new'       =>  _x('Add Service', 'Service'),
+  //   'add_new_item'  =>  'Add Service',
+  //   'edit_item'     =>  'Edit Service',
+  //   'new_item'      =>  'New Service',
+  //   'view_item'     =>  'View Service',
+  //   'search_items'  =>  'Search Services',
+  //   'not_found'     =>  'No Services Found',
+  //   'not_found_in_trash' => 'No Services found in Trash',
+  //   'all_items'     =>  'View All Services',
+  //   'archives'      =>  'Services',
+  //   'insert_into_item'  =>  'Insert Into Service',
+  //   'uploaded_to_this_item' => 'Uploaded to this Service',
+  //   'menu_name'     =>  'Services',
+  //   'name_admin_bar'=>  'Services'
+  // )
+
+  //   register_post_type('services',
+  //   array(
+  //     'description' => 'Services we provide',
+  //     'has_archive' => false,
+  //     'labels'      => $labels,
+  //     'menu_position' => 5,
+  //     'public'      => true,
+  //     'publicly_queryable' =>true,
+  //     'rewrite'     => array(
+  //       'slug'      => 'services'
+  //       ),
+  //     'supports'    => array(
+  //       'title',
+  //       'editor',
+  //       'thumbnail',
+  //       'excerpt',
+  //       'custom-fields',
+  //       ),
+  //     'show_ui'     => true,
+  //     'taxonomies'  => array('post_tag')
+  //   )
+  // );
+
   $labels = array(
     'name'          =>  'Team Members',
     'singular_name' =>  'Team Member',
@@ -193,7 +237,6 @@ function filter(){
 //   echo $description;
 //   die();
 // }
-
 
 //wrapping videos in responsive container
 
