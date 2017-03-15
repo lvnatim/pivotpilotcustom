@@ -11,6 +11,18 @@
   position: relative;
   height: 1px;
   width: 100%;
+  transition: top 0.3s linear 0.3s, transform 0.3s linear 0s;
+  &:first-of-type{
+    top: 0px;
+    transform: rotateZ(0deg);
+   }
+  &:nth-of-type(2){
+    transform: rotateZ(0deg);
+  }
+  &:last-of-type{
+    top: 0px;
+    transform: rotateZ(0deg);
+  }
 }
 
 .hamburger.alternate > span {
@@ -18,17 +30,26 @@
 }
 
 .hamburger.state-closed > span{
- &:first-of-type{
+  transition: top 0.3s linear 0s, transform 0.3s linear 0.3s;
+  &:first-of-type{
   top: 8px;
   transform: rotateZ(45deg);
- }
- &:nth-of-type(2){
+  }
+  &:nth-of-type(2){
   transform: rotateZ(45deg);
- }
- &:last-of-type{
+  }
+  &:last-of-type{
   top: -8px;
   transform: rotateZ(-45deg);
- }
+  }
+}
+
+.hamburger.portfolio-hamburger{
+  top: -4.5px;
+}
+
+.hamburger.portfolio-hamburger > span{
+  background: white;
 }
 
 #mobile-menu{
@@ -56,6 +77,9 @@
 
 #mobile-menu-logo > h1{
   font-size: 32px;
+  @media(min-width:425px){
+    font-size: 42px;
+  }
 }
 
 #mobile-menu-logo > img{
@@ -64,6 +88,9 @@
   padding-left: 5px;
   padding-right: 3px;
   position: relative;
+  @media(min-width:425px){
+    height:32px;
+  }
 }
 
 #mobile-menu-sidebar{
@@ -148,4 +175,91 @@
 
 #mobile-menu-sidebar .inner-inner-button:last-of-type.active .inner-inner-menu{
   margin-bottom: -17px;
+}
+
+#portfolio-header{
+  align-items:center;
+  display: flex;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+#portfolio-header > p.title{
+  margin-top: 0;
+  margin-left: 10px;
+  max-width: 0;
+  overflow: hidden;
+}
+
+#portfolio-menu.state-opened > #portfolio-header > p.title {
+  max-width: 100px;
+  transition: 0.3s;
+  transition-delay: 0.3s;
+}
+
+#portfolio-menu{
+  align-items: center;
+  background: #8f8aff;
+  display:flex;
+  flex-direction:column;
+  padding-top: 15px;
+  position: fixed;
+  right: -86px;
+  top: 68px;
+  transition: 0.3s;
+  z-index: 9999;
+  @media(min-width:425px){
+    top: 80px;
+  }
+}
+
+#portfolio-menu.state-opened{
+  right: 0;
+}
+
+#portfolio-menu > a {
+  background: #ecebfe;
+  color: $blue;
+  padding: 12px;
+  position: relative;
+  width: 100%;
+}
+
+#portfolio-menu > a > .default_url{
+  display:inline-block;
+}
+
+#portfolio-menu.state-opened > a > .default_url {
+  display:none;
+}
+
+#portfolio-menu > a > .full_url {
+  display:none;
+}
+
+#portfolio-menu.state-opened > a > .full_url{
+  display:inline-block;
+}
+
+#portfolio-menu > ul {
+  overflow: hidden;
+  max-height: 0;
+  padding-left: 15px;
+  padding-bottom: 0;
+  padding-right: 15px;
+  transition: 0.3s;
+  transition-delay: 0.3s;
+  width: 100%;
+}
+
+#portfolio-menu.state-opened > ul{
+  max-height: 100px;
+  padding-bottom: 15px;
+}
+
+#portfolio-menu > ul > a {
+  color: white;
+  display: block;
 }

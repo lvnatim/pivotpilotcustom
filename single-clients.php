@@ -1,4 +1,30 @@
 <?php get_header(); ?>
+
+<div id="portfolio-menu">
+  <div id="portfolio-header">
+    <div id="portfolio-menu-open" class="hamburger portfolio-hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <p class="title">Services</p>
+  </div>
+
+  <ul>
+    <?php if(get_field('branding_and_logo')): ?><a class="portfolio-button" href="#branding-and-logo">Branding & Logo</a><?php endif?>
+    <?php if(get_field('website')): ?><a class="portfolio-button" href="#web-and-seo">Website & SEO</a><?php endif?>
+    <?php if(get_field('animation')): ?><a class="portfolio-button" href="#animation">Animation & Film</a><?php endif?>
+    <?php if(get_field('print')): ?><a class="portfolio-button" href="#print-and-packaging">Print & Packaging</a><?php endif?>
+  </ul>
+
+  <?php if(get_field('website_link')): ?>
+  <a href="<?php the_field('website_link'); ?>" target="_blank">
+    <span class="default_url">www</span>
+    <span class="full_url"><?php the_field('website_link'); ?></span>
+  </a>
+  <?php endif ?>
+</div>
+
 <section class="first-section portfolio-section" 
   style="background-color: <?php the_field('background_color') ?>;color: <?php the_field('text_color') ?>;">
   <?php get_template_part('partials/portfolio_default', 'portfolio_default'); ?>

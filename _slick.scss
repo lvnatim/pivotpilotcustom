@@ -60,6 +60,9 @@
   background-position: center;
   display: block;
   height: 175px;
+  @media(min-width:425px){
+    height: 225px;
+  }
 }
 
 .slide-inner-cont h1{

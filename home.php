@@ -3,17 +3,20 @@
 <section class="first-section radial-background">
   <div class="dynamic-content-cont">
     <div class="default-content">
-      <h1>We use strategic design to help our clients grow.</h1>
+      <h1>We use strategic</h1>
+      <h1>design to help our</h1>
+      <h1>clients grow.</h1>
     </div>
     <div class="alternate-content">
       <p>Beautiful designs are useless without substance. For this reason, we research your competition and industry gaps before we design and create marketing strategies to help your company stand out in a competitive market.</p>
       <p>Our services include:</p>
       <ul>
-        <a class="button"><h3>Branding & Logo</h3></a>
-        <a class="button"><h3>Web Development & SEO</h3></a>
-        <a class="button"><h3>Film & Animation</h3></a>
-        <a class="button"><h3>Print & Packaging</h3></a>
-        <a class="button"><h3>Online Marketing & Adwords</h3></a>
+        <?php $terms = get_terms( 'services' );?>
+        <?php foreach($terms as $term): ?>
+          <a class="button" href="<?php echo get_site_url() . '/portfolio?taxonomy=services&category=' . $term->term_id ?>">
+            <h3><?php echo $term->name ?></h3>
+          </a>
+        <?php endforeach ?>
       </ul>
     </div>
   </div>

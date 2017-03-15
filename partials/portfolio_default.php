@@ -1,4 +1,4 @@
-<div id="defaul">
+<div id="default">
   <p class="title"><?php echo $post->post_title; ?></p>
   <h1 class="bold"><?php echo $post->post_excerpt; ?></h1>
   <p><?php echo $post->post_content; ?></p>

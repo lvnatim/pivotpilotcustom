@@ -61,34 +61,6 @@
               <li><a><h1>Interactive Animation</h1></a></li>
             </ul>
           </li>
-
-<!--           <li id="menu-website"><h1>website</h1>
-            <ul class="submenu-2">
-              <li><h1>website build</h1></li>
-              <li><h1>Google Adwords &amp; SEO</h1></li>
-              <li><h1>interactive animation</h1></li>
-            </ul>
-          </li>
-          <li id="menu-print"><h1>print &amp; packaging</h1>
-            <ul class="submenu-2">
-              <li><h1>branded stationary</h1></li>
-              <li><h1>marketing materials</h1></li>
-              <li><h1>product packaging</h1></li>
-            </ul>
-          </li>
-          <li id="menu-digital"><h1>digital marketing</h1>
-            <ul class="submenu-2">
-              <li><h1>social media campaigns </h1></li>
-              <li><h1>corporate videos</h1></li>
-              <li><h1>Google Adwords &amp; SEO</h1></li>
-            </ul>
-          </li>
-          <li id="menu-film"><h1>film &amp; animation</h1>
-            <ul class="submenu-2">
-              <li><h1>corporate videos</h1></li>
-              <li><h1>interactive animation</h1></li>
-            </ul>
-          </li> -->
         </ul>
       </li>
       <li><a href="<?php echo get_site_url() . '/portfolio' ?>"><h1>Portfolio</h1></a></li>
