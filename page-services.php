@@ -79,12 +79,15 @@ jQuery(document).ready(function($){
   $('.more-info-plus').on('click', function() {
     const index = $(this).data('overlay') - 1;
     $('.service-overlay').eq(index).addClass('active');
+    // $(this).next().addClass('active');
+    // $('.service-overlay-content').animate({'padding-top': '50px'}, 500);
   });
 
   // Currently clicking anywhere on overlay removes 'active' class.
 
   $('.service-overlay').on('click', function() {
     $('.service-overlay').removeClass('active');
+    $('.service-overlay-content').animate({'padding-top': '800px'}, 200);
   })
 });
 </script>
