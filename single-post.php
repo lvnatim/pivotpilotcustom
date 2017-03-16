@@ -11,9 +11,9 @@
         <li class="term"><?php echo $term->name ?></li>
       <?php endforeach?>
       </div>
-      <h3><?php echo $post->post_title ?></h3>
+      <h3 id="blog-post-title"><?php echo $post->post_title ?></h3>
       <p class="date"><?php echo get_the_date('', $post) ?></p>
-      <img class="img-responsive" src="<?php echo get_the_post_thumbnail_url($post); ?>"/>
+      <img id="blog-post-thumbnail" class="img-responsive" src="<?php echo get_the_post_thumbnail_url($post); ?>"/>
     </div>
   </div>
 
@@ -51,14 +51,14 @@
   <div id="blog-related-posts-cont">
     <p class="title">Related Posts</p>
     <div id="blog-related-posts" class="slide-container">
-    <?php 
+    <?php
       function return_term_id($term) {
         return $term->term_id;
       }
       $blog_post_terms = get_the_terms($post, 'category');
       $blog_post_term_ids = array_map("return_term_id", $blog_post_terms);
     ?>
-    <?php 
+    <?php
 
     $args = array(
       'posts_per_page'   => 4,
@@ -95,13 +95,13 @@
 
 <div id="share-bar">
   <div class="social-icons">
-    <a href="https://facebook.com/pivotandpilot" target="_blank">
+    <a href="" target="_blank" id="fb-icon">
       <img src="<?php echo get_template_directory_uri() . '/dist/icons/facebook.svg' ?>" class="img-responsive svg"/>
     </a>
-    <a href="https://twitter.com/pivotandpilot" target="_blank">
+    <a href="" target="_blank" id="tweet-icon">
       <img src="<?php echo get_template_directory_uri() . '/dist/icons/twitter.svg' ?>" class="img-responsive svg"/>
     </a>
-    <a href="https://www.linkedin.com/company/pivot-&-pilot-creative" target="_blank">
+    <a href="" target="_blank" id="linkedin-icon">
       <img src="<?php echo get_template_directory_uri() . '/dist/icons/linkedin.svg' ?>" class="img-responsive svg"/>
     </a>
   </div>
@@ -241,6 +241,31 @@ jQuery(document).ready(function($){
     const $link = $('<a>', {href: href_str, class: 'blockquote-tweet'});
     $(this).append($link);
   });
+
+  //Footer 'smart links'. FB, Twitter, LinkedIn.
+
+  $(".social-icons a:nth-of-type(1)").each(function(index) {
+    const current_url = encodeURIComponent(window.location.href);
+    let facebook_share_link = "https://www.facebook.com/sharer/sharer.php?u=" + current_url;
+    $('#fb-icon').attr('href', facebook_share_link);
+  });
+
+  $(".social-icons a:nth-of-type(2)").each(function(index) {
+    const default_twitter_url = 'https://twitter.com/intent/tweet?url=';
+    const current_url = encodeURIComponent(window.location.href);
+    var str = "Look at this post!";
+    str = str.replace(/\s/g, "%20")
+    const href_str = default_twitter_url + current_url + "&text=" + str;
+    const $link = $('<a>', {href: href_str, class: 'blockquote-tweet'});
+    $('#tweet-icon').attr('href', href_str);
+  });
+
+  $(".social-icons a:nth-of-type(3)").each(function(index) {
+    const current_url = encodeURIComponent(window.location.href);
+    const current_title = $('#blog-post-title').text();
+    let linkedin_share_link = 'https://www.linkedin.com/shareArticle?mini=true&url=' + current_url + ' &title=' + current_title;
+    $('#linkedin-icon').attr('href', linkedin_share_link);
+  })
 });
 </script>
 
