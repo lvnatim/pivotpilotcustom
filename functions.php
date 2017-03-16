@@ -183,8 +183,6 @@ function register_custom_clients_and_taxonomies(){
 
 function asset_pipeline(){
   wp_enqueue_style('bootstrap', get_template_directory_uri() . '/dist/bootstrap/css/bootstrap.css');
-  wp_enqueue_style('style', get_stylesheet_uri());
-
   wp_enqueue_style('slick', get_template_directory_uri() . '/dist/js/slick/slick.css');
   wp_enqueue_style('slick-theme', get_template_directory_uri() . '/dist/js/slick/slick-theme.css');
   wp_register_script('slick', get_template_directory_uri() . '/dist/js/slick/slick.js', array('jquery'), null, true);
@@ -193,7 +191,6 @@ function asset_pipeline(){
   wp_register_script('filter', get_template_directory_uri() . '/dist/js/filter.js', array(), null, true);
   wp_register_script('filter-blog', get_template_directory_uri() . '/dist/js/filter-blog.js', array(), null, true);
   wp_register_script('portfolio', get_template_directory_uri() . '/dist/js/portfolio.js', array(), null, true);
-  wp_register_script('showcase', get_template_directory_uri() . '/dist/js/showcase.js', array(), null, true);
   wp_register_script('landing', get_template_directory_uri() . '/dist/js/landing.js', array(), null, true);
   wp_register_script('gradient', get_template_directory_uri() . '/dist/js/gradient.js', array(), null, true);
   wp_register_script('slider', get_template_directory_uri() . '/dist/js/slider.js', array(), null, true);
@@ -212,8 +209,8 @@ function asset_pipeline(){
   }
   if(is_home()){
     wp_enqueue_script('landing');
-    wp_enqueue_script('showcase');
   }
+  wp_enqueue_style('style', get_stylesheet_uri());
   wp_enqueue_script('index');
   wp_enqueue_script('portfolio');
 }

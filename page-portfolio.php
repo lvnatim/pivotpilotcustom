@@ -8,6 +8,7 @@ $category = $query['category'];
 $pagenum = $query['pagenum'] ? $query['pagenum'] : 1;
 $offset = ($pagenum - 1) * 2;
 $tax_query = '';
+$category_name = $category ? get_term($category)->name : 'All ' . $taxonomy ;
 
 if($taxonomy && $category ){
   $tax_query = array(
@@ -61,7 +62,10 @@ function generate_dropdown_str($num){
     <a class="title blue" href="?taxonomy=industries">Industries</a>
   </ul>
   <div class="search-bar">
-    <div>All <?php echo $taxonomy ?><img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/arrow-down.svg' ?>"/></div>
+    <div>
+      <span id="current-taxonomy"><?php echo $category_name ?></span>
+      <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/arrow-down.svg' ?>"/>
+    </div>
     <ul>
       <li><a class="filter-services" data-category="0" href="?category=0" data-taxonomy="<?php echo $taxonomy ?>">All <?php echo $taxonomy ?></a></li>
       <?php $terms = get_terms( $taxonomy );?>

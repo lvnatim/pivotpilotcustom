@@ -55,7 +55,9 @@ function generate_dropdown_str($num){
 
 <section class="light-purple-background first-section last-section">
   <div class="search-bar">
-    <div>All Posts<img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/arrow-down.svg' ?>"/></div>
+    <div>
+      <span id="current-taxonomy">All Posts</span>
+      <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/arrow-down.svg' ?>"/></div>
     <ul>
       <li><a class="filter-blog" data-term-id="0" href="?category=0">All Posts</a></li>
       <?php $terms = get_terms( 'category' );?>

@@ -1,0 +1,169 @@
+blockquote{
+  padding: 0px 0px 45px 0px;
+  margin: 0;
+}
+
+blockquote p {
+  font-family: Walsheim;
+  font-size: 13px;
+  margin-top: 0;
+  text-align: center;
+}
+
+blockquote p.title {
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+#animation{
+  padding-bottom: 30px;
+}
+
+.field-content{
+  margin-bottom: 30px;
+}
+
+.full-size-container{
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.gallery{
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.gif-cont{
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 30px;
+}
+
+.mid-size-container{
+  padding-top: 15px;
+}
+
+.navigation{
+  align-items: center;
+  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-top: 30px;
+}
+
+.navigation-client{
+  position: relative;
+  width: 50%;
+  padding-top: 40%;
+}
+
+.navigation-client:first-of-type > .navigation-overlay{
+  text-align:right;
+  > img{
+    left: 15px;
+  }
+  > svg{
+    left: 15px;
+  }
+}
+
+.navigation-client:last-of-type > .navigation-overlay{
+  text-align:left;
+  > img{
+    right: 15px;
+  }
+  > svg{
+    right: 15px;
+  }
+}
+
+.navigation-overlay{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.navigation-overlay > img,
+.navigation-overlay > svg {
+  align-items: center;
+  border-radius: 50%;
+  display: inline-flex;
+  fill: inherit;
+  padding: 10px;
+  position: absolute;
+    top: 35%;
+  height: 40px;
+  width: 40px;
+}
+
+.navigation-overlay > svg > polygon{
+  fill: inherit;
+}
+
+.portfolio-section{
+  padding-bottom: 0;
+}
+
+.portfolio-section *,
+.portfolio-section p.title {
+  color: inherit;
+}
+
+.portfolio-section blockquote p.title {
+  font-size: 11px;
+}
+
+.portfolio-section h1{
+  margin-top: 12px;
+}
+
+#print-and-packaging{
+  margin-top: 0;
+}
+
+#print-and-packaging > p.title {
+  margin-top: 30px;
+}
+
+.separator{
+  border-top: 1px solid;
+  margin-top: -83px;
+  padding-bottom: 20px;
+}
+
+#web-and-seo{
+  margin-top: calc(45px + 100px);
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 45px;
+}
+
+.website-cont{
+  margin-bottom: -80px;
+  position: relative;
+    top: -100px;
+}
+
+.website-cont > div{
+  height: 200px;
+  overflow: scroll;
+}
+
+.website-mobile-cont{
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.website-mobile-flat{
+  height: 300px;
+  overflow: scroll;
+}
