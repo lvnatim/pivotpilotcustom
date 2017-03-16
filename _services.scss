@@ -33,9 +33,15 @@
   width: 20px;
   margin: 10px auto;
   border-radius: 50%;
+  transition: 0.3s;
   p {
     color: $light-purple;
     font-size: 14px;
+    cursor: default;
+  }
+  &:hover {
+    background: $desktop-submenu-1-hover;
+    transition: 0.3s;
   }
 }
 
@@ -50,6 +56,20 @@
   h1 {
     font-size: 12px;
     margin: 10px 0;
+  }
+  h3 {
+    width: 70%;
+  }
+  @media (min-width: 768px) {
+    h3{
+      width: 60%;
+    }
+    p {
+      width: 70%;
+    }
+    h1 {
+      font-size: 18px;
+    }
   }
 }
 
@@ -130,6 +150,91 @@
   }
 }
 
+
+@media (min-width: 768px) {
+  .services-snippets-container {
+    align-items: center;
+    background: $light-purple;
+    display: flex;
+    flex-direction: column;
+    margin: 45px 0;
+    padding: 50px 0;
+  }
+
+  .services-icon-post {
+    padding: 10px 20px;
+  }
+
+  .services-icons-slider {
+    padding: 0 20px;
+  }
+
+  .selected-logos {
+    h3 {
+      font-size: 16px;
+    }
+    .image-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 -15px;
+      a {
+        width: 50%;
+        padding: 0 15px;
+      }
+      img {
+        margin: 15px 0;
+      }
+    }
+  }
+
+  #service-overlay-exit {
+    margin: 15px;
+  }
+
+  .service-overlay-content {
+    display: flex;
+    margin-top: 200px;
+    margin: 200px 0 0 -100px;
+    justify-content: center;
+    padding-top: 800px;
+    .snippet-icon-container {
+      float: left;
+      margin: 0 15px;
+      width: 100px;
+    }
+    .snippet-content-container {
+      float: left;
+      width: 60%;
+      h3 {
+        font-size: 44px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-icon-post {
+    width: 140px;
+    img {
+      width: 100px;
+    }
+  }
+
+  .service-info p {
+    width: 60%;
+  }
+
+  .services-icons-slider {
+    padding: 0 100px;
+  }
+
+  .selected-logos img {
+    margin: 22.5px 0;
+  }
+}
 
 
 
