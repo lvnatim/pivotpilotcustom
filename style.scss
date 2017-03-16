@@ -194,6 +194,12 @@ footer {
 
 section {
   padding: 45px 15px;
+  @media (min-width: 768px) {
+    padding: 45px 30px;
+  }
+  @media (min-width: 1024px) {
+    padding: 45px 45px;
+  }
   transition: 1s;
 }
 
