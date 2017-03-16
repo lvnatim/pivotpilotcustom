@@ -23,44 +23,22 @@
       <li class="inner-button">
         <h1>Services</h1>
         <ul class="inner-menu">
+          <?php $terms = get_terms( 'services' );?>
+          <?php foreach($terms as $term): ?>
           <li class="inner-inner-button">
-            <h1>Branding &amp; Logo</h1>
+            <h1><?php echo $term->name; ?></h1>
             <ul class="inner-inner-menu">
-              <li><a><h1>Branded Stationary</h1></a></li>
-              <li><a><h1>Brand Development</h1></a></li>
+              <?php $term_children_ids = get_term_children($term->term_id, 'services'); ?>
+              <?php foreach($term_children_ids as $term_id): ?>
+              <li>
+                <a href="<?php echo get_site_url() . '/services?category=' . $term_id ?>">
+                  <h1><?php echo get_term($term_id)->name; ?></h1>
+                </a>
+              </li>
+              <?php endforeach ?>
             </ul>
           </li>
-          <li class="inner-inner-button">
-            <h1>Website</h1>
-            <ul class="inner-inner-menu">
-              <li><a><h1>Website Build</h1></a></li>
-              <li><a><h1>Google Adwords & SEO</h1></a></li>
-              <li><a><h1>Interactive Animation</h1></a></li>
-            </ul>
-          </li>
-          <li class="inner-inner-button">
-            <h1>Print & Packaging</h1>
-            <ul class="inner-inner-menu">
-              <li><a><h1>Branded Stationary</h1></a></li>
-              <li><a><h1>Marketing Materials</h1></a></li>
-              <li><a><h1>Product Packaging</h1></a></li>
-            </ul>
-          </li>
-          <li class="inner-inner-button">
-            <h1>Digital Marketing</h1>
-            <ul class="inner-inner-menu">
-              <li><a><h1>Social Media Campaigns</h1></a></li>
-              <li><a><h1>Corporate Videos</h1></a></li>
-              <li><a><h1>Google Adwords & SEO</h1></a></li>
-            </ul>
-          </li>
-          <li class="inner-inner-button">
-            <h1>Film & Animation</h1>
-            <ul class="inner-inner-menu">
-              <li><a><h1>Corporate Videos</h1></a></li>
-              <li><a><h1>Interactive Animation</h1></a></li>
-            </ul>
-          </li>
+          <?php endforeach ?>
         </ul>
       </li>
       <li><a href="<?php echo get_site_url() . '/portfolio' ?>"><h1>Portfolio</h1></a></li>

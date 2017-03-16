@@ -305,6 +305,12 @@ $('#featured-team-members').slick({
   slidesToShow: 1
 });
 
+$('#featured-service-snippets').slick({
+  arrows: false,
+  slidesToShow: 2,
+})
+
+
  var lastScrollTop = 0;
 $(window).scroll(function(event){
    var st = $(this).scrollTop();
