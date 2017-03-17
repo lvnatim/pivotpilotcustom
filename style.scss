@@ -213,10 +213,66 @@ section.first-section.no-padding-top{
     padding-top: 80px;
   }
 }
+// Original (what Tim had)
+// section#radial-background{
+//   background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
+//   // background: yellow;
+// }
 
-section.radial-background{
-  background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
+
+// Option 1
+// section#radial-background {
+//   background: linear-gradient(
+//     270deg,
+//     #D2D0FF,
+//     #D2D0FF,
+//     #D2D0FF,
+//     #D2D0FF,
+//     #BAB8FF,
+//     #BAB8FF,
+//     #8b88e0,
+//     #8b88e0,
+//     red,
+//     #8b88e0,
+//     #BAB8FF,
+//     #BAB8FF,
+//     #D2D0FF,
+//     #D2D0FF,
+//     #D2D0FF,
+//     #D2D0FF);
+//   background-size: 500% 500%;
+
+//   -webkit-animation: moveGradient 30s ease infinite;
+//   -moz-animation: moveGradient 30s ease infinite;
+//   animation: moveGradient 5s ease infinite;
+
+//   @-webkit-keyframes moveGradient {
+//       0%{background-position:0% 50%}
+//       100%{background-position:100% 50%}
+//   }
+
+//   @-moz-keyframes moveGradient {
+//       0%{background-position:0% 50%}
+//       100%{background-position:100% 50%}
+//   }
+
+//   @keyframes moveGradient {
+//       0%{background-position:0% 50%}
+//       100%{background-position:100% 50%}
+//   }
+// }
+
+// Option 2
+section#radial-background {
+  background-image: url('http://localhost:8888/pnp3/wp-content/uploads/2017/03/dbzixnar.png');
+  animation: moveBackground 20s;
 }
+
+@keyframes moveBackground {
+  from {background-position: 0;}
+  to {background-position: -1000px;}
+}
+
 
 section.last-section{
   padding-bottom: 60px;
