@@ -70,7 +70,7 @@ a.button{
   display: inline-block;
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   margin-top: 15px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -80,6 +80,9 @@ a.button{
   width: 100%;
   @media(min-width:425px){
     font-size: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
@@ -95,6 +98,7 @@ a.button.footer-button{
 
 a.icon-button{
   align-items: center;
+  background: transparent;
   display: flex;
   justify-content: center;
 }
@@ -138,6 +142,10 @@ h1{
 
 h1.bold{
   font-weight: 600;
+  @media(min-width:768px){
+    font-size: 36px;
+    width: 60%
+  }
 }
 
 h3{
@@ -149,9 +157,19 @@ h3{
   @media(min-width:1200px){font-size: 48px;}
 }
 
+iframe{
+  height: 173px;
+  width: 100%;
+}
+
+li {
+  font-size: 16px;
+  @media(min-width:425px){font-size: 18px;}
+}
+
 p {
   font-family: arno-pro;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.4;
   margin-top: 12px;
   @media(min-width:425px){font-size: 18px;}
@@ -159,12 +177,20 @@ p {
   @media(min-width:1200px){font-size: 24px;}
 }
 
+p.blue{
+  color: $blue;
+}
+
 p.date {
   font-style: italic;
 }
 
-p.title{
+.title{
+  font-family: Walsheim;
+  font-size: 10px;
+  letter-spacing: 1.5px;
   font-weight: 900;
+  text-transform: uppercase;
 }
 
 img:not(.ampersand) {
@@ -213,6 +239,7 @@ section.first-section.no-padding-top{
     padding-top: 80px;
   }
 }
+
 // Original (what Tim had)
 // section#radial-background{
 //   background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
@@ -271,11 +298,26 @@ section#radial-background {
 @keyframes moveBackground {
   from {background-position: 0;}
   to {background-position: -1000px;}
+
+
+section.first-section.less-padding-top{
+  padding-top: 90px;
+  @media(min-width:768px){
+    padding-top: 135px;
+  }
+}
+
+section.radial-background{
+  background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
+  @media(min-width:768px){
+    padding-top: 210px;
+    padding-bottom: 120px;
+  }
 }
 
 
 section.last-section{
-  padding-bottom: 60px;
+  padding-bottom: 90px;
 }
 
 section.light-purple-background{
@@ -477,12 +519,6 @@ section.light-purple-background{
   margin: 15px 0;
   text-align: center;
   width: 100%;
-  @media(min-width: 768px){
-    bottom: 12px;
-    right: 24px;
-    position: absolute;
-    width: auto;
-  }
 }
 
 @-webkit-keyframes look{
@@ -1204,18 +1240,6 @@ ul.filter-submenu {
 
 .text-container.portfolio-text-container .title{
   padding-bottom: 5px;
-}
-
-.title{
-  color: white;
-  font-family: Walsheim;
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.title.blue{
-  color: $blue;
 }
 
 .title-container{

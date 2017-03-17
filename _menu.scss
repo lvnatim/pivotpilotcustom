@@ -1,3 +1,30 @@
+#ampersand-cont {
+  align-items: center;
+  background: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+    height: 60px;
+    width: 60px;
+  transition: 0.5s;
+}
+
+#purple-ampersand {
+  height: 37px;
+  position: relative;
+  top: -1px;
+  transition: 0.5s;
+  transform: rotateZ(0deg);
+}
+
+#white-ampersand {
+  height: 37px;
+  opacity: 0;
+  position: absolute;
+  transition: 0.5s;
+  transform: rotateZ(0deg);
+}
+
 .hamburger{
   bottom: 2px;
   position: relative;
@@ -52,6 +79,70 @@
   background: white;
 }
 
+#menu{
+  display: none;
+  @media(min-width:768px){
+    align-items: flex-end;
+    background: white;
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+    z-index: 20000;
+  }
+}
+
+#menu > a{
+  
+}
+
+#menu > ul {
+  overflow: hidden;
+  max-width: 0;
+  padding-bottom: 8px;
+  transition: 0.5s;
+  white-space: nowrap;
+}
+
+#menu:hover > ul,
+#menu.state-active > ul{
+  max-width: 200px;
+}
+
+#menu > ul > a {
+  font-size: 16px;
+  &:first-of-type{
+    padding-left: 20px;
+    padding-right: 7.5px;
+  }
+  &:last-of-type{
+    padding-left: 7.5px;
+    padding-right: 20px;
+  }
+}
+
+#menu:hover > #ampersand-cont,
+#menu.state-active > #ampersand-cont {
+  background: $blue;
+}
+
+#menu:hover > #ampersand-cont > #purple-ampersand,
+#menu.state-active > #ampersand-cont > #purple-ampersand {
+  transform: rotateZ(360deg);
+  opacity: 0;
+}
+
+#menu:hover > #ampersand-cont > #white-ampersand,
+#menu.state-active > #ampersand-cont > #white-ampersand {
+  transform: rotateZ(360deg);
+  opacity: 1;
+}
+
 #mobile-menu{
   align-items: center;
   background: white;
@@ -63,7 +154,7 @@
     top: 0;
   transition: 1s;
   width: 100%;
-  z-index: 10000;
+  z-index: 11000;
   @media(min-width:768px){
     display: none;
   }
@@ -121,11 +212,14 @@
 
 #mobile-menu-sidebar h1 {
   font-size: 20px;
+  @media(min-width:425px){
+    font-size: 26px;
+  }
 }
 
 #mobile-menu-sidebar li{
   display: block;
-  padding: 3px 0px;
+  padding: 5px 0px;
 }
 
 #mobile-menu-sidebar > ul{
@@ -197,6 +291,7 @@
 }
 
 #portfolio-menu.state-opened > #portfolio-header > p.title {
+  color: white;
   max-width: 100px;
   transition: 0.3s;
   transition-delay: 0.3s;
@@ -242,6 +337,10 @@
   display:none;
 }
 
+#portfolio-menu.state-opened > a {
+  text-align: center;
+}
+
 #portfolio-menu.state-opened > a > .full_url{
   display:inline-block;
 }
@@ -258,111 +357,104 @@
 }
 
 #portfolio-menu.state-opened > ul{
-  max-height: 100px;
+  max-height: 125px;
   padding-bottom: 15px;
 }
 
 #portfolio-menu > ul > a {
   color: white;
   display: block;
+  padding-bottom: 2px;
 }
 
-#services-dropdown {
-  display:none;
-}
 
-#services-dropdown .level-1 {
-  display: none;
-}
+@media(min-width:768px){
 
-#services-dropdown .level-1.active {
-  background: $desktop-submenu-1;
-  display: flex;
-  flex-direction: row;
-  height: 60px;
-  left: 0;
-  justify-content: center;
-  padding: 0 100px;
-  position: relative;
-  width: 100%;
-  h1 {
-    color: white;
-    font-family: Walsheim;
-    font-size: 10px;
-    line-height: 60px;
-    width: 100%;
+  #services-dropdown {
+    display:none;
+    position: fixed;
+      top: 90px;
+      left: 0;
+      right: 0;
+    z-index: 20000;
   }
+  
+  #services-dropdown.state-active,
+  #services-dropdown:target{
+    display: block;
+  }
+
+  #services-dropdown:before {
+    background: #7c77ff;
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+      top: -10px;
+      left: 252px;
+    transform: rotateZ(45deg);
+  }
+
+  #services-dropdown a {
+    display: block;
+  }
+
+  #services-dropdown p.title{
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin-top: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    white-space: nowrap;
+  }
+
 }
 
-#services-dropdown .level-2 {
-  display: none;
-}
-
-#services-dropdown .level-2.active {
-  background: $desktop-submenu-2;
+#services-dropdown > .service-term-cont {
+  background: #7c77ff;
   display: flex;
-  height: 60px;
-  left: 0;
   justify-content: center;
-  margin-top: 40px;
-  padding: 0 150px;
+  padding: 0 30px;
+  width: 100%;
+}
+
+#services-dropdown .service-subterm-cont {
+  background: #b4b3fd;
+  display: none;
+  left: 0;
+  justify-content: space-around;
+  padding: 0 60px;
   position: absolute;
-  top: 20px;
   width: 100%;
 }
 
-.level-1-dropdown-button {
-  cursor: default;
-  text-align: center;
-  width: 150px;
-  &:hover {
-    background: $desktop-submenu-1-hover;
-  }
-  &.active:after {
-    border-bottom: 12px solid $desktop-submenu-2;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    bottom: 0;
-    content: "";
-    height: 0;
-    margin-left: -10px;
-    position: absolute;
-    width: 0;
-  }
+#services-dropdown .service-term-button-cont.state-active .service-subterm-cont{
+  display: flex;
 }
 
-.level-1-dropdown-button.active {
-  background: $desktop-submenu-1-hover;
-}
-
-
-.level-2-dropdown-button {
-  width: 250px;
-  h1 {
-    cursor: default;
-  }
-  &:hover {
-    background: $desktop-submenu-2-hover;
-    color: white;
-  }
-}
-
-.placeholder-menu {
-  background: honeydew;
-  height: 60px;
+.service-subterm-button{
   position: relative;
-  top: 0;
-  width: 100%;
-  &.active:after {
-    border-bottom: 12px solid $desktop-submenu-1;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    bottom: 0;
-    content: "";
-    height: 0;
-    left: 25%;
-    margin-left: -10px;
-    position: absolute;
-    width: 0;
-  }
+}
+
+.service-subterm-button:active {
+  background: #8f8aff;
+}
+
+.service-term-button-cont.state-active > .service-subterm-button:after{
+  background: #b4b3fd;
+  content: "";
+  height: 20px;
+  width: 20px;
+  margin-left: -7px;
+  position: absolute;
+    bottom: -10px;
+    left: 50%;
+  transform: rotateZ(45deg);
+}
+
+.service-subterm-cont > a:hover {
+  background: #7c77ff;
 }

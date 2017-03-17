@@ -1,4 +1,5 @@
 blockquote{
+  border-left: none;
   padding: 0px 0px 45px 0px;
   margin: 0;
 }
@@ -19,6 +20,49 @@ blockquote p.title {
 #animation{
   padding-bottom: 30px;
 }
+
+#font-section p.title{
+  margin-top: 0;
+}
+
+@-webkit-keyframes fontappear{
+  0%{
+    transform: translate(0px, 60px);
+    z-index: 1;
+  }
+  80%{
+    transform: translate(0px, -20px);
+    z-index: 3;
+  }
+  100%{
+    transform: translate(0px, 0px);
+  }
+}
+
+#font-section img.img-responsive{
+  position: relative;
+  transform: translate(0px, 60px);
+  transition: 1s;
+  z-index: 1;
+}
+
+#font-section img.state-active{
+  animation: fontappear 1s;
+  transform: translate(0px, 0px);
+  z-index: 3; 
+}
+
+#font-section .separator,
+#font-section p {
+  position: relative;
+  z-index: 2;
+}
+
+#font-section p:not(.title){
+  margin-top: 0;
+  padding-top: 12px;
+}
+
 
 .field-content{
   margin-bottom: 30px;
@@ -55,7 +99,7 @@ blockquote p.title {
 .navigation-client{
   position: relative;
   width: 50%;
-  padding-top: 40%;
+  padding-top: 50%;
 }
 
 .navigation-client:first-of-type > .navigation-overlay{
@@ -65,6 +109,11 @@ blockquote p.title {
   }
   > svg{
     left: 15px;
+  }
+  &:hover{
+    > img, svg {
+      transform: translate(-45px);
+    }
   }
 }
 
@@ -76,17 +125,23 @@ blockquote p.title {
   > svg{
     right: 15px;
   }
+  &:hover{
+    > img, svg {
+      transform: translate(45px);
+    }
+  }
 }
 
 .navigation-overlay{
+  overflow: hidden;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 15px;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .navigation-overlay > img,
@@ -97,9 +152,10 @@ blockquote p.title {
   fill: inherit;
   padding: 10px;
   position: absolute;
-    top: 35%;
+    top: 45%;
   height: 40px;
   width: 40px;
+  transition: 0.3s;
 }
 
 .navigation-overlay > svg > polygon{
@@ -134,6 +190,11 @@ blockquote p.title {
 
 #print-and-packaging > p.title {
   margin-top: 30px;
+}
+
+.responsive-container{
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .separator{

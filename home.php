@@ -49,7 +49,7 @@ $posts = get_posts(
 );
 ?>
 
-<section>
+<section class="last-section">
   <a class="button alternate no-margin-top">Featured Case Studies</a>
   <div id="featured-case-studies" class="slide-container">
     <?php foreach($posts as $post): ?>

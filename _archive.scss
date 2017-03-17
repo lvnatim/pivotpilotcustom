@@ -19,11 +19,11 @@
 }
 
 .search-bar * {
+  font-family: arno-pro;
   text-transform: capitalize;
 }
 
 .search-bar > div{
-  font-family: arno-pro;
   font-style: italic;
   padding: 7.5px 0;
 }
@@ -51,8 +51,11 @@
   border-bottom: 1px solid $blue;
   display: block;
   padding: 7.5px 0;
-  font-family: arno-pro;
   font-style: italic;
+}
+
+.search-bar > ul > li.state-active{
+  display:none;
 }
 
 .search-bar > ul > li:last-of-type{
@@ -84,7 +87,7 @@
 @-webkit-keyframes postappear{
   0%{
     opacity: 0.2;
-    top: -10px;
+    top: 10px;
   }
   100%{
     opacity: 1;
@@ -94,7 +97,7 @@
 
 .post{
   animation: 1s postappear linear;
-  padding-top: 30px;
+  padding-top: 45px;
   position: relative;
   top: 0;
 }
@@ -149,6 +152,10 @@
   text-align: center;
 }
 
+.pagination > .pagenums > div > span {
+  font-family: arno-pro;
+}
+
 .pagination > .pagenums > .pagenums-dropdown{
   border-top: 1px solid;
   margin-top: 5px;
@@ -166,7 +173,13 @@
 .pagination > .pagenums > .pagenums-dropdown > a {
   border-bottom: 1px solid;
   display: block;
+  font-family: arno-pro;
   padding: 5px 15px;
+  transition: 0.3s;
+}
+
+.pagination > .pagenums > .pagenums-dropdown > a.active{
+  background: #8f8aff;
 }
 
 .filter-menu {

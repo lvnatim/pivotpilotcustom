@@ -128,6 +128,7 @@
     right: 15px;
     top: 15px;
   }
+
   #mc_embed_signup form {
     padding: 0 0 0 0;
   }
@@ -155,6 +156,12 @@
   #mc_embed_signup input::-webkit-input-placeholder {
     color: white;
     font-family: Walsheim;
+    transition: 0.3s;
+  }
+
+
+  #mc_embed_signup input:focus::-webkit-input-placeholder{
+    color: transparent;
   }
 
 
@@ -217,7 +224,7 @@
   </div>
 
   <h3 class="align-center">or</h3>
-  <a class="button icon-button alternate">
+  <a class="button icon-button">
     <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/like.svg' ?>"/>
     <p class="title">Follow us on Facebook</p>
   </a>
