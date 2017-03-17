@@ -154,6 +154,10 @@
   border: 1px solid white;
 }
 
+.form-cont > p{
+  margin-top: 6px;
+}
+
 #share-bar{
   display: flex;
   position: fixed;
@@ -194,11 +198,12 @@
 
 #share-bar > .form-prompt {
   background: #7c77ff;
-  padding-right: 15px;
+  text-align: center;
   width: 45%;
 }
 
 #share-bar > .form-prompt > p.title {
+  color: white;
   margin: 0;
 }
 

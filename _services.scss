@@ -127,7 +127,15 @@
 
 .service-overlay-content{
   position: relative;
+  transform: translate(0px, 100vh);
+  transition: 1s;
 }
+
+.service-overlay.active .service-overlay-content{
+  transform: translate(0px, 0px);
+}
+
+
 
 @media (min-width: 768px) {
   .services-snippets-container {

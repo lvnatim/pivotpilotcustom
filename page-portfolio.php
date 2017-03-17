@@ -67,10 +67,12 @@ function generate_dropdown_str($num){
       <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/arrow-down.svg' ?>"/>
     </div>
     <ul>
-      <li><a class="filter-services" data-category="0" href="?category=0" data-taxonomy="<?php echo $taxonomy ?>">All <?php echo $taxonomy ?></a></li>
+      <li class="<?php if(!$category){echo 'state-active';} ?>">
+        <a class="filter-services" data-category="0" href="?category=0" data-taxonomy="<?php echo $taxonomy ?>">All <?php echo $taxonomy ?></a>
+      </li>
       <?php $terms = get_terms( $taxonomy );?>
       <?php foreach($terms as $term): ?>
-      <li>
+      <li class="<?php if($category == $term->term_id){echo 'state-active';} ?>">
         <a class="filter-services" data-taxonomy="<?php echo $taxonomy ?>" data-category="<?php echo $term->term_id ?>" href="?taxonomy=<?php echo $taxonomy?>&category=<?php echo $term->term_id ?>"><?php echo $term->name ?></a>
       </li>
       <?php endforeach?>
@@ -106,7 +108,7 @@ function generate_dropdown_str($num){
         <ul class="pagenums-dropdown">
           <?php foreach(range(1, $total_posts) as $number): ?>
           <a
-            class="dropdown"
+            class="dropdown <?php if($number == $pagenum){ echo 'active';} ?>"
             href="<?php echo generate_dropdown_str($number) ?>"
             data-category="<?php echo $category ?>"
             data-pagenum="<?php echo $number ?>"

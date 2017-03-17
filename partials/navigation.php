@@ -26,7 +26,7 @@
       <img 
         class="img-responsive svg" 
         src="<?php echo get_template_directory_uri() . '/dist/icons/arrow-right.svg' ?>"
-        style="background-color: <?php echo $next_text_color ?>; fill: <?php echo $prev_text_color ?>"
+        style="background-color: <?php echo $next_text_color ?>; fill: <?php echo $next_background_color ?>"
       />
     </a>
   </div>

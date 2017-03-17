@@ -55,6 +55,8 @@ $('.inner-inner-button > h1').on('click', function(){
 
 $('.filter-blog').on('click', function(e){
   e.preventDefault();
+  $('.search-bar > ul > li').removeClass('state-active');
+  $(this).parent().addClass('state-active');
   const term_id = $(this).data('termId');
   const taxonomy_name = $(this).text();
   $('#current-taxonomy').text(taxonomy_name);
@@ -87,7 +89,9 @@ $('#dynamic-content').on('click', '.previous', function(e){
           'pagenum': pagenum
       },
       success:function(data){
-        $('#dynamic-content').html(data);
+        $('body').animate({scrollTop: 0}, 1000, 'swing', function(){
+          $('#dynamic-content').html(data);
+        });
       },
       error: function(){}
     });
@@ -109,7 +113,9 @@ $('#dynamic-content').on('click', '.next', function(e){
           'pagenum': pagenum,
       },
       success:function(data){
-        $('#dynamic-content').html(data);
+        $('body').animate({scrollTop: 0}, 1000, 'swing', function(){
+          $('#dynamic-content').html(data);
+        });
       },
       error: function(){}
     });
@@ -117,6 +123,8 @@ $('#dynamic-content').on('click', '.next', function(e){
 });
 
 $('#dynamic-content').on('click', '.dropdown', function(e){
+  $('.dropdown').removeClass('active');
+  $(this).addClass('active');
   e.preventDefault();
   const category = $(this).data('category');
   const pagenum = $(this).data('pagenum');
@@ -128,7 +136,9 @@ $('#dynamic-content').on('click', '.dropdown', function(e){
         'pagenum': pagenum,
     },
     success:function(data){
-      $('#dynamic-content').html(data);
+      $('body').animate({scrollTop: 0}, 1000, 'swing', function(){
+        $('#dynamic-content').html(data);
+      });
     },
     error: function(){}
   });
@@ -136,6 +146,8 @@ $('#dynamic-content').on('click', '.dropdown', function(e){
 
 $('.filter-services').on('click', function(e){
   e.preventDefault();
+  $('.search-bar > ul > li').removeClass('state-active');
+  $(this).parent().addClass('state-active');
   const category = $(this).data('category');
   const taxonomy = $(this).data('taxonomy');
   const taxonomy_name = $(this).text();
@@ -208,6 +220,8 @@ $('#dynamic-content-services').on('click', '.next', function(e){
 });
 
 $('#dynamic-content-services').on('click', '.dropdown', function(e){
+  $('.dropdown').removeClass('active');
+  $(this).addClass('active');
   e.preventDefault();
   const category = $(this).data('category');
   const pagenum = $(this).data('pagenum');
@@ -221,7 +235,9 @@ $('#dynamic-content-services').on('click', '.dropdown', function(e){
         'taxonomy': taxonomy,
     },
     success:function(data){
-      $('#dynamic-content-services').html(data);
+      $('body').animate({scrollTop: 0}, 1000, 'swing', function(){
+        $('#dynamic-content-services').html(data);
+      });
     },
     error: function(){}
   });
@@ -311,12 +327,20 @@ $('#featured-service-snippets').slick({
 })
 
 
- var lastScrollTop = 0;
+var lastScrollTop = 0;
+var blogContentEnd;
+if($('#blog-post-custom-fields').length > 0){
+  blogContentEnd = $('#blog-post-custom-fields').offset().top - $(window).outerHeight();
+}
+
+
 $(window).scroll(function(event){
    var st = $(this).scrollTop();
    if (st > lastScrollTop){
     // downscroll code
-    if(st > 150){
+    if(st > blogContentEnd ){
+      $('#share-bar').removeClass('state-active');
+    } else if(st > 150){
       $('#mobile-menu').addClass('state-hidden');
       $('#share-bar').addClass('state-active');
     }
@@ -327,3 +351,13 @@ $(window).scroll(function(event){
    }
    lastScrollTop = st;
 });
+
+$(window).scroll(function(event){
+  $('#font-section > div > img').each(function(){
+    if($(this).offset().top + $(this).outerHeight() < $(window).scrollTop() + $(window).outerHeight()){
+      $(this).addClass('state-active');
+    } else {
+      $(this).removeClass('state-active');
+    }
+  })
+})

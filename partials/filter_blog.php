@@ -88,7 +88,11 @@ function generate_dropdown_str($num){
     </div>
     <ul class="pagenums-dropdown">
       <?php foreach(range(1, $total_posts) as $number): ?>
-      <a class="dropdown" href="<?php echo generate_dropdown_str($number) ?>" data-category="<?php echo $category ?>" data-pagenum="<?php echo $number ?>"><?php echo $number ?></a>
+      <a 
+        class="dropdown <?php if($number == $pagenum){ echo 'active';} ?>" 
+        href="<?php echo generate_dropdown_str($number) ?>" 
+        data-category="<?php echo $category ?>" 
+        data-pagenum="<?php echo $number ?>"><?php echo $number ?></a>
       <?php endforeach ?>
     </ul>
   </div>

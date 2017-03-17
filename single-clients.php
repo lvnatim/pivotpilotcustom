@@ -18,7 +18,7 @@
   </ul>
 
   <?php if(get_field('website_link')): ?>
-  <a href="<?php the_field('website_link'); ?>" target="_blank">
+  <a href="http://www.<?php the_field('website_link'); ?>" target="_blank">
     <span class="default_url">www</span>
     <span class="full_url"><?php the_field('website_link'); ?></span>
   </a>
