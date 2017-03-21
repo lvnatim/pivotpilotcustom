@@ -311,7 +311,22 @@ $('#featured-case-studies').slick({
   centerPadding: '11.25px',
   infinite: false,
   initialSlide: 1,
-  slidesToShow: 1
+  mobileFirst: true,
+  slidesToShow: 1,
+  responsive: [{
+    breakpoint: 767,
+    settings: {
+      arrows: false,
+      autoplay: false,
+      centerMode: false,
+      centerPadding: 0,
+      cssEase: 'linear',
+      dots: true,
+      fade: true,
+      infinite: true
+    }
+  }]
+
 });
 
 $('#featured-team-members').slick({

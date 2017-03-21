@@ -26,6 +26,71 @@
   margin-top: 15px;
 }
 
+#home-case-studies  {
+  @media( min-width: 768px) {
+    .featured-case-studies-button {
+      font-size: 8px;
+      margin-left: -10px;
+      padding: 20px 10px;
+      position: absolute;
+      width: 22%;
+      z-index: 10;
+    }
+    h3 {
+      position: absolute;
+      top: 40px;
+      width: 50%;
+      z-index: 10;
+    }
+    ul {
+      position: absolute;
+      top: 130px;
+    }
+
+    span {
+      display: inline-block;
+      transform: translate(0, 150px);
+    }
+
+    .slide-inner-cont li {
+      overflow: hidden;
+    }
+
+    .slick-active li {
+      display: inline-block;
+      overflow: hidden;
+      &:nth-of-type(1) span {
+        transform: translate(0, 0);
+        transition: transform 1s;
+      }
+      &:nth-of-type(2) span {
+        transform: translate(0, 0);
+        transition: transform 1.5s;
+      }
+    }
+
+    .slick-dots {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+    }
+    .slide-image-cont {
+      height: 400px;
+      margin: 0 30px;
+    }
+    .slick-dots {
+      height: 0px;
+      margin-top: -100px;
+      margin-left: 5px;
+      position: absolute;
+      li[aria-hidden="true"] button:before {
+        color: $blue;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
 .slick-dotted.slick-slider{
   margin-bottom: 0;
 }
@@ -63,6 +128,9 @@
   @media(min-width:425px){
     height: 225px;
   }
+  @media (min-width:768px) {
+    height: 500px;
+  }
 }
 
 .slide-inner-cont h1{
@@ -81,4 +149,4 @@
 .slide-inner-cont p.title{
   color: $blue;
   margin: 0;
-} 
+}

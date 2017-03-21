@@ -1,3 +1,10 @@
+$('.landing-face').on('click', function(event) {
+  event.preventDefault();
+  $('html, body').animate({
+    scrollTop: $('#home-case-studies').offset().top
+    }, 500);
+})
+
 $('#switch-landing').on('click', function(){
   $('.primary-menu').toggleClass('white');
   $('#primary-menu-mobile').toggleClass('alternate');

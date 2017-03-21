@@ -23,17 +23,22 @@
     </div>
   </div>
   <a id="change-landing" class="button">How Exactly?</a>
-  <div class="landing-face">
-    <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
-    <img class="img-responsive facepart eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
-    <img class="img-responsive facepart nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face/nose.svg' ?>"/>
-    <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face/mouth.svg' ?>"/>
-  </div>
+  <a href="#home-case-studies">
+    <div class="landing-face">
+      <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
+      <img class="img-responsive facepart eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
+      <img class="img-responsive facepart nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face/nose.svg' ?>"/>
+      <img class="img-responsive facepart mouth" src="<?php echo get_template_directory_uri() . '/dist/animation/face/mouth.svg' ?>"/>
+    </div>
+  </a>
+
 </section>
 
 <section class="light-purple-background">
-  <h3>Yes, we will make you look good. But, most importantly, we will do it towards your business goals.</h3>
-  <p>Beautiful designs are useless without substance. For this reason, we research your competition and industry gaps before we design and create marketing strategies to help your company stand out in a competitive market.</p>
+  <div class="light-purple-background-text">
+    <h3>Yes, we will make you look good. But, most importantly, we will do it towards your business goals.</h3>
+    <p>Beautiful designs are useless without substance. For this reason, we research your competition and industry gaps before we design and create marketing strategies to help your company stand out in a competitive market.</p>
+  </div>
   <div id="pie-container">
     <div id="pie"></div>
   </div>
@@ -57,8 +62,8 @@ $posts = get_posts(
 );
 ?>
 
-<section class="last-section">
-  <a class="button alternate no-margin-top">Featured Case Studies</a>
+<section class="last-section" id="home-case-studies">
+  <a class="button alternate no-margin-top featured-case-studies-button">Featured Case Studies</a>
   <div id="featured-case-studies" class="slide-container">
     <?php foreach($posts as $post): ?>
     <div class="slide">
@@ -68,12 +73,22 @@ $posts = get_posts(
         <ul>
           <?php $terms = get_the_terms($post, 'services'); ?>
           <?php foreach($terms as $term): ?>
-          <li><?php echo $term->name ?></li>
+            <li>
+              <span>
+                <?php echo $term->name ?>
+              </span>
+            </li>
           <?php endforeach?>
         </ul>
       </div>
     </div>
     <?php endforeach ?>
+  </div>
+  <div class="featured-case-studies-face">
+    <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
+    <img class="img-responsive facepart eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
+    <img class="img-responsive facepart nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face/nose.svg' ?>"/>
+
   </div>
 </section>
 
