@@ -1,9 +1,14 @@
 footer section{
+  position: relative;
   padding-bottom: 1px;
 }
 
 .big-icons-container{
   display:flex;
+  @media(min-width:768px){
+    display: block;
+    margin-top: 30px;
+  }
 }
 
 .big-icon-container{
@@ -13,10 +18,40 @@ footer section{
   justify-content: center;
   padding: 10px 0;
   width: 50%;
+  @media(min-width:768px){
+    background: none;
+    display: block;
+    padding: 0 0;
+  }
+}
+
+.big-icon-container > h3 {
+  display: none;
+  @media(min-width:768px){
+    color: white;
+    display: block;
+  }
 }
 
 .big-icon-container .img-responsive {
   height : 60px;
+  @media(min-width:768px){
+    display:none;
+  }
+}
+
+#copyright {
+  font-family: Walsheim;
+  margin: 15px 0;
+  text-align: center;
+  width: 100%;
+  @media(min-width:768px){
+    margin: 0;
+    position: absolute;
+      right: 30px;
+      bottom: 30px;
+    width: auto;
+  }
 }
 
 .small-icon{
@@ -30,6 +65,12 @@ footer section{
   justify-content: space-around;
   width: 25%;
   padding: 8% 0;
+  @media(min-width:768px){
+    background: none;
+    margin-top: 90px;
+    padding: 0 30px 0 0;
+    width: auto;
+  }
 }
 
 .small-icons-container .img-responsive{
@@ -39,7 +80,6 @@ footer section{
 .small-icons-container{
   display:flex;
   @media(min-width:768px){
-    margin-left: -20px;
-    padding: 0;
+    padding-bottom: 30px;
   }
 }

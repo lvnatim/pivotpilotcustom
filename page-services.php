@@ -17,25 +17,45 @@ $service_description = $term->description;
   <h1 class="bold"><?php echo $service_excerpt ?></h1>
   <p><?php echo $service_description ?></p>
 
-  <h3>Why does it matter?</h3>
-  <div id="featured-service-snippets">
-    <?php foreach(range(1, 7) as $current_snippet_number): ?>
-      <?php if(get_field('snippet_icon_' . $current_snippet_number, 'services_' . $category)): ?>
-        <?php
-          $snippet_icon = get_field('snippet_icon_' . $current_snippet_number, 'services_' . $category);
-          $snippet_excerpt = get_field('snippet_excerpt_' . $current_snippet_number, 'services_' . $category);
-          $snippet_description = get_field('snippet_description_' . $current_snippet_number, 'services_' . $category);
-          $snippet_icon_inverse = get_field('snippet_icon_inverse_' . $current_snippet_number, 'services_' . $category);
-        ?>
-        <div>
+  <div id="snippets-cont">
+    <h3>Why does it matter?</h3>
+    <div id="featured-service-snippets">
+      <?php foreach(range(1, 7) as $current_snippet_number): ?>
+        <?php if(get_field('snippet_icon_' . $current_snippet_number, 'services_' . $category)): ?>
+          <?php
+            $snippet_icon = get_field('snippet_icon_' . $current_snippet_number, 'services_' . $category);
+            $snippet_excerpt = get_field('snippet_excerpt_' . $current_snippet_number, 'services_' . $category);
+            $snippet_description = get_field('snippet_description_' . $current_snippet_number, 'services_' . $category);
+            $snippet_icon_inverse = get_field('snippet_icon_inverse_' . $current_snippet_number, 'services_' . $category);
+          ?>
+          <div>
+            <div class="services-icon-post">
+              <img src="<?php echo $snippet_icon ?>"/>
+              <p><?php echo $snippet_excerpt ?></p>
+              <div class="more-info-plus" data-overlay="<?php echo $current_snippet_number ?>">+</div>
+            </div>
+          </div>
+        <?php endif ?>
+      <?php endforeach ?>
+    </div>
+
+    <div id="desktop-featured-service-snippets">
+      <?php foreach(range(1, 7) as $current_snippet_number): ?>
+        <?php if(get_field('snippet_icon_' . $current_snippet_number, 'services_' . $category)): ?>
+          <?php
+            $snippet_icon = get_field('snippet_icon_' . $current_snippet_number, 'services_' . $category);
+            $snippet_excerpt = get_field('snippet_excerpt_' . $current_snippet_number, 'services_' . $category);
+            $snippet_description = get_field('snippet_description_' . $current_snippet_number, 'services_' . $category);
+            $snippet_icon_inverse = get_field('snippet_icon_inverse_' . $current_snippet_number, 'services_' . $category);
+          ?>
           <div class="services-icon-post">
             <img src="<?php echo $snippet_icon ?>"/>
             <p><?php echo $snippet_excerpt ?></p>
             <div class="more-info-plus" data-overlay="<?php echo $current_snippet_number ?>">+</div>
           </div>
-        </div>
-      <?php endif ?>
-    <?php endforeach ?>
+        <?php endif ?>
+      <?php endforeach ?>
+    </div>
   </div>
   
   <div id="overlay-cont">
@@ -66,7 +86,7 @@ $service_description = $term->description;
     <?php endforeach ?>
   </div>
 
-  <h3>Selected Logos</h3>
+  <p class="title">Selected Logos</p>
   <div class="selected-logos">
     <?php foreach(range(1, 6) as $image_counter): ?>
       <a target="_blank" href="<?php the_field('selected_logo_link_' . $image_counter, 'services_' . $category); ?>">

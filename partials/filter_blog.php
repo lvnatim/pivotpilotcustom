@@ -57,8 +57,28 @@ function generate_dropdown_str($num){
   return $page_num_str . $category_query_str;
 }
 
+function generate_rotation(){
+  return rand(-45, 45) . "deg";
+}
+
+function generate_side(){
+  static $left = true;
+  if($left){
+    $left = false;
+    return "0%";
+  } else {
+    $left = true;
+    return "100%";
+  }
+}
+
+function generate_top(){
+  return rand(0, 50) . "%";
+}
+
 ?>
 
+<div id="blog-post-container">
 <?php foreach($displayed_posts as $post): ?>
   <?php $terms = get_the_terms($post, 'category'); ?>
   <div class="post blog-post">
@@ -70,6 +90,17 @@ function generate_dropdown_str($num){
     <h3><?php echo $post->post_title ?></h3>
     <p class="date"><?php echo get_the_date('', $post) ?></p>
     <a class="image-cont" href="<?php echo get_permalink($post); ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url($post); ?>)">
+      <?php foreach($terms as $term): ?>
+        <img 
+          class="img-responsive desktop-image icon" 
+          src="<?php echo get_field('category_icon', 'category_' . $term->term_id); ?>"
+          style="
+            transform: rotateZ(<?php echo generate_rotation(); ?>); 
+            left: <?php echo generate_side(); ?>; 
+            top: <?php echo generate_top(); ?>";
+        />
+      <?php endforeach?>
+      <img class="img-responsive desktop-image" src="<?php echo get_the_post_thumbnail_url($post); ?>" />
       <img alt="Click for more!" class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/plus.svg' ?>"/>
     </a>
   </div>

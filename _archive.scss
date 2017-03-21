@@ -1,3 +1,149 @@
+#blog-page > .search-bar {
+  @media(min-width:768px){
+    border-bottom: 0;
+  }
+}
+
+#blog-page > .search-bar > ul {
+  @media(min-width:768px){
+    max-height: none;
+    overflow: visible;
+    text-align: right;
+  }
+}
+
+#blog-page > .search-bar > ul > li,
+#blog-page > .search-bar > ul > li.state-active {
+  @media(min-width:768px){
+    border-bottom: 0;
+    display:inline-block;
+  }
+}
+
+#blog-page > .search-bar > ul > li:not(:last-of-type):after{
+  @media(min-width:768px){
+    content: " /";
+    color: #8f8aff;
+    font-family: none;
+    font-size: 14px;
+  }
+}
+
+#blog-page > .search-bar > ul > li > a {
+  @media(min-width:768px){
+    color: #8f8aff;
+    display:inline-block;
+    font-family: Walsheim;
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    padding-left:2px;
+    text-transform: uppercase;
+  }
+}
+
+#blog-page > .search-bar > ul > li:hover > a,
+#blog-page > .search-bar > ul > li.state-active > a {
+  @media(min-width:768px){
+    color: $blue;
+  }
+}
+
+#blog-page > .search-bar > div {
+  @media(min-width:768px){
+    display:none;
+  }
+}
+
+#client-post-container{
+  @media(min-width:768px){
+    margin-top: 15px;
+  }
+}
+
+#dynamic-content-services{
+  @media(min-width:768px){
+    margin-top: 135px;
+    transition: 1s;
+  }
+}
+
+.post.client-post{
+  @media(min-width:768px){
+    display:inline-block;
+    margin-bottom: 9px;
+    padding-top: 0;
+    width: calc(50% - 8px);
+    &:nth-of-type(odd){margin-right: 5px;}
+    &:nth-of-type(even){margin-left: 5px;}
+  }
+}
+
+.post-overlay{
+  @media(min-width:768px){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    pointer-events: none;
+    position: absolute;
+      top: 0;
+      left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.post-overlay:before{
+  @media(min-width:768px){
+    background: rgba(68, 60, 255, 0.8);
+    content: "";
+    mix-blend-mode: multiply;
+    position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+  }
+}
+
+.post-overlay *{
+  @media(min-width:768px){
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.post-overlay > h3.post-excerpt {
+  display: none;
+  @media(min-width:768px){
+    display: block;
+    font-size: 24px;
+    line-height: 1.15;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    width: 95%;
+  }
+}
+
+.post-overlay > h3.post-title {
+  @media(min-width:768px){
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+
+.post-overlay li{
+  @media(min-width:768px){
+    font-size: 15px;
+  }
+}
+
+
 .filter-blog{
   display: block;
   font-style: italic;
@@ -66,8 +212,11 @@
   display:block;
 }
 
-.blog-post{
+.post.blog-post{
   text-align: center;
+  @media(min-width:768px){
+    padding-top: 75px;
+  }
 }
 
 .blog-post > p{
@@ -78,20 +227,42 @@
 .blog-post > h3{
   font-weight: 600;
   width: 80%;
+  @media(min-width:768px){
+    width: 70%;
+  }
+}
+
+#blog-post-container > .blog-post > div:first-of-type{
+  @media(min-width:768px){
+    position: absolute;
+      bottom: -30px;
+    width: 100%;
+  }
 }
 
 .client-post > div > li:not(:last-of-type):after {
   content: ", ";
 }
 
-@-webkit-keyframes postappear{
+@-webkit-keyframes fadein{
   0%{
-    opacity: 0.2;
-    top: 10px;
+    opacity: 0;
   }
   100%{
     opacity: 1;
-    top: 0;
+  }
+}
+
+#client-post-container{
+  animation: 1s fadein linear;
+}
+
+@-webkit-keyframes postappear{
+  0%{
+    transform: translate(0px, 10px);
+  }
+  100%{
+    transform: translate(0px, 0px);
   }
 }
 
@@ -99,6 +270,7 @@
   animation: 1s postappear linear;
   padding-top: 45px;
   position: relative;
+  transform: translate(0px, 0px);
   top: 0;
 }
 
@@ -115,7 +287,17 @@
   position: relative;
 }
 
-.post > .image-cont > img {
+.blog-post > .image-cont{
+  @media(min-width:768px){
+    background: none !important;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+  }
+}
+
+.post > .image-cont > img:not(.desktop-image) {
   background-color: #8f8aff;
   border-radius: 50%;
   padding: 10px;
@@ -124,6 +306,37 @@
     bottom: 15px;
   height: 40px;
   width: 40px;
+  @media(min-width:768px){
+    display: none;
+  }
+}
+
+.post > .image-cont > img.desktop-image {
+  @media(min-width:768px){
+    height: auto;
+    width: auto;
+    max-height: 400px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+.post > .image-cont > img.desktop-image,
+.post > .image-cont > img.icon {
+  display: none;
+  @media(min-width:768px){
+    display: block;
+  }
+}
+
+.post > .image-cont > img.icon {
+  @media(min-width:768px){
+    height: 100px;
+    width: 100px;
+    position: absolute;
+      margin-left: -50px;
+    z-index: 2;
+  }
 }
 
 .pagination{
@@ -185,7 +398,10 @@
 .filter-menu {
   margin-left: -15px;
   margin-right: -15px;
-  overflow: hidden;
+  @media(min-width:768px){
+    margin-left: -30px;
+    margin-right: -30px;
+  }
 }
 
 .filter-menu > a{
@@ -193,6 +409,9 @@
   display: inline-block;
   padding: 15px 75px 15px 15px;
   transition: 0.3s;
+  @media(min-width: 768px){
+    padding: 15px 60px 15px 30px;
+  }
 }
 
 .filter-menu > a:nth-of-type(even){
@@ -201,4 +420,71 @@
 
 .filter-menu > a:last-of-type{
   width: 100%;
+}
+
+#portfolio-page{
+  overflow-x: hidden;
+}
+
+#portfolio-page > .search-bar {
+  @media(min-width:768px){
+    border-bottom: 0;
+    margin-top: 30px;
+  }
+}
+
+#portfolio-page > .search-bar > div{
+  @media(min-width:768px){
+    display: none;
+  }
+}
+
+#portfolio-page > .search-bar > ul{
+  @media(min-width:768px){
+    max-height: none;
+    overflow: visible;
+    position: relative;
+  }
+}
+
+#portfolio-page > .search-bar > ul > li{
+  @media(min-width:768px){
+    border-bottom: 0;
+    display: inline-block;
+    padding-right: 12px;
+  }
+}
+
+#portfolio-page > .search-bar > ul > li.state-active > a{
+  @media(min-width:768px){
+    border-bottom: 1px solid $blue;
+  }
+}
+
+#portfolio-page > .search-bar > ul > li > a {
+  @media(min-width:768px){
+    font-style: normal;
+    font-size: 13px;
+    font-family: Walsheim;
+  }
+}
+
+#portfolio-page > .search-bar > ul > li > p{
+  display: none;
+  @media(min-width:768px){
+    display: block;
+    font-style: normal;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    text-transform: none;
+    transition: 1s;
+    width: 70%;
+  }
+}
+
+#portfolio-page > .search-bar > ul > li.state-active > p {
+  @media(min-width:768px){
+    opacity: 1;
+  }
 }

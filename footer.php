@@ -4,9 +4,11 @@
     <div class="big-icons-container">
       <a href="tel:+6044582345" class="icon-container big-icon-container">
         <img class="img-responsive svg" src="<?php echo get_template_directory_uri() . '/dist/icons/phone.svg' ?>"/>
+        <h3>604.458.2345</h3>
       </a>
       <a href="mailto:hello@pivotandpilot.com" class="icon-container big-icon-container">
         <img class="img-responsive svg" src="<?php echo get_template_directory_uri() . '/dist/icons/mail.svg' ?>"/>
+        <h3>hello@pivotandpilot.com</h3>
       </a>
     </div>
     <div class="small-icons-container">

@@ -9,7 +9,7 @@ function render_image($field_name){
 ?>
 
 <section class="first-section about-section last-section">
-  <div class="fade-slide-container">
+  <div id="about-slider" class="fade-slide-container">
     <?php render_image('slider_image_one'); ?>
     <?php render_image('slider_image_two'); ?>
     <?php render_image('slider_image_three'); ?>
@@ -21,7 +21,12 @@ function render_image($field_name){
     <?php foreach($team_members as $team_member): ?>
     <div class="slide">
       <div class="slide-inner-cont">
-        <a class="slide-image-cont" style="background-image: url(<?php echo get_the_post_thumbnail_url($team_member) ?>)"></a>
+        <img class="fun-fact" src="<?php echo get_template_directory_uri() . '/dist/img/fact.svg'; ?>"/>
+        <img src="<?php the_field('team_member_icon', $team_member); ?>"/>
+        <a class="slide-image-cont" style="background-image: url(<?php echo get_the_post_thumbnail_url($team_member) ?>)">
+          <div class="overlay"></div>
+          <h3><?php the_field('team_member_first_name', $team_member) ?><br> likes <?php the_field('team_member_icon_name', $team_member) ?></h3>
+        </a>
         <h1><?php the_field('team_member_first_name', $team_member) ?></h1>
         <h1><?php the_field('team_member_last_name', $team_member) ?></h1>
         <p class="title"><?php the_field('team_member_title_one', $team_member) ?></p>
@@ -29,6 +34,9 @@ function render_image($field_name){
       </div>
     </div>
     <?php endforeach ?>
+  </div>
+  <div id="featured-team-members-controller">
+    <img src="<?php echo get_template_directory_uri() . '/dist/img/member.svg'; ?>"/>
   </div>
 </section>
 
