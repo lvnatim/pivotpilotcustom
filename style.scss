@@ -305,7 +305,7 @@ section.first-section.no-padding-top{
 
 // Option 2
 section#radial-background {
-  background-image: url('http://localhost:8888/pnp3/wp-content/uploads/2017/03/gradient.png');
+  background-image: url('./dist/img/gradient.png');
   animation: moveBackground 30s infinite;
 }
 

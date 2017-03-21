@@ -421,24 +421,14 @@
   padding-bottom: 2px;
 }
 
-<<<<<<< HEAD
 #services-dropdown{
   display: none;
 }
 
-=======
-#services-dropdown {
-  display: none;
-}
->>>>>>> 662bd870740c2418a2502554111c3e60b4529242
 
-@media(min-width:768px){
+@media(min-width:1024px){
 
   #services-dropdown {
-<<<<<<< HEAD
-=======
-    // display:block;
->>>>>>> 662bd870740c2418a2502554111c3e60b4529242
     position: fixed;
       top: 90px;
       left: 0;
