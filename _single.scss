@@ -370,11 +370,18 @@ blockquote p.title {
 }
 
 .website-cont > div{
+  box-shadow: 0px 5px 45px -5px rgba(0,0,0,0.5);
   height: 200px;
   overflow: scroll;
   @media(min-width: 768px){
     height: 275px;
   }
+}
+
+.website-cont > img {
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  box-shadow: 0px -7px 45px -5px rgba(0,0,0,0.5);
 }
 
 .website-mobile-cont{
@@ -389,7 +396,20 @@ blockquote p.title {
   }
 }
 
+.website-mobile-cont > img:nth-of-type(1) {
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  box-shadow: 0px -7px 45px -12px rgba(0,0,0,0.5);
+}
+
+.website-mobile-cont > img:nth-of-type(2) {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: 0px 7px 45px -12px rgba(0,0,0,0.5);
+}
+
 .website-mobile-flat{
+  box-shadow: 0px 0px 50px black;
   height: 300px;
   overflow: scroll;
 }

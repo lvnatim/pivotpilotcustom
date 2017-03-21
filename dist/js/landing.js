@@ -44,7 +44,7 @@ $('.service-title-container').on('mouseover', function(){
 })
 
 $("#main-landing").on('mousemove', function(e){
- var parentOffset = $(this).parent().offset(); 
+ var parentOffset = $(this).parent().offset();
  var relX = e.pageX - parentOffset.left;
  var relY = e.pageY - parentOffset.top;
  $(this).attr({style: 'background: radial-gradient(circle farthest-corner at ' + relX + 'px ' + relY + 'px' + ', #FFFFFF 0%, #443CFF 95%);'});

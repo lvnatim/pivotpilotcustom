@@ -1,5 +1,7 @@
 $('#change-landing').on('click', function(){
   $(this).parent().toggleClass('state-alternate');
+  $(this).toggleClass('state-alternate');
+  $('.landing-face').toggleClass('state-alternate');
 });
 
 $('#form-open').on('click', function(){

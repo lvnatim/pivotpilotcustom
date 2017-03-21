@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="first-section radial-background">
+<section class="first-section radial-background" id="radial-background">
   <div class="dynamic-content-cont">
     <div class="default-content">
       <h1>We use strategic</h1>
@@ -7,9 +7,11 @@
       <h1>clients grow.</h1>
     </div>
     <div class="alternate-content">
-      <p>Beautiful designs are useless without substance. For this reason, we research your competition and industry gaps before we design and create marketing strategies to help your company stand out in a competitive market.</p>
-      <p>Our services include:</p>
-      <ul>
+      <div class="alternate-content-text">
+        <p>Beautiful designs are useless without substance. For this reason, we research your competition and industry gaps before we design and create marketing strategies to help your company stand out in a competitive market.</p>
+        <p class="include">Our services include:</p>
+      </div>
+      <ul class="alternate-content-buttons">
         <?php $terms = get_terms( 'services' );?>
         <?php foreach($terms as $term): ?>
           <a class="button" href="<?php echo get_site_url() . '/portfolio?taxonomy=services&category=' . $term->term_id ?>">
@@ -20,6 +22,12 @@
     </div>
   </div>
   <a id="change-landing" class="button">How Exactly?</a>
+  <div class="landing-face">
+    <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
+    <img class="img-responsive facepart eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
+    <img class="img-responsive facepart nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face/nose.svg' ?>"/>
+    <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face/mouth.svg' ?>"/>
+  </div>
 </section>
 
 <section class="light-purple-background">

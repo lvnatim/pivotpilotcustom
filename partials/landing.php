@@ -4,7 +4,7 @@
       <div id="landing-container">
         <div id="main-landing" class="landing">
           <h1>We use strategic design to help our clients grow.</h1>
-          <h1 id="switch-landing">How Exactly?</h1>
+          <h1 id="switch-landing">How exactly?</h1>
           <div>
             <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
             <img class="img-responsive facepart eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
