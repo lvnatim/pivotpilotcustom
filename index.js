@@ -3,7 +3,7 @@ $('#change-landing').on('click', function(){
 });
 
 $('#form-open').on('click', function(){
-  $('.form-cont').addClass('state-active');
+  $('.form-cont').toggleClass('state-active');
 });
 
 $('#form-close').on('click', function(){
@@ -164,6 +164,10 @@ $('.filter-services').on('click', function(e){
     },
     error: function(){}
   });
+
+    const description_height = $(this).next().outerHeight() + 42;
+    $('#dynamic-content-services').css({'margin-top': description_height});
+
 });
 
 $('#dynamic-content-services').on('click', '.previous', function(e){
@@ -285,12 +289,22 @@ $('img.svg').each(function(){
 });
 
 $('#blog-related-posts').slick({
-  arrows: false,
+  arrows: true,
   centerMode: true,
-  centerPadding: '11.25px',
+  centerPadding: '60px',
   infinite: true,
   initialSlide: 0,
-  slidesToShow: 1
+  slidesToShow: 2,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerPadding: '11.25px',
+        slidesToShow: 1,
+      }
+    }
+  ]
 });
 
 $('.fade-slide-container').slick({
@@ -313,12 +327,23 @@ $('#featured-case-studies').slick({
 });
 
 $('#featured-team-members').slick({
-  arrows: false,
+  arrows: true,
+  appendArrows: $('#featured-team-members-controller'),
   centerMode: true,
-  centerPadding: '22.5px',
-  infinite: true,
-  initialSlide: 2,
-  slidesToShow: 1
+  centerPadding: '210px',
+  slidesToShow: 1,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerPadding: '22.5px',
+        initialSlide: 1,
+        infinite: true,
+        slidesToShow: 1
+      }
+    }
+  ]
 });
 
 $('#featured-service-snippets').slick({
@@ -344,12 +369,21 @@ $(window).scroll(function(event){
       $('#mobile-menu').addClass('state-hidden');
       $('#share-bar').addClass('state-active');
     }
-
+    $('#menu').removeClass('state-active');
    } else {
     // upscroll code
+    $('#menu').addClass('state-active');
     $('#mobile-menu').removeClass('state-hidden');
    }
    lastScrollTop = st;
+});
+
+$(window).scroll(function(e){
+  if($(window).scrollTop() > $('#menu').outerHeight()){
+    $('#menu').addClass('state-toggled');
+  } else {
+    $('#menu').removeClass('state-toggled');
+  }
 });
 
 $(window).scroll(function(event){

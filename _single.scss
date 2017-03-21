@@ -9,16 +9,41 @@ blockquote p {
   font-size: 13px;
   margin-top: 0;
   text-align: center;
+  @media(min-width:768px){
+    font-size:20px;
+    margin: 0 auto;
+    width: 80%;
+  }
 }
 
 blockquote p.title {
-  margin-top: 10px;
+  font-size: 10px;
   font-weight: 900;
-  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  text-transform: uppercase;
 }
 
 #animation{
   padding-bottom: 30px;
+  @media(min-width:768px){
+    padding-bottom: 45px;
+  }
+}
+
+#blog-post-thumbnail{
+  @media(min-width:768px){
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+  }
+}
+
+#font-section > div {
+  @media(min-width:768px){
+    display:inline-block;
+    width: 49.5%;
+  }
 }
 
 #font-section p.title{
@@ -55,10 +80,13 @@ blockquote p.title {
 #font-section .separator,
 #font-section p {
   position: relative;
+  width: 100%;
   z-index: 2;
 }
 
 #font-section p:not(.title){
+  font-family: Walsheim;
+  font-size: 14px;
   margin-top: 0;
   padding-top: 12px;
 }
@@ -71,6 +99,10 @@ blockquote p.title {
 .full-size-container{
   margin-left: -15px;
   margin-right: -15px;
+  @media(min-width:768px){
+    margin-left: -30px;
+    margin-right: -30px;
+  }
 }
 
 .gallery{
@@ -78,10 +110,36 @@ blockquote p.title {
   margin-bottom: 45px;
 }
 
+.gallery-sub-cont{
+  @media(min-width:768px){
+    align-items: center;
+    display: flex;
+  }
+}
+
+.gallery-sub-cont > img{
+  @media(min-width:768px){
+    width: 33.3%;
+  }
+}
+
 .gif-cont{
   margin-left: -15px;
   margin-right: -15px;
   margin-bottom: 30px;
+  @media(min-width:768px){
+    align-items: center;
+    display:flex;
+    margin-left: -30px;
+    margin-right: -30px;
+    margin-bottom: 45px;
+  }
+}
+
+.gif-cont > img {
+  @media(min-width:768px){
+    width: 33.33333333%;
+  }
 }
 
 .mid-size-container{
@@ -91,15 +149,27 @@ blockquote p.title {
 .navigation{
   align-items: center;
   display: flex;
+  justify-content: space-between;
   margin-left: -15px;
   margin-right: -15px;
   padding-top: 30px;
+  @media(min-width:768px){
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 60px;
+  }
 }
 
 .navigation-client{
+  background-size: cover;
+  background-position: center;
   position: relative;
   width: 50%;
   padding-top: 50%;
+  @media(min-width:768px){
+    padding-top: 35%;
+    width: calc(50% - 7.5px);
+  }
 }
 
 .navigation-client:first-of-type > .navigation-overlay{
@@ -115,10 +185,12 @@ blockquote p.title {
       transform: translate(-45px);
     }
   }
+  @media(min-width:768px){
+    text-align: left;
+  }
 }
 
 .navigation-client:last-of-type > .navigation-overlay{
-  text-align:left;
   > img{
     right: 15px;
   }
@@ -142,6 +214,37 @@ blockquote p.title {
     bottom: 0;
     left: 0;
     right: 0;
+  transition: 0.3s;
+  @media(min-width:768px){
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+  }
+}
+
+.navigation-overlay:hover{
+  @media(min-width:768px){
+    background-color: rgba(0,0,0,0) !important;
+  }
+}
+
+.navigation-overlay:hover p.title{
+  @media(min-width:768px){
+    color: $blue !important;
+    transition: 0.3s;
+  }
+}
+
+.navigation-overlay > p.title{
+  @media(min-width:768px){
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: initial;
+    line-height: 1.2;
+    margin-top: 6px;
+    margin-left: -2px;
+    text-transform: none;
+  }
 }
 
 .navigation-overlay > img,
@@ -156,14 +259,27 @@ blockquote p.title {
   height: 40px;
   width: 40px;
   transition: 0.3s;
+  @media(min-width:768px){
+    display:none;
+  }
 }
 
 .navigation-overlay > svg > polygon{
   fill: inherit;
 }
 
+.navigation-overlay > span {
+  display:none;
+  @media(min-width:768px){
+    display:block;
+  }
+}
+
 .portfolio-section{
   padding-bottom: 0;
+  @media(min-width:768px){
+    padding-bottom: 90px;
+  }
 }
 
 .portfolio-section *,
@@ -171,8 +287,10 @@ blockquote p.title {
   color: inherit;
 }
 
-.portfolio-section blockquote p.title {
-  font-size: 11px;
+.portfolio-section > div > p{
+  @media(min-width:768px){
+    width: 70%;
+  }
 }
 
 .portfolio-section h1{
@@ -190,6 +308,24 @@ blockquote p.title {
 
 #print-and-packaging > p.title {
   margin-top: 30px;
+  @media(min-width:768px){
+    margin-top: 45px;
+  }
+}
+
+.print-sub-images-container {
+  @media(min-width:768px){
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.print-sub-images-container > img {
+  margin-top: 15px;
+  @media(min-width:768px){
+    width: calc(50% - 7.5px);
+  }
 }
 
 .responsive-container{
@@ -201,6 +337,9 @@ blockquote p.title {
   border-top: 1px solid;
   margin-top: -83px;
   padding-bottom: 20px;
+  @media(min-width:768px){
+    margin-top: -86px;
+  }
 }
 
 #web-and-seo{
@@ -210,23 +349,44 @@ blockquote p.title {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 45px;
+  @media(min-width:768px){
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: -30px;
+    margin-right: -30px;
+    margin-top: calc(75px + 100px);
+  }
 }
 
 .website-cont{
   margin-bottom: -80px;
   position: relative;
     top: -100px;
+  @media(min-width:768px){
+    margin: 0 auto -80px auto;
+    top: -115px;
+    width: calc(75% - 60px);
+  }
 }
 
 .website-cont > div{
   height: 200px;
   overflow: scroll;
+  @media(min-width: 768px){
+    height: 275px;
+  }
 }
 
 .website-mobile-cont{
   padding-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
+  @media(min-width:768px){
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 33%;
+  }
 }
 
 .website-mobile-flat{

@@ -50,7 +50,16 @@
   </div>
 </div>
 
-<div id="menu" class="state-active">
+<?php  
+
+if(is_home()){
+  $menu_is_see_through = true;
+}
+
+?>
+
+<div id="menu" class="state-active <?php if($menu_is_see_through){echo "state-see-through";} ?>">
+  <div class="overlay"></div>
   <a href="<?php echo get_site_url(); ?>">
     <h1>Pivot</h1>
   </a>

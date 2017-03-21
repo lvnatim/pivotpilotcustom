@@ -109,6 +109,10 @@
     <img src="<?php echo get_template_directory_uri() . '/dist/icons/mail.svg' ?>" class="img-responsive svg"/>
     <p class="title">Stay Updated</p>
   </a>
+  <a class="share-button" id="facebook-like">
+    <img src="<?php echo get_template_directory_uri() . '/dist/icons/like.svg' ?>" class="img-responsive svg"/>
+    <p class="title">Like Us On Facebook</p>
+  </a>
 </div>
 
 <div class="form-cont">
@@ -179,6 +183,12 @@
     padding: 15px 0;
     text-transform: uppercase;
     width: 100%;
+  }
+
+  @media(min-width:768){
+    #mc_embed_signup input.button{
+      margin-top: 30px;
+    }
   }
 
   #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error{

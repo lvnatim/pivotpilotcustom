@@ -11,6 +11,7 @@
   <div class="navigation-client" style="background-image:url(<?php echo get_the_post_thumbnail_url($prev_post); ?>)""/>
     <a href="<?php echo get_permalink($prev_post) ?>" class="navigation-overlay" 
       style="background-color: <?php echo $prev_background_color ?>;">
+      <span><p class="title" style="color: <?php echo $prev_text_color ?>;">Previous Project</p></span>
       <p class="title" style="color: <?php echo $prev_text_color ?>;"><?php echo $prev_post->post_title; ?></p>
       <img 
         class="img-responsive svg" 
@@ -22,6 +23,7 @@
   <div class="navigation-client" style="background-image:url(<?php echo get_the_post_thumbnail_url($next_post); ?>)">
     <a href="<?php echo get_permalink($next_post) ?>" class="navigation-overlay" 
       style="background-color: <?php echo $next_background_color ?>">
+      <span><p class="title" style="color: <?php echo $next_text_color ?>;">Next Project</p></span>
       <p class="title" style="color: <?php echo $next_text_color ?>;"><?php echo $next_post->post_title; ?></p>
       <img 
         class="img-responsive svg" 

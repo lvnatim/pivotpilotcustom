@@ -6,7 +6,7 @@ parse_str($_SERVER['QUERY_STRING'], $query);
 $taxonomy = $query['taxonomy'] ? $query['taxonomy'] : 'services';
 $category = $query['category'];
 $pagenum = $query['pagenum'] ? $query['pagenum'] : 1;
-$offset = ($pagenum - 1) * 2;
+$offset = ($pagenum - 1) * 6;
 $tax_query = '';
 $category_name = $category ? get_term($category)->name : 'All ' . $taxonomy ;
 
@@ -27,8 +27,8 @@ $args = array(
 );
 
 $posts_array = get_posts($args);
-$displayed_posts = array_slice($posts_array, $offset, 2);
-$total_posts = ceil(count($posts_array) / 2.0) ;
+$displayed_posts = array_slice($posts_array, $offset, 6);
+$total_posts = ceil(count($posts_array) / 6.0) ;
 
 $next_query_str = '';
 $prev_query_str = '';
@@ -56,7 +56,7 @@ function generate_dropdown_str($num){
 
 ?>
 
-<section class="first-section light-purple-background filter-section no-padding-top" data-taxonomy="<?php echo $taxonomy ?>">
+<section id="portfolio-page" class="first-section light-purple-background filter-section no-padding-top" data-taxonomy="<?php echo $taxonomy ?>">
   <ul class="filter-menu">
     <a class="title blue active" href="?taxonomy=services">Services</a>
     <a class="title blue" href="?taxonomy=industries">Industries</a>
@@ -69,11 +69,13 @@ function generate_dropdown_str($num){
     <ul>
       <li class="<?php if(!$category){echo 'state-active';} ?>">
         <a class="filter-services" data-category="0" href="?category=0" data-taxonomy="<?php echo $taxonomy ?>">All <?php echo $taxonomy ?></a>
+        <p><?php echo $post->post_content ?></p>
       </li>
       <?php $terms = get_terms( $taxonomy );?>
       <?php foreach($terms as $term): ?>
       <li class="<?php if($category == $term->term_id){echo 'state-active';} ?>">
         <a class="filter-services" data-taxonomy="<?php echo $taxonomy ?>" data-category="<?php echo $term->term_id ?>" href="?taxonomy=<?php echo $taxonomy?>&category=<?php echo $term->term_id ?>"><?php echo $term->name ?></a>
+        <p><?php echo $term->description ?></p>
       </li>
       <?php endforeach?>
     </ul>
@@ -85,11 +87,14 @@ function generate_dropdown_str($num){
         <?php $post_terms = get_the_terms($post, 'services'); ?>
         <div class="post client-post">
           <a class="image-cont" href="<?php echo get_permalink($post); ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url($post); ?>)"></a>
-          <h3><?php echo $post->post_title ?></h3>
-          <div>
-          <?php foreach($post_terms as $term): ?>
-            <li><?php echo $term->name ?></li>
-          <?php endforeach?>
+          <div class="post-overlay">
+            <h3 class="post-title"><?php echo $post->post_title ?></h3>
+            <h3 class="post-excerpt"><?php echo $post->post_excerpt ?></h3>
+            <div>
+            <?php foreach($post_terms as $term): ?>
+              <li><?php echo $term->name ?></li>
+            <?php endforeach?>
+            </div>
           </div>
         </div>
       <?php endforeach ?>

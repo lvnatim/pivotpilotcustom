@@ -5,7 +5,7 @@ $pagenum = $_GET['pagenum'] ? $_GET['pagenum'] : 1;
 $taxonomy = $_GET['taxonomy'] ? $_GET['taxonomy'] : 'services';
 $tax_query = '';
 
-$offset = ($pagenum - 1) * 2;
+$offset = ($pagenum - 1) * 6;
 
 if($category){
   $tax_query = array(
@@ -24,8 +24,8 @@ $args = array(
 );
 
 $posts_array = get_posts($args);
-$displayed_posts = array_slice($posts_array, $offset, 2); 
-$total_posts = ceil(count($posts_array) / 2.0) ;
+$displayed_posts = array_slice($posts_array, $offset, 6); 
+$total_posts = ceil(count($posts_array) / 6.0) ;
 
 $next_query_str = '';
 $prev_query_str = '';
@@ -50,18 +50,23 @@ function generate_dropdown_str($num){
 
 ?>
 
-<?php foreach($displayed_posts as $post): ?>
-  <?php $post_terms = get_the_terms($post, 'services'); ?>
-  <div class="post client-post">
-    <a class="image-cont" href="<?php echo get_permalink($post); ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url($post); ?>)"></a>
-    <h3><?php echo $post->post_title ?></h3>
-    <div>
-    <?php foreach($post_terms as $term): ?>
-      <li><?php echo $term->name ?></li>
-    <?php endforeach?>
+<div id="client-post-container">
+  <?php foreach($displayed_posts as $post): ?>
+    <?php $post_terms = get_the_terms($post, 'services'); ?>
+    <div class="post client-post">
+      <a class="image-cont" href="<?php echo get_permalink($post); ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url($post); ?>)"></a>
+      <div class="post-overlay">
+        <h3 class="post-title"><?php echo $post->post_title ?></h3>
+        <h3 class="post-excerpt"><?php echo $post->post_excerpt ?></h3>
+        <div>
+        <?php foreach($post_terms as $term): ?>
+          <li><?php echo $term->name ?></li>
+        <?php endforeach?>
+        </div>
+      </div>
     </div>
-  </div>
-<?php endforeach ?>  
+  <?php endforeach ?>  
+</div>
 <div class="pagination">
   <a class="previous" href="<?php echo $prev_query_str ?>" data-category="<?php echo $category ?>" data-taxonomy="<?php echo $taxonomy ?>">
     <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/arrow-left.svg' ?>"/>

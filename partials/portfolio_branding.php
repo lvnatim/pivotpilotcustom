@@ -1,7 +1,7 @@
 <?php if(get_field('branding_and_logo')): ?>
 <div id="branding-and-logo">
   <p class="title">Branding & Identity</p>
-  <p class="portfolio-content"><?php the_field('brand_content') ?></p>
+  <p><?php the_field('brand_content') ?></p>
   <div id="font-section">
     <div>
       <img class="img-responsive state-active" src="<?php the_field('font_one_image') ?>"/>
