@@ -88,6 +88,7 @@
 
 #featured-team-members .slide-inner-cont > a > h3{
   font-family: arno-pro;
+  font-size: 26px;
   font-style: italic;
   color: white;
   position: absolute;
@@ -144,7 +145,7 @@
 }
 
 #featured-team-members-controller > img{
-  width: 100px;
+  width: 70px;
 }
 
 #blog-related-posts > .slick-arrow{
@@ -244,6 +245,7 @@
 
 #featured-case-studies .slide-inner-cont > ul > li {
   @media(min-width:768px){
+    line-height: 16px;
     overflow:hidden;
     &:nth-of-type(1) > span{transition-delay:0.2s;}
     &:nth-of-type(2) > span{transition-delay:0.4s;}
@@ -305,6 +307,7 @@
 
 #featured-case-studies ul{
   @media(min-width:768px){
+    max-width: 50%;
     position: absolute;
     top: 140px;
   }

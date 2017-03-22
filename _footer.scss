@@ -70,11 +70,22 @@ footer section{
     margin-top: 90px;
     padding: 0 30px 0 0;
     width: auto;
+    .svg {
+      -webkit-transition: 0.6s ease-out;
+      -moz-transition:  0.6s ease-out;
+      transition:  0.6s ease-out;
+      &:hover {
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }
+    }
   }
 }
 
 .small-icons-container .img-responsive{
   height: 25px;
+
 }
 
 .small-icons-container{
@@ -83,3 +94,13 @@ footer section{
     padding-bottom: 30px;
   }
 }
+
+
+
+
+
+
+
+
+
+

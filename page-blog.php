@@ -27,20 +27,20 @@ $args = array(
 );
 
 $posts_array = get_posts($args);
-$displayed_posts = array_slice($posts_array, $offset, 2); 
+$displayed_posts = array_slice($posts_array, $offset, 2);
 $total_posts = ceil(count($posts_array) / 2.0) ;
 
 $next_query_str = '';
 $prev_query_str = '';
 
 if($pagenum < $total_posts && $pagenum > 0){
-  $page_num_str = '?pagenum=' . ($pagenum + 1); 
+  $page_num_str = '?pagenum=' . ($pagenum + 1);
   $category_query_str = $category ? '&category=' . $category : '';
   $next_query_str = $page_num_str . $category_query_str;
 }
 
 if($pagenum <= $total_posts && $pagenum > 1){
-  $page_num_str = '?pagenum=' . ($pagenum - 1); 
+  $page_num_str = '?pagenum=' . ($pagenum - 1);
   $category_query_str = $category ? '&category=' . $category : '';
   $prev_query_str = $page_num_str . $category_query_str;
 }
@@ -110,12 +110,12 @@ function generate_top(){
           <p class="date"><?php echo get_the_date('', $post) ?></p>
           <a class="image-cont" href="<?php echo get_permalink($post); ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url($post); ?>)">
             <?php foreach($terms as $term): ?>
-              <img 
-                class="img-responsive desktop-image icon" 
+              <img
+                class="img-responsive desktop-image icon"
                 src="<?php echo get_field('category_icon', 'category_' . $term->term_id); ?>"
                 style="
-                  transform: rotateZ(<?php echo generate_rotation(); ?>); 
-                  left: <?php echo generate_side(); ?>; 
+                  transform: rotateZ(<?php echo generate_rotation(); ?>);
+                  left: <?php echo generate_side(); ?>;
                   top: <?php echo generate_top(); ?>";
               />
             <?php endforeach?>
@@ -123,7 +123,7 @@ function generate_top(){
             <img alt="Click for more!" class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/plus.svg' ?>"/>
           </a>
         </div>
-      <?php endforeach ?>  
+      <?php endforeach ?>
     </div>
 
     <div class="pagination">
@@ -138,10 +138,10 @@ function generate_top(){
         </div>
         <ul class="pagenums-dropdown">
           <?php foreach(range(1, $total_posts) as $number): ?>
-          <a 
-            class="dropdown <?php if($number == $pagenum){ echo 'active';} ?>" 
+          <a
+            class="dropdown <?php if($number == $pagenum){ echo 'active';} ?>"
             href="<?php echo generate_dropdown_str($number); ?>"
-            data-category="<?php echo $category ?>" 
+            data-category="<?php echo $category ?>"
             data-pagenum="<?php echo $number ?>"><?php echo $number; ?></a>
           <?php endforeach ?>
         </ul>

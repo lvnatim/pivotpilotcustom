@@ -57,7 +57,7 @@ $service_description = $term->description;
       <?php endforeach ?>
     </div>
   </div>
-  
+
   <div id="overlay-cont">
     <?php foreach(range(1, 6) as $current_snippet_number): ?>
       <?php if(get_field('snippet_icon_' . $current_snippet_number, 'services_' . $category)): ?>
