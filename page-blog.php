@@ -71,12 +71,12 @@ function generate_top(){
 }
 
 ?>
-
 <section id="blog-page" class="light-purple-background first-section last-section less-padding-top">
   <div class="search-bar">
     <div>
       <span id="current-taxonomy">All Posts</span>
-      <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/arrow-down.svg' ?>"/></div>
+      <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/arrow-down.svg' ?>"/>
+    </div>
     <ul>
       <li class="<?php if(!$category){echo 'state-active';} ?>"><a class="filter-blog" data-term-id="0" href="?category=0">All Posts</a></li>
       <?php $terms = get_terms( 'category' );?>
@@ -87,6 +87,14 @@ function generate_top(){
       <?php endforeach?>
     </ul>
   </div>
+
+<!--   <?php echo $_POST['search-term'] ?>
+  <div id="search-by-title">
+    <form action="" method="post">
+      <input type="text" value="" name="search-term" placeholder="Search by title...">
+      <input type="submit" value="" name="search">
+    </form>
+  </div> -->
 
   <div id="dynamic-content">
     <div id="blog-post-container">

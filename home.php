@@ -22,13 +22,11 @@
     </div>
   </div>
   <a id="change-landing" class="button">How Exactly?</a>
-  <a href="#home-case-studies">
-    <div class="landing-face">
-      <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
-      <img class="img-responsive facepart eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
-      <img class="img-responsive facepart nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face/nose.svg' ?>"/>
-      <img class="img-responsive facepart mouth" src="<?php echo get_template_directory_uri() . '/dist/animation/face/mouth.svg' ?>"/>
-    </div>
+  <a href="#home-case-studies" class="landing-face">
+    <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
+    <img class="img-responsive eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
+    <img class="img-responsive nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face/nose.svg' ?>"/>
+    <img class="img-responsive mouth" src="<?php echo get_template_directory_uri() . '/dist/animation/face/mouth.svg' ?>"/>
   </a>
 
 </section>
@@ -62,21 +60,19 @@ $posts = get_posts(
 ?>
 
 <section class="last-section" id="home-case-studies">
-  <a class="button alternate no-margin-top featured-case-studies-button">Featured Case Studies</a>
+  <a id="featured-case-studies-button" class="button alternate no-margin-top">Featured Case Studies</a>
   <div id="featured-case-studies" class="slide-container">
     <?php foreach($posts as $post): ?>
     <div class="slide">
       <div class="slide-inner-cont">
-        <a href="<?php echo get_permalink($post) ?>" class="slide-image-cont" style="background-image: url(<?php echo get_the_post_thumbnail_url($post); ?>)"></a>
+        <a href="<?php echo get_permalink($post) ?>" class="slide-image-cont" style="background-image: url(<?php echo get_the_post_thumbnail_url($post); ?>)">
+          <div class="overlay"></div>
+        </a>
         <h3><?php echo $post->post_excerpt ?></h3>
         <ul>
           <?php $terms = get_the_terms($post, 'services'); ?>
           <?php foreach($terms as $term): ?>
-            <li>
-              <span>
-                <?php echo $term->name ?>
-              </span>
-            </li>
+            <li><span><?php echo $term->name ?></span></li>
           <?php endforeach?>
         </ul>
       </div>
@@ -84,9 +80,9 @@ $posts = get_posts(
     <?php endforeach ?>
   </div>
   <div class="featured-case-studies-face">
-    <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
-    <img class="img-responsive facepart eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
-    <img class="img-responsive facepart nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face/nose.svg' ?>"/>
+    <img class="img-responsive facepart eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face2/eyeball.svg' ?>"/>
+    <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face2/eyelid.svg' ?>"/>
+    <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face2/arrow.svg' ?>"/>
 
   </div>
 </section>

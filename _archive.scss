@@ -1,3 +1,7 @@
+#blog-page{
+  position: relative;
+}
+
 #blog-page > .search-bar {
   @media(min-width:768px){
     border-bottom: 0;
@@ -487,4 +491,25 @@
   @media(min-width:768px){
     opacity: 1;
   }
+}
+
+#search-by-title > form {
+  display: flex;
+}
+
+#search-by-title > form > input[type="text"] {
+  width: calc(100% - 40px);
+}
+
+#search-by-title > form > input[type="submit"] {
+  background-color: #8f8aff;
+  background-image: url('./dist/icons/search.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  border-radius: 50%;
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 10px;
 }
