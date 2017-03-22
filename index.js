@@ -6,6 +6,9 @@ $('#change-landing').on('click', function(){
 
 $('#form-open').on('click', function(){
   $('.form-cont').toggleClass('state-active');
+  setTimeout(function() {
+    $('.form-triangle').toggleClass('triangle-active');
+  }, 750);
 });
 
 $('#form-close').on('click', function(){

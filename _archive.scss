@@ -240,8 +240,7 @@
 
 #blog-post-container > .blog-post > div:first-of-type{
   @media(min-width:768px){
-    position: absolute;
-      bottom: -30px;
+    bottom: -30px;
     width: 100%;
   }
 }
@@ -373,6 +372,7 @@
 
 .pagination > .pagenums > div > span {
   font-family: arno-pro;
+  font-style: italic;
 }
 
 .pagination > .pagenums > .pagenums-dropdown{
