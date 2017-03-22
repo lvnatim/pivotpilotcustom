@@ -87,14 +87,14 @@ function generate_top(){
       <?php endforeach?>
     </ul>
   </div>
-
-<!--   <?php echo $_POST['search-term'] ?>
+  <!-- <?php echo $_POST['search-term'] ?> -->
   <div id="search-by-title">
     <form action="" method="post">
       <input type="text" value="" name="search-term" placeholder="Search by title...">
       <input type="submit" value="" name="search">
+      <div></div>
     </form>
-  </div> -->
+  </div>
 
   <div id="dynamic-content">
     <div id="blog-post-container">
