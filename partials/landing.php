@@ -6,10 +6,10 @@
           <h1>We use strategic design to help our clients grow.</h1>
           <h1 id="switch-landing">How exactly?</h1>
           <div>
-            <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
-            <img class="img-responsive facepart eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
-            <img class="img-responsive facepart nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face/nose.svg' ?>"/>
-            <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face/mouth.svg' ?>"/>
+            <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
+            <img class="img-responsive eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
+            <img class="img-responsive nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face/nose.svg' ?>"/>
+            <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/animation/face/mouth.svg' ?>"/>
           </div>
         </div>
         <div class="landing landing-alternate">
