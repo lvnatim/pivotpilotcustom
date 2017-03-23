@@ -148,6 +148,9 @@
     bottom: 0;
   z-index: 20000;
   pointer-events: none;
+  .hamburger {
+    width: 36px;
+  }
 }
 
 .service-overlay.active {
@@ -186,8 +189,8 @@
 
 .service-overlay-exit {
   position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 30px;
+    right: 30px;
 }
 
 .service-overlay-content{
