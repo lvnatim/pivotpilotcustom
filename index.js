@@ -315,6 +315,8 @@ $('#blog-related-posts').slick({
 $('.fade-slide-container').slick({
   adaptiveHeight: true,
   arrows: false,
+  autoplay: true,
+  autoplaySpeed: 5000,
   dots: true,
   infinite: true,
   speed: 500,

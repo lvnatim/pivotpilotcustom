@@ -1,6 +1,6 @@
 #blog-post-container .blog-post:first-of-type{
   @media(min-width:768px){
-    padding-top: 45px;
+    padding-top: 60px;
   }
 }
 
@@ -32,6 +32,19 @@
       top: 0;
     width: 100%;
     z-index: -1;
+  }
+  &:after{
+    background: url('./dist/icons/twitter.svg');
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: -15px;
+    left: 15px;
+    @media(min-width:768px){
+      top: 15px;
+    }
   }
 }
 

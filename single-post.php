@@ -191,9 +191,26 @@
     }
   }
 
+  #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error{
+    border: 0;
+    border-bottom: 1px solid white;
+  }
+
   #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error{
+    background: #fd9c9e;
+    border: 0;
     border-radius: 0;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-top: 0;
+    padding: 15px 10px;
+    text-transform: uppercase;
     width: 100%;
+  }
+
+  #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error::-webkit-input-placeholder{
+    color: #fd9c9e;
   }
 
   .submit-container{
