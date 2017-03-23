@@ -23,25 +23,25 @@
 
   <div id="blog-post-custom-fields">
     <?php if(get_field('blog_website_url')): ?>
-    <a class="button" href="<?php echo get_field('blog_website_url') ?>">Visit Site</a>
+    <a class="button" href="<?php echo get_field('blog_website_url') ?>" target="_blank">Visit Site</a>
     <?php endif ?>
     <?php if(get_field('work_cited_one')): ?>
       <div class="citation-cont">
         <p class="title">Works Cited</p>
         <div class="citation">
           <p>1. <?php echo get_field('work_cited_one'); ?></p>
-          <a href="<?php echo get_field('work_cited_one_url') ?>"><?php echo get_field('work_cited_one_url') ?></a>
+          <a href="<?php echo get_field('work_cited_one_url') ?>" target="_blank"><?php echo get_field('work_cited_one_url') ?></a>
         </div>
       <?php if(get_field('work_cited_two')): ?>
         <div class="citation">
           <p>2. <?php echo get_field('work_cited_two'); ?></p>
-          <a href="<?php echo get_field('work_cited_two_url') ?>"><?php echo get_field('work_cited_two_url') ?></a>
+          <a href="<?php echo get_field('work_cited_two_url') ?>" target="_blank"><?php echo get_field('work_cited_two_url') ?></a>
         </div>
       <?php endif ?>
       <?php if(get_field('work_cited_three')): ?>
         <div class="citation">
           <p>3. <?php echo get_field('work_cited_three'); ?></p>
-          <a href="<?php echo get_field('work_cited_three_url') ?>"><?php echo get_field('work_cited_three_url') ?></a>
+          <a href="<?php echo get_field('work_cited_three_url') ?>" target="_blank"><?php echo get_field('work_cited_three_url') ?></a>
         </div>
       <?php endif ?>
     <?php endif ?>

@@ -11,7 +11,7 @@ if($_GET['term_id']){
   $category = $_GET['term_id'];
 }
 
-$offset = ($pagenum - 1) * 2;
+$offset = ($pagenum - 1) * 4;
 
 $args = array(
   'posts_per_page'   => '',
@@ -33,8 +33,8 @@ $args = array(
 );
 
 $posts_array = get_posts($args);
-$displayed_posts = array_slice($posts_array, $offset, 2); 
-$total_posts = ceil(count($posts_array) / 2.0) ;
+$displayed_posts = array_slice($posts_array, $offset, 4); 
+$total_posts = ceil(count($posts_array) / 4.0) ;
 
 $next_query_str = '';
 $prev_query_str = '';
