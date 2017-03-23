@@ -225,6 +225,7 @@ li {
 
 li.term{
   font-size: 12px;
+  font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   &:not(:last-of-type):after{
@@ -233,8 +234,12 @@ li.term{
 }
 
 footer {
-  background-color: #3c44ff;
+  background-color: $blue;
   width: 100%;
+}
+
+footer.share-bar-space{
+  padding-bottom: 65px;
 }
 
 section {

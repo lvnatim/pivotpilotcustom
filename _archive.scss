@@ -138,6 +138,7 @@
 }
 
 .post-overlay > h3.post-title {
+  margin-top: 10px;
   @media(min-width:768px){
     font-size: 10px;
     letter-spacing: 1.5px;
@@ -175,6 +176,7 @@
 .search-bar{
   border-bottom: 1px solid $blue;
   font-family: arno-pro;
+  font-size: 16px;
   position: relative;
 }
 
@@ -236,6 +238,9 @@
 .blog-post > p{
   margin-top: 0;
   margin-bottom: 12.5px;
+  @media(min-width:768px){
+    margin-bottom: 20px;
+  }
 }
 
 .blog-post > h3{
@@ -281,7 +286,7 @@
 
 .post{
   animation: 1s postappear linear;
-  padding-top: 45px;
+  padding-top: 30px;
   position: relative;
   transform: translate(0px, 0px);
   top: 0;
@@ -430,9 +435,9 @@
 
 .filter-menu > a:not(.active):hover{
   @media(min-width:768px){
-    -webkit-box-shadow: inset 5px 5px 5px 0px $blue;
-    -moz-box-shadow: inset 5px 5px 5px 0px $blue;
-    box-shadow: inset 5px 5px 5px 0px $blue;
+    -webkit-box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.5);
+    -moz-box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.5);
+    box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.5);
   }
 }
 
@@ -554,7 +559,8 @@
   }
 }
 
- #search-by-title:hover{
+ #search-by-title:hover,
+ #search-by-title:focus{
   z-index: 1;
   transition-delay: 0s;
 }

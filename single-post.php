@@ -1,11 +1,11 @@
 <?php $terms = get_the_category($post->ID) ?>
 <?php echo get_header(); ?>
 
-<section class="first-section last-section">
+<section class="first-section last-section no-padding-top">
 
   <div id="blog-post-container">
     <?php $terms = get_the_terms($post, 'category'); ?>
-    <div class="post blog-post single-post">
+    <div class="post blog-post">
       <div>
       <?php foreach($terms as $term): ?>
         <li class="term"><?php echo $term->name ?></li>

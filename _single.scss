@@ -65,6 +65,9 @@ blockquote p.title {
 }
 
 #font-section img.img-responsive{
+  height: 290px;
+  width: 290px;
+  margin: 0 auto;
   position: relative;
   transform: translate(0px, 60px);
   transition: 1s;
@@ -343,13 +346,10 @@ blockquote p.title {
   border-top: 1px solid;
   margin-top: -83px;
   padding-bottom: 20px;
-  @media(min-width:768px){
-    margin-top: -86px;
-  }
 }
 
 #web-and-seo{
-  margin-top: calc(45px + 100px);
+  margin-top: calc(45px + 30vw);
   margin-left: -15px;
   margin-right: -15px;
   padding-left: 15px;
@@ -365,9 +365,9 @@ blockquote p.title {
 }
 
 .website-cont{
-  margin-bottom: -80px;
+  margin-bottom: calc(-30vw + 20px);
   position: relative;
-    top: -100px;
+    top: -30vw;
   @media(min-width:768px){
     margin: 0 auto -80px auto;
     top: -115px;
@@ -377,7 +377,7 @@ blockquote p.title {
 
 .website-cont > div{
   box-shadow: 0px 5px 45px -5px rgba(0,0,0,0.5);
-  height: 200px;
+  height: 60vw;
   overflow: scroll;
   @media(min-width: 768px){
     height: 275px;
@@ -416,6 +416,9 @@ blockquote p.title {
 
 .website-mobile-flat{
   box-shadow: 0px 0px 50px black;
-  height: 300px;
+  height: 115vw;
   overflow: scroll;
+  @media(min-width:768px){
+    height: 40vw;
+  }
 }

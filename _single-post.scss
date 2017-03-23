@@ -215,7 +215,7 @@
 }
 
 .form-cont{
-  background:rgba(68,60,255,0.9);
+  background:rgba(68,60,255,0.95);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -228,7 +228,7 @@
     right:0;
     bottom:0;
   transition: 1s;
-  z-index: 30000;
+  z-index: 30003;
   @media(min-width:768px){
     background:rgba(68,60,255,1);
     opacity: 1;

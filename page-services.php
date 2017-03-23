@@ -18,7 +18,7 @@ $service_description = $term->description;
   <p><?php echo $service_description ?></p>
 
   <div id="snippets-cont">
-    <h3>Why does it matter?</h3>
+    <h1 class="bold">Why does it matter?</h1>
     <div id="featured-service-snippets">
       <?php foreach(range(1, 7) as $current_snippet_number): ?>
         <?php if(get_field('snippet_icon_' . $current_snippet_number, 'services_' . $category)): ?>
@@ -29,10 +29,10 @@ $service_description = $term->description;
             $snippet_icon_inverse = get_field('snippet_icon_inverse_' . $current_snippet_number, 'services_' . $category);
           ?>
           <div>
-            <div class="services-icon-post">
+            <div class="services-icon-post" data-overlay="<?php echo $current_snippet_number ?>">
               <img src="<?php echo $snippet_icon ?>"/>
               <p><?php echo $snippet_excerpt ?></p>
-              <div class="more-info-plus" data-overlay="<?php echo $current_snippet_number ?>">+</div>
+              <div class="more-info-plus">+</div>
             </div>
           </div>
         <?php endif ?>
@@ -48,10 +48,10 @@ $service_description = $term->description;
             $snippet_description = get_field('snippet_description_' . $current_snippet_number, 'services_' . $category);
             $snippet_icon_inverse = get_field('snippet_icon_inverse_' . $current_snippet_number, 'services_' . $category);
           ?>
-          <div class="services-icon-post">
+          <div class="services-icon-post" data-overlay="<?php echo $current_snippet_number ?>">
             <img src="<?php echo $snippet_icon ?>"/>
             <p><?php echo $snippet_excerpt ?></p>
-            <div class="more-info-plus" data-overlay="<?php echo $current_snippet_number ?>">+</div>
+            <div class="more-info-plus">+</div>
           </div>
         <?php endif ?>
       <?php endforeach ?>
@@ -100,7 +100,7 @@ $service_description = $term->description;
 
 <script>
 jQuery(document).ready(function($){
-  $('.more-info-plus').on('click', function() {
+  $('.services-icon-post').on('click', function() {
     const index = $(this).data('overlay') - 1;
     $('.service-overlay').eq(index).addClass('active');
   });
