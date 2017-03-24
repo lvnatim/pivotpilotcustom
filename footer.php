@@ -1,4 +1,4 @@
-<footer>
+<footer class="<?php if(is_singular('post')){echo 'share-bar-space';} ?>">
   <section>
     <a class="button footer-button">Book A Free Consultation</a>
     <div class="big-icons-container">

@@ -1,11 +1,11 @@
 <?php $terms = get_the_category($post->ID) ?>
 <?php echo get_header(); ?>
 
-<section class="first-section last-section">
+<section class="first-section last-section no-padding-top">
 
   <div id="blog-post-container">
     <?php $terms = get_the_terms($post, 'category'); ?>
-    <div class="post blog-post single-post">
+    <div class="post blog-post">
       <div>
       <?php foreach($terms as $term): ?>
         <li class="term"><?php echo $term->name ?></li>
@@ -23,25 +23,25 @@
 
   <div id="blog-post-custom-fields">
     <?php if(get_field('blog_website_url')): ?>
-    <a class="button" href="<?php echo get_field('blog_website_url') ?>">Visit Site</a>
+    <a class="button" href="<?php echo get_field('blog_website_url') ?>" target="_blank">Visit Site</a>
     <?php endif ?>
     <?php if(get_field('work_cited_one')): ?>
       <div class="citation-cont">
         <p class="title">Works Cited</p>
         <div class="citation">
           <p>1. <?php echo get_field('work_cited_one'); ?></p>
-          <a href="<?php echo get_field('work_cited_one_url') ?>"><?php echo get_field('work_cited_one_url') ?></a>
+          <a href="<?php echo get_field('work_cited_one_url') ?>" target="_blank"><?php echo get_field('work_cited_one_url') ?></a>
         </div>
       <?php if(get_field('work_cited_two')): ?>
         <div class="citation">
           <p>2. <?php echo get_field('work_cited_two'); ?></p>
-          <a href="<?php echo get_field('work_cited_two_url') ?>"><?php echo get_field('work_cited_two_url') ?></a>
+          <a href="<?php echo get_field('work_cited_two_url') ?>" target="_blank"><?php echo get_field('work_cited_two_url') ?></a>
         </div>
       <?php endif ?>
       <?php if(get_field('work_cited_three')): ?>
         <div class="citation">
           <p>3. <?php echo get_field('work_cited_three'); ?></p>
-          <a href="<?php echo get_field('work_cited_three_url') ?>"><?php echo get_field('work_cited_three_url') ?></a>
+          <a href="<?php echo get_field('work_cited_three_url') ?>" target="_blank"><?php echo get_field('work_cited_three_url') ?></a>
         </div>
       <?php endif ?>
     <?php endif ?>
@@ -191,9 +191,26 @@
     }
   }
 
+  #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error{
+    border: 0;
+    border-bottom: 1px solid white;
+  }
+
   #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error{
+    background: #fd9c9e;
+    border: 0;
     border-radius: 0;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-top: 0;
+    padding: 15px 10px;
+    text-transform: uppercase;
     width: 100%;
+  }
+
+  #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error::-webkit-input-placeholder{
+    color: #fd9c9e;
   }
 
   .submit-container{

@@ -13,6 +13,7 @@
   </div>
 
   <div id="mobile-menu-sidebar">
+    <div class="overlay"></div>
     <div id="mobile-close" class="alternate hamburger state-closed">
       <span></span>
       <span></span>

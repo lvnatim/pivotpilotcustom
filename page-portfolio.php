@@ -58,8 +58,8 @@ function generate_dropdown_str($num){
 
 <section id="portfolio-page" class="first-section light-purple-background filter-section no-padding-top" data-taxonomy="<?php echo $taxonomy ?>">
   <ul class="filter-menu">
-    <a class="title blue active" href="?taxonomy=services">Services</a>
-    <a class="title blue" href="?taxonomy=industries">Industries</a>
+    <a class="title blue <?php if($taxonomy == 'services'){echo 'active';} ?>" href="?taxonomy=services">Services</a>
+    <a class="title blue <?php if($taxonomy != 'services'){echo 'active';} ?>" href="?taxonomy=industries">Industries</a>
   </ul>
   <div class="search-bar">
     <div>

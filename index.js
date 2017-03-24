@@ -1,4 +1,10 @@
 $('#change-landing').on('click', function(){
+  if($(this).parent().hasClass('state-alternate')){
+    $(this).html('How Exactly?')
+  } else {
+    $(this).html('Go Back')
+  }
+
   $(this).parent().toggleClass('state-alternate');
   $(this).toggleClass('state-alternate');
   $('.landing-face').toggleClass('state-alternate');
@@ -23,6 +29,10 @@ $('#mobile-close').on('click', function(){
   $('#mobile-menu-sidebar').removeClass('state-opened');
 });
 
+$('#mobile-menu-sidebar > .overlay').on('click', function(){
+  $('#mobile-menu-sidebar').removeClass('state-opened');
+});
+
 $('#portfolio-menu-open').on('click', function(){
   $(this).toggleClass('state-closed');
   $('#portfolio-menu').toggleClass('state-opened');
@@ -32,11 +42,7 @@ $('.portfolio-button').on('click',function(e){
   e.preventDefault();
   const target = $(this).attr('href');
   const scrolltop = $(target).offset().top;
-  $('body').animate({scrollTop: scrolltop}, 1000, 'swing', function(){
-    $('#portfolio-menu').removeClass('state-opened');
-    $('#portfolio-menu-open').removeClass('state-closed');
-    $('#mobile-menu').addClass('state-hidden');
-  });
+  $('body').animate({scrollTop: scrolltop}, 1000, 'swing');
 });
 
 $('.search-bar').on('click', function(){
@@ -315,6 +321,8 @@ $('#blog-related-posts').slick({
 $('.fade-slide-container').slick({
   adaptiveHeight: true,
   arrows: false,
+  autoplay: true,
+  autoplaySpeed: 5000,
   dots: true,
   infinite: true,
   speed: 500,
@@ -357,7 +365,7 @@ $('#featured-team-members').slick({
       breakpoint: 768,
       settings: {
         arrows: false,
-        centerPadding: '22.5px',
+        centerPadding: '15px',
         initialSlide: 1,
         infinite: true,
         slidesToShow: 1
@@ -368,6 +376,7 @@ $('#featured-team-members').slick({
 
 $('#featured-service-snippets').slick({
   arrows: false,
+  infinite: false,
   slidesToShow: 2,
 })
 
@@ -383,9 +392,7 @@ $(window).scroll(function(event){
    var st = $(this).scrollTop();
    if (st > lastScrollTop){
     // downscroll code
-    if(st > blogContentEnd ){
-      $('#share-bar').removeClass('state-active');
-    } else if(st > 150){
+    if(st > 150){
       $('#mobile-menu').addClass('state-hidden');
       $('#share-bar').addClass('state-active');
     }

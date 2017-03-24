@@ -29,6 +29,8 @@
 
 #featured-service-snippets{
   margin-top: 15px;
+  margin-left: -15px;
+  margin-right: -15px;
   @media(min-width:768px){
     display:none;
   }
@@ -37,10 +39,11 @@
 
 #featured-service-snippets > .slick-list {
   padding-right: 15px;
+  padding-left: 15px;
 }
 
 #featured-service-snippets .slick-slide {
-  margin-right: 15px;
+  margin-right: 7.5px;
 }
 
 .services-icon-post {
@@ -138,7 +141,9 @@
 }
 
 .service-overlay {
+  align-items: center;
   background-color: rgba(68,60,255,0.95);
+  display: flex;
   opacity: 0;
   transition: opacity 0.5s;
   position: fixed;
@@ -146,11 +151,17 @@
     left: 0;
     right: 0;
     bottom: 0;
-  z-index: 20000;
+  z-index: 40000;
+  padding-bottom: 50px;
   pointer-events: none;
   .hamburger {
     width: 36px;
   }
+}
+
+.service-overlay > section {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .service-overlay.active {
@@ -189,8 +200,8 @@
 
 .service-overlay-exit {
   position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 20px;
+    right: 15px;
 }
 
 .service-overlay-content{

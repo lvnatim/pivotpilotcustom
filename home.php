@@ -66,7 +66,6 @@ $posts = get_posts(
     <div class="slide">
       <div class="slide-inner-cont">
         <a href="<?php echo get_permalink($post) ?>" class="slide-image-cont" style="background-image: url(<?php echo get_the_post_thumbnail_url($post); ?>)">
-          <div class="overlay"></div>
         </a>
         <h3><?php echo $post->post_excerpt ?></h3>
         <ul>

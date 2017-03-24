@@ -27,8 +27,7 @@ function render_image($field_name){
           <div class="overlay"></div>
           <h3><?php the_field('team_member_first_name', $team_member) ?><br> likes <?php the_field('team_member_icon_name', $team_member) ?></h3>
         </a>
-        <h1><?php the_field('team_member_first_name', $team_member) ?></h1>
-        <h1><?php the_field('team_member_last_name', $team_member) ?></h1>
+        <h1><?php the_field('team_member_first_name', $team_member) ?> <?php the_field('team_member_last_name', $team_member) ?></h1>
         <p class="title"><?php the_field('team_member_title_one', $team_member) ?></p>
         <p class="title"><?php the_field('team_member_title_two', $team_member) ?></p>
       </div>
