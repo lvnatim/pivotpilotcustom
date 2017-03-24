@@ -89,18 +89,10 @@ footer section{
 }
 
 .small-icons-container{
-  display:flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   @media(min-width:768px){
     padding-bottom: 30px;
   }
 }
-
-
-
-
-
-
-
-
-
-

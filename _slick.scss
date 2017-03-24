@@ -80,8 +80,12 @@
   @media(min-width:768px){
     opacity: 0;
     top: -80px;
-    transform: rotateZ(180deg);
-    transform-origin: bottom center;
+    -webkit-transform: rotateZ(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotateZ(180deg);
+    -webkit-transform-origin: bottom center;
+        -ms-transform-origin: bottom center;
+            transform-origin: bottom center;
     transition: 0.3s;
     height: 30px;
   }
@@ -120,7 +124,9 @@
 
   >img.fun-fact {
     opacity: 1;
-    transform: rotateZ(0deg);
+    -webkit-transform: rotateZ(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotateZ(0deg);
   }
 }
 
@@ -208,9 +214,15 @@
 }
 
 .fade-slide-container > .slick-dots{
-  align-items: flex-end;
-  display:flex;
-  flex-direction: column;
+  -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+        align-items: flex-end;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
     top:10px;
     bottom: auto;
 }
@@ -255,7 +267,9 @@
     position: absolute;
     top: 45px;
     transition: 1s;
-    transform: translate(0px, 45px);
+    -webkit-transform: translate(0px, 45px);
+        -ms-transform: translate(0px, 45px);
+            transform: translate(0px, 45px);
     width: 60%;
   }
 }
@@ -361,9 +375,15 @@
     }
 
     .slick-dots {
-      align-items: flex-end;
+      -webkit-align-items: flex-end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
     }
   }
 }
