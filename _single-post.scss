@@ -33,7 +33,6 @@
     width: 100%;
     z-index: -1;
   }
-<<<<<<< HEAD
   &:after {
     content: "";
     background-image: url('./dist/img/twitter_logo.png');
@@ -46,21 +45,6 @@
     left: 10px;
     top: -25px;
     z-index: 2;
-
-=======
-  &:after{
-    background: url('./dist/icons/twitter.svg');
-    background-repeat: no-repeat;
-    content: "";
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    top: -15px;
-    left: 15px;
-    @media(min-width:768px){
-      top: 15px;
-    }
->>>>>>> 0c3ef879b1d498175c584749bfcdeb06d2044094
   }
 }
 

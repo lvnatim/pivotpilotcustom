@@ -86,11 +86,13 @@
   display: none;
   @media(min-width:1024px){
     align-items: flex-end;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 30px;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
     position: fixed;
       left: 0;
       right: 0;
@@ -140,10 +142,18 @@
   &:first-of-type{
     padding-left: 15px;
     padding-right: 7.5px;
+    @media(min-width:1024px){
+      padding-right: 10px;
+      padding-left: 20px;
+    }
   }
   &:last-of-type{
     padding-left: 7.5px;
     padding-right: 15px;
+    @media(min-width:1024px){
+      padding-left: 10px;
+      padding-right: 20px;
+    }
   }
 }
 
@@ -154,11 +164,15 @@
 }
 
 #menu.state-see-through > .overlay{
-  transform: translate(0, -95px);
+  -webkit-transform: translate(0, -110px);
+      -ms-transform: translate(0, -110px);
+          transform: translate(0, -110px);
 }
 
 #menu.state-see-through.state-toggled > .overlay{
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 #menu:hover > #ampersand-cont,
@@ -465,7 +479,7 @@
 
   #services-dropdown {
     position: fixed;
-      top: 90px;
+      top: 110px;
       left: 0;
       right: 0;
     z-index: 20000;
@@ -477,23 +491,27 @@
   }
 
   #services-dropdown:before {
-    background: #7c77ff;
+    background: #8f8dfc;
     content: "";
     height: 20px;
     width: 20px;
     position: absolute;
       top: -10px;
-      left: 252px;
+      left: 230px;
     transform: rotateZ(45deg);
   }
 
   #services-dropdown a {
     display: block;
+    text-align: center;
+  }
+
+  .service-subterm-cont > a {
+    width: 50%;
   }
 
   #services-dropdown p.title{
     color: white;
-    letter-spacing: 1px;
     font-weight: 300;
     margin-top: 0;
     padding-top: 15px;
@@ -503,12 +521,21 @@
     white-space: nowrap;
   }
 
+  #services-dropdown p.title:hover{
+    background: #7d7afb;
+    cursor:pointer;
+  }
+
 }
 
 #services-dropdown > .service-term-cont {
-  background: #7c77ff;
+  background: #8f8dfc;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+            -ms-flex-pack: center;
   padding: 0 30px;
   width: 100%;
 }
@@ -548,5 +575,5 @@
 }
 
 .service-subterm-cont > a:hover {
-  background: #7c77ff;
+  background: #a19ffc;
 }

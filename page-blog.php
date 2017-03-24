@@ -6,6 +6,7 @@ parse_str($_SERVER['QUERY_STRING'], $query);
 $category = $query['category'];
 $pagenum = $query['pagenum'] ? $query['pagenum'] : 1;
 $offset = ($pagenum - 1) * 4;
+$title = $_POST['search-term'];
 
 $args = array(
   'posts_per_page'   => '',
@@ -23,7 +24,8 @@ $args = array(
   'author'           => '',
   'author_name'      => '',
   'post_status'      => 'publish',
-  'suppress_filters' => true
+  'suppress_filters' => true,
+  's'                => $title,
 );
 
 $posts_array = get_posts($args);
@@ -72,6 +74,7 @@ function generate_top(){
 
 ?>
 <section id="blog-page" class="light-purple-background first-section last-section less-padding-top">
+
   <div class="search-bar">
     <div>
       <span id="current-taxonomy">All Posts</span>
@@ -87,7 +90,7 @@ function generate_top(){
       <?php endforeach?>
     </ul>
   </div>
-  <!-- <?php echo $_POST['search-term'] ?> -->
+
   <div id="search-by-title">
     <form action="" method="post">
       <input type="text" value="" name="search-term" placeholder="Search by title...">
