@@ -334,7 +334,7 @@ $('#featured-case-studies').slick({
   arrows: false,
   centerMode: true,
   centerPadding: '11.25px',
-  infinite: false,
+  infinite: true,
   initialSlide: 1,
   mobileFirst: true,
   slidesToShow: 1,
