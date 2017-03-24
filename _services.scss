@@ -22,14 +22,14 @@
 #desktop-featured-service-snippets{
   display:none;
   @media(min-width:768px){
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-        align-items: center;
+    -webkit-align-items: flex-start;
+         -ms-flex-align: start;
+            align-items: flex-start;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
+              -ms-flex-pack: center;
             justify-content: center;
   }
 }
@@ -79,6 +79,9 @@
   font-family: Walsheim;
   font-size: 16px;
   margin-top: 5px;
+  @media(min-width:1024px){
+    font-size: 20px;
+  }
 }
 
 .services-icon-post > .more-info-plus {
@@ -291,7 +294,7 @@
   .services-icon-post {
     width: 140px;
     img {
-      width: 100px;
+      width: 70px;
     }
   }
 

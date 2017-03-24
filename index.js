@@ -176,8 +176,10 @@ $('.filter-services').on('click', function(e){
     error: function(){}
   });
 
-    const description_height = $(this).next().outerHeight() + 42;
-    $('#dynamic-content-services').css({'margin-top': description_height});
+    if($(window).width() > 767){
+      const description_height = $(this).next().outerHeight() + 42;
+      $('#dynamic-content-services').css({'margin-top': description_height});
+    }
 
 });
 
@@ -358,7 +360,7 @@ $('#featured-team-members').slick({
   arrows: true,
   appendArrows: $('#featured-team-members-controller'),
   centerMode: true,
-  centerPadding: '210px',
+  centerPadding: '270px',
   slidesToShow: 1,
   responsive: [
     {

@@ -2,6 +2,9 @@ blockquote{
   border-left: none;
   padding: 0px 0px 45px 0px;
   margin: 0;
+  @media(min-width:1024px){
+    padding-bottom:60px;
+  }
 }
 
 blockquote p {
@@ -22,12 +25,21 @@ blockquote p.title {
   letter-spacing: 1px;
   margin-top: 10px;
   text-transform: uppercase;
+  @media(min-width:768px){
+    font-size: 12px;
+  }
+  @media(min-width:1024px){
+    font-size: 13px;
+  }
 }
 
 #animation{
   padding-bottom: 30px;
   @media(min-width:768px){
     padding-bottom: 45px;
+  }
+  @media(min-width:1024px){
+    padding-bottom: 60px;
   }
 }
 
@@ -92,6 +104,12 @@ blockquote p.title {
   font-size: 14px;
   margin-top: 0;
   padding-top: 12px;
+  @media(min-width:768px){
+    font-size: 15px;
+  }
+  @media(min-width:1024px){
+    font-size: 16px;
+  }
 }
 
 
@@ -144,6 +162,11 @@ blockquote p.title {
     margin-left: -30px;
     margin-right: -30px;
     margin-bottom: 45px;
+  }
+  @media(min-width:1024px){
+    margin-left: -45px;
+    margin-right: -45px;
+    margin-bottom: 60px;
   }
 }
 
@@ -374,7 +397,15 @@ blockquote p.title {
     padding-right: 30px;
     margin-left: -30px;
     margin-right: -30px;
-    margin-top: calc(75px + 100px);
+    margin-top: calc(60px + 17.5vw);
+  }
+  @media(min-width:1024px){
+    margin-left: -45px;
+    margin-right: -45px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 60px;
+    margin-top: calc(75px + 17.5vw);
   }
 }
 
@@ -383,8 +414,10 @@ blockquote p.title {
   position: relative;
     top: -30vw;
   @media(min-width:768px){
-    margin: 0 auto -80px auto;
-    top: -115px;
+    margin-bottom: calc(-17.5vw + 60px);
+    margin-left: auto;
+    margin-right: auto;
+    top: -17.5vw;
     width: calc(75% - 60px);
   }
 }
@@ -394,7 +427,7 @@ blockquote p.title {
   height: 60vw;
   overflow: scroll;
   @media(min-width: 768px){
-    height: 275px;
+    height: 35vw;
   }
 }
 
@@ -413,6 +446,9 @@ blockquote p.title {
     padding-left: 15px;
     padding-right: 15px;
     width: 33%;
+  }
+  @media(min-width:1024px){
+    padding-top: 60px;
   }
 }
 
