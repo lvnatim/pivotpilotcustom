@@ -6,6 +6,10 @@
       <h1>design to help our</h1>
       <h1>clients grow.</h1>
     </div>
+    <div class="default-content-desktop">
+      <h1>We use strategic design</h1>
+      <h1>to help our clients grow.</h1>
+    </div>
     <div class="alternate-content">
       <div class="alternate-content-text">
         <p>Beautiful designs are useless without substance. For this reason, we research your competition and industry gaps before we design and create marketing strategies to help your company stand out in a competitive market.</p>

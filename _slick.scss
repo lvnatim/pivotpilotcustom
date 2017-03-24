@@ -18,6 +18,9 @@
       bottom: 120px;
     z-index: 1;
   }
+  @media(min-width:1024px){
+    bottom: 130px;
+  }
 }
 
 .featured-case-studies-face > img {
@@ -295,6 +298,9 @@
     &:nth-of-type(5) > span{transition-delay:1.0s;}
     &:nth-of-type(6) > span{transition-delay:1.2s;}
   }
+  @media(min-width:768px){
+    line-height: 22px;
+  }
 }
 
 #featured-case-studies .slide-inner-cont > ul > li > span{
@@ -305,12 +311,18 @@
     transform: translate(0px, 100px);
     transition: 0.6s;
   }
+  @media(min-width:1024px){
+    font-size: 22px;
+  }
 }
 
 
 #featured-case-studies .slick-active > .slide-inner-cont > h3 {
   @media(min-width:768px){
     transform: translate(0px, 0px);
+  }
+  @media(min-width:1024px){
+    line-height: 40px;
   }
 }
 
@@ -362,6 +374,9 @@
     margin: 0 45px 0 45px;
     position: relative;
     transition: 1s;
+  }
+  @media(min-width:768px){
+    height: 450px;
   }
 }
 
