@@ -358,9 +358,15 @@
 }
 
 .pagination{
-  align-items: center;
+  -webkit-align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-top: 30px;
 }
 
@@ -550,6 +556,7 @@
   left: 15px;
   right: 15px;
   top: 90px;
+  text-align: right;
   transition-delay: 0.3s;
   z-index: 0;
   @media(min-width:768px){

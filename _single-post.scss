@@ -311,6 +311,8 @@
 }
 
 #share-bar{
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   position: fixed;
     bottom:-100%;
@@ -326,18 +328,30 @@
 
 #share-bar > div,
 #share-bar > a {
-  align-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #share-bar > #facebook-like{
   display:none;
   @media(min-width:768px){
-    align-items: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
     background: #7c77ff;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 34%;
   }
 }

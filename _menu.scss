@@ -179,10 +179,16 @@
 }
 
 #mobile-menu{
-  align-items: center;
+  -webkit-align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
   background: white;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
   padding: 15px;
   position: fixed;
     left: 0;
@@ -207,10 +213,13 @@
 
 #mobile-menu-logo{
   align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
 #mobile-menu-logo > h1{
+  display: inline-block;
   font-size: 32px;
   @media(min-width:425px){
     font-size: 42px;
@@ -219,6 +228,7 @@
 
 #mobile-menu-logo > img{
   bottom: 1px;
+  display: inline-block;
   height: 25px;
   padding-left: 5px;
   padding-right: 3px;

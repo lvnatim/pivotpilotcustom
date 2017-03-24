@@ -10,10 +10,11 @@
   }
 }
 
-#snippets-cont > h3 {
+#snippets-cont > h1.bold {
   @media(min-width:768px){
     font-weight: 900;
     text-align: center;
+    width: 100%;
   }
 }
 
@@ -21,9 +22,15 @@
 #desktop-featured-service-snippets{
   display:none;
   @media(min-width:768px){
-    align-items: flex-start;
-    display:flex;
-    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
