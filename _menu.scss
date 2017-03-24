@@ -4,14 +4,14 @@
   border-radius: 50%;
   display: flex;
   justify-content: center;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
   position: relative;
   transition: 0.5s;
 }
 
 #purple-ampersand {
-  height: 31px;
+  height: 40px;
   position: relative;
   top: -1px;
   transition: 0.5s;
@@ -19,7 +19,7 @@
 }
 
 #white-ampersand {
-  height: 31px;
+  height: 40px;
   opacity: 0;
   position: absolute;
     top: 9px;
@@ -89,8 +89,8 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 45px;
+    padding-right: 45px;
     padding-top: 30px;
     padding-bottom: 30px;
     position: fixed;
@@ -105,6 +105,9 @@
 #menu h1{
   @media(min-width:768px){
     font-size: 40px
+  }
+  @media(min-width:1024px){
+    font-size: 50px
   }
 }
 
@@ -127,18 +130,18 @@
 #menu > ul {
   overflow: hidden;
   max-width: 0;
-  padding-bottom: 6px;
+  padding-bottom: 6.5px;
   transition: 0.5s;
   white-space: nowrap;
 }
 
 #menu:hover > ul,
 #menu.state-active > ul{
-  max-width: 200px;
+  max-width: 230px;
 }
 
 #menu > ul > a {
-  font-size: 16px;
+  font-size: 20px;
   &:first-of-type{
     padding-left: 15px;
     padding-right: 7.5px;
@@ -164,9 +167,9 @@
 }
 
 #menu.state-see-through > .overlay{
-  -webkit-transform: translate(0, -110px);
-      -ms-transform: translate(0, -110px);
-          transform: translate(0, -110px);
+  -webkit-transform: translate(0, -120px);
+      -ms-transform: translate(0, -120px);
+          transform: translate(0, -120px);
 }
 
 #menu.state-see-through.state-toggled > .overlay{
@@ -403,7 +406,7 @@
   min-width: 140px;
   padding-top: 15px;
   position: fixed;
-  right: -86px;
+  right: -103px;
   top: 68px;
   transition: 0.3s;
   z-index: 9999;
@@ -411,8 +414,13 @@
     top: 80px;
   }
   @media(min-width:768px){
-    display:flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     top: 90px;
+  }
+  @media(min-width:1024px){
+    top: 110px;
   }
 }
 
@@ -441,6 +449,7 @@
 }
 
 #portfolio-menu.state-opened > a {
+  min-width: 200px;
   text-align: center;
 }
 
@@ -467,7 +476,8 @@
 #portfolio-menu > ul > a {
   color: white;
   display: block;
-  padding-bottom: 2px;
+  font-size: 16px;
+  padding-bottom: 4px;
 }
 
 #services-dropdown{
@@ -550,7 +560,13 @@
   width: 100%;
 }
 
+#services-dropdown .service-term-button-cont{
+  width: 20%;
+}
+
 #services-dropdown .service-term-button-cont.state-active .service-subterm-cont{
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 

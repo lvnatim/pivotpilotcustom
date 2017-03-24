@@ -87,6 +87,11 @@
     width: 100px;
     z-index: 2;
   }
+  @media(min-width:1024px){
+      left: -75px;
+      top: -75px;
+    width: 150px;
+  }
 }
 
 #featured-team-members .slide-inner-cont > img.fun-fact{
@@ -101,6 +106,9 @@
             transform-origin: bottom center;
     transition: 0.3s;
     height: 30px;
+  }
+  @media(min-width:1024px){
+    top: -105px;
   }
 }
 
