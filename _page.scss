@@ -172,14 +172,14 @@ a#change-landing {
     width: 300px;
   }
   @media(min-width:1024px){
-    font-size: 52px;
+    font-size: 46px;
     margin-top: -15px;
   }
 }
 
 a#change-landing.state-alternate {
   @media(min-width:768px){
-    color: $blue;
+    color: white;
     transform: translate(0px, 50px);
   }
 }

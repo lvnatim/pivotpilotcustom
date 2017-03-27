@@ -369,6 +369,9 @@
     position: absolute;
     top: 140px;
   }
+  @media(min-width:1024px){
+    top: 100px;
+  }
 }
 
 #featured-case-studies .slide {
