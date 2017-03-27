@@ -192,6 +192,10 @@
   position: absolute;
     top: 42%;
   z-index: 3;
+  @media(min-width:1024px){
+    height: 60px;
+    width: 60px;
+  }
 }
 
 #blog-related-posts > .slick-arrow:before{
@@ -210,6 +214,11 @@
     position: absolute;
       top: 13px;
       left: 10px;
+    @media(min-width:1024px){
+      top: 20px;
+      left: 16px;
+      width: 28px;
+    }
   }
 }
 #blog-related-posts > .slick-next{
@@ -223,6 +232,11 @@
     position: absolute;
       top: 13px;
       left: 10px;
+    @media(min-width:1024px){
+      top: 20px;
+      left: 16px;
+      width: 28px;
+    }
   }
 }
 
@@ -463,6 +477,10 @@
   }
   @media (min-width:768px) {
     height: 200px;
+  }
+  @media (min-width:1024px){
+    height: 260px;
+    margin: 0 10px;
   }
 }
 
