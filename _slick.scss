@@ -46,9 +46,11 @@
 }
 
 #featured-team-members .slide-inner-cont{
-  max-width: 300px;
   margin: 0 auto;
   position: relative;
+  @media(min-width:768px){
+    max-width: 300px;
+  }
 }
 
 #featured-team-members .slide-inner-cont > h1{
@@ -87,6 +89,11 @@
     width: 100px;
     z-index: 2;
   }
+  @media(min-width:1024px){
+      left: -75px;
+      top: -75px;
+    width: 150px;
+  }
 }
 
 #featured-team-members .slide-inner-cont > img.fun-fact{
@@ -101,6 +108,9 @@
             transform-origin: bottom center;
     transition: 0.3s;
     height: 30px;
+  }
+  @media(min-width:1024px){
+    top: -105px;
   }
 }
 
@@ -265,8 +275,8 @@
   margin-left: 3.75px;
   margin-right: 3.75px;
   @media(min-width:768px){
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 }
 
@@ -386,14 +396,11 @@
 }
 
 #featured-case-studies .slide-image-cont {
+  height: 50vw;
   @media(min-width:768px){
-    height: 350px;
     margin: 0 45px 0 45px;
     position: relative;
     transition: 1s;
-  }
-  @media(min-width:768px){
-    height: 450px;
   }
 }
 
@@ -461,7 +468,7 @@
     margin-left: -30px;
     margin-right: -30px;
   }
-  @media(min-width:768px){
+  @media(min-width:1024px){
     margin-left: -45px;
     margin-right: -45px;
   }

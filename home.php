@@ -64,7 +64,7 @@ $posts = get_posts(
 ?>
 
 <section class="last-section" id="home-case-studies">
-  <a id="featured-case-studies-button" class="button alternate no-margin-top">Featured Case Studies</a>
+  <a id="featured-case-studies-button" class="button alternate no-margin-top" href="<?php echo get_site_url() . '/portfolio' ?>">Featured Case Studies</a>
   <div id="featured-case-studies" class="slide-container">
     <?php foreach($posts as $post): ?>
     <div class="slide">

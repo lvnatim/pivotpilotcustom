@@ -325,6 +325,9 @@
   @media(min-width:768px){
     width: 70%;
   }
+  @media(min-width:1024px){
+    width: 50%;
+  }
 }
 
 #blog-post-container {
@@ -517,6 +520,7 @@
   border-bottom: 1px solid;
   display: block;
   font-family: arno-pro;
+  font-style: italic;
   padding: 5px 15px;
   transition: 0.3s;
 }

@@ -110,11 +110,11 @@ a.button.footer-button{
   display: block;
   margin-top: -65px;
   @media(min-width: 768px){
-    margin-top: -105px;
+    margin-top: -75px;
     width: 300px;
   }
   @media(min-width:1024px){
-    margin-top: -75px;
+    margin-top: -85px;
   }
 }
 
@@ -178,7 +178,8 @@ h3{
   font-size: 18px;
   line-height: 1.3;
   @media(min-width:425px){font-size: 24px;}
-  @media(min-width:768px){font-size: 32px;}
+  @media(min-width:768px){font-size: 32px;line-height:1.15;}
+  @media(min-width:1024px){font-size: 40px;}
 }
 
 iframe{
@@ -254,10 +255,10 @@ footer.share-bar-space{
 }
 
 section {
-  padding: 45px 15px;
+  padding: 30px 15px;
   transition: 1s;
-  @media (min-width: 768px) {padding: 75px 30px;}
-  @media (min-width: 1024px) {padding: 45px 45px;}
+  @media (min-width: 768px) {padding: 45px 30px;}
+  @media (min-width: 1024px) {padding: 60px 45px;}
 }
 
 section.first-section{
@@ -279,7 +280,7 @@ section.first-section.no-padding-top{
     padding-top: 90px;
   }
   @media(min-width:1024px){
-    padding-top: 110px;
+    padding-top: 120px;
   }
 }
 
@@ -639,18 +640,9 @@ ul.filter-submenu {
   @media(min-width:768px){
     display: inline-block;
     width: 66%;
-    h3 {
-      font-size: 26px;
-    }
-    p {
-      font-size: 18px;
-    }
   }
   @media(min-width:1024px){
     width: 65%;
-    h3 {
-      font-size: 32px;
-    }
   }
 }
 

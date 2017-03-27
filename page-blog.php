@@ -93,7 +93,7 @@ function generate_top(){
 
   <div id="search-by-title">
     <form action="" method="post">
-      <input type="text" value="" name="search-term" placeholder="Search by title...">
+      <input type="text" value="" name="search-term" placeholder="Search by Title">
       <input type="submit" value="" name="search">
       <div></div>
     </form>
