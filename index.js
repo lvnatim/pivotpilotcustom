@@ -360,7 +360,7 @@ $('#featured-team-members').slick({
   arrows: true,
   appendArrows: $('#featured-team-members-controller'),
   centerMode: true,
-  centerPadding: '270px',
+  centerPadding: '180px',
   slidesToShow: 1,
   responsive: [
     {

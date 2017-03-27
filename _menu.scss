@@ -146,7 +146,7 @@
     padding-left: 15px;
     padding-right: 7.5px;
     @media(min-width:1024px){
-      padding-right: 10px;
+      padding-right: 7.5px;
       padding-left: 20px;
     }
   }
@@ -154,7 +154,7 @@
     padding-left: 7.5px;
     padding-right: 15px;
     @media(min-width:1024px){
-      padding-left: 10px;
+      padding-left: 7.5px;
       padding-right: 20px;
     }
   }
@@ -420,7 +420,8 @@
     top: 90px;
   }
   @media(min-width:1024px){
-    top: 110px;
+    top: 120px;
+    right: -95px;
   }
 }
 
