@@ -116,12 +116,9 @@
   @media(min-width:768px){
     margin-top: 45px;
   }
-  @media(min-width:768px){
-    margin-top: 60px;
-  }
   @media(min-width:1024px){
     font-size: 12px;
-    margin-top: 75px;
+    margin-top: 60px;
   }
 }
 
@@ -273,9 +270,15 @@
 
 .form-cont{
   background:rgba(68,60,255,0.95);
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   opacity: 0;
   padding: 0 15px;
   pointer-events: none;
@@ -289,42 +292,50 @@
   @media(min-width:768px){
     background:rgba(68,60,255,1);
     opacity: 1;
+    max-width: 340px;
     padding: 75px 30px 45px 30px;
       top: auto;
-      left: 28%;
+      left: calc(50vw - 170px);
       right: auto;
       bottom: -400px;
     width: 43%;
   }
 }
 
-.form-triangle {
-  @media(min-width: 768px) {
-    display: block;
-    bottom: 7.5px;
-  }
-}
-
-.form-triangle.triangle-active {
-  @media(min-width: 768px) {
-    background: $blue;
-    height: 15px;
-    width: 15px;
-    position: absolute;
-      left: 49%;
-      bottom: -7.5px;
-    transition: 0.1s;
-    transform: rotateZ(45deg);
-  }
+.form-cont:after{
+  background: $blue;
+  bottom: 0;
+  content: "";
+  height: 15px;
+  width: 15px;
+  margin-left: -7.5px;
+  position: absolute;
+    left: 50%;
+  -webkit-transform: rotateZ(45deg) translate(0px, -7.5px);
+      -ms-transform: rotate(45deg) translate(0px, -7.5px);
+          transform: rotateZ(45deg) translate(0px, -7.5px);
+  transition: 1s;
+  transition-delay:0s;
 }
 
 .form-cont.state-active{
   pointer-events: auto;
   opacity: 1;
   @media(min-width:768px){
-    transform: translate(0, -500px);
+    -webkit-transform: translate(0, -500px);
+        -ms-transform: translate(0, -500px);
+            transform: translate(0, -500px);
+    transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
   }
+}
+
+.form-cont.state-active:after{
+  transition-delay:0.5s;
+  -webkit-transform: rotateZ(45deg) translate(0px, 10px);
+      -ms-transform: rotate(45deg) translate(0px, 10px);
+          transform: rotateZ(45deg) translate(0px, 10px);
 }
 
 .form-cont *{
@@ -471,7 +482,7 @@
   width: 100% !important;
   @media(min-width:1024px){
     margin-top: 30px;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
   }
 }
 

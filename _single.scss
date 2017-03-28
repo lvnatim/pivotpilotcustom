@@ -71,15 +71,21 @@ blockquote p.title {
 
 @-webkit-keyframes fontappear{
   0%{
-    transform: translate(0px, 60px);
+    -webkit-transform: translate(0px, 60px);
+        -ms-transform: translate(0px, 60px);
+            transform: translate(0px, 60px);
     z-index: 1;
   }
   80%{
-    transform: translate(0px, -20px);
+    -webkit-transform: translate(0px, -20px);
+        -ms-transform: translate(0px, -20px);
+            transform: translate(0px, -20px);
     z-index: 3;
   }
   100%{
-    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
   }
 }
 
@@ -95,6 +101,7 @@ blockquote p.title {
 
 #font-section img.state-active{
   animation: fontappear 1s;
+  -webkit-animation: fontappear 1s;
   transform: translate(0px, 0px);
   z-index: 3;
 }
@@ -389,9 +396,15 @@ blockquote p.title {
 
 .print-sub-images-container {
   @media(min-width:768px){
-    align-items: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 

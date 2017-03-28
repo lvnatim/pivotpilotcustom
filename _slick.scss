@@ -41,7 +41,8 @@
 }
 
 .featured-case-studies-face > img.eyeball {
-  animation: lookaround 3s infinite ease-in-out;
+  -webkit-animation: lookaround 3s infinite ease-in-out;
+          animation: lookaround 3s infinite ease-in-out;
 }
 
 
@@ -343,7 +344,9 @@
   @media(min-width:768px){
     display: inline-block;
     font-size: 16px;
-    transform: translate(0px, 100px);
+    -webkit-transform: translate(0px, 100px);
+        -ms-transform: translate(0px, 100px);
+            transform: translate(0px, 100px);
     transition: 0.6s;
   }
   @media(min-width:1024px){
@@ -354,14 +357,18 @@
 
 #featured-case-studies .slick-active > .slide-inner-cont > h3 {
   @media(min-width:768px){
-    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
   }
 }
 
 #featured-case-studies .slick-active > .slide-inner-cont > ul > li > span{
   @media(min-width:768px){
     display: inline-block;
-    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
   }
 }
 
@@ -439,7 +446,9 @@
     position: relative;
     span {
       display: inline-block;
-      transform: translate(0, 150px);
+      -webkit-transform: translate(0px, 150px);
+          -ms-transform: translate(0px, 150px);
+              transform: translate(0px, 150px);
     }
 
     .slick-dots {

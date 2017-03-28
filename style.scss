@@ -23,9 +23,21 @@ Version: 1.0;
 }
 
 @-webkit-keyframes lookaround{
-  0%{transform: translate(5px, 0);}
-  50%{transform: translate(-5px, 0);}
-  100%{transform: translate(5px, 0);}
+  0%{
+  -webkit-transform: translate(5px, 0);
+      -ms-transform: translate(5px, 0);
+          transform: translate(5px, 0);
+  }
+  50%{
+  -webkit-transform: translate(-5px, 0);
+      -ms-transform: translate(-5px, 0);
+          transform: translate(-5px, 0);
+  }
+  100%{
+  -webkit-transform: translate(5px, 0);
+      -ms-transform: translate(5px, 0);
+          transform: translate(5px, 0);
+  }
 }
 
 $blue: #443cff;
@@ -224,11 +236,6 @@ p.date {
   }
 }
 
-img:not(.ampersand) {
-  -webkit-transform : translate3d(0,0,0);
-  transform : translate3d(0,0,0);
-}
-
 li {
   display: inline-block;
   font-family: arno-pro;
@@ -292,7 +299,6 @@ section.first-section.no-padding-top{
 }
 
 section#radial-background {
-  animation: moveBackground 30s infinite linear;
   background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
   background-image: url('./dist/img/gradient.png');
   position: relative;
@@ -310,11 +316,6 @@ section#radial-background {
     padding-left: calc((100vw - 1110px) / 2);
     padding-right: calc((100vw - 1110px) / 2);
   }
-}
-
-@keyframes moveBackground {
-  from {background-position: 0;}
-  to {background-position: 3496px;}
 }
 
 section.first-section.less-padding-top{

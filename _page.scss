@@ -223,11 +223,14 @@ a#change-landing.state-alternate {
 }
 
 .landing-face > img.eyeball {
-  animation: lookaround 3s infinite ease-in-out;
+  -webkit-animation: lookaround 3s infinite ease-in-out;
+          animation: lookaround 3s infinite ease-in-out;
 }
 
 .landing-face:hover > img.nose {
-  transform: translate(0px, 5px);
+  -webkit-transform: translate(0, 5px);
+      -ms-transform: translate(0, 5px);
+          transform: translate(0, 5px);
 }
 
 section.state-alternate{

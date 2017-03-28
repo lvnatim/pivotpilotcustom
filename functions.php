@@ -193,7 +193,6 @@ function asset_pipeline(){
   wp_register_script('portfolio', get_template_directory_uri() . '/dist/js/portfolio.js', array(), null, true);
   wp_register_script('landing', get_template_directory_uri() . '/dist/js/landing.js', array(), null, true);
   wp_register_script('gradient', get_template_directory_uri() . '/dist/js/gradient.js', array(), null, true);
-  wp_register_script('slider', get_template_directory_uri() . '/dist/js/slider.js', array(), null, true);
   wp_localize_script( 'index', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
   wp_localize_script( 'filter', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
   wp_enqueue_script('jquery-min');
@@ -204,11 +203,9 @@ function asset_pipeline(){
   if(is_page( 'services' )){
     wp_enqueue_script('filter');
   }
-  if(is_page( 'about' )){
-    wp_enqueue_script('slider');
-  }
   if(is_home()){
     wp_enqueue_script('landing');
+    wp_enqueue_script('gradient');
   }
   wp_enqueue_style('style', get_stylesheet_uri());
   wp_enqueue_script('index');
