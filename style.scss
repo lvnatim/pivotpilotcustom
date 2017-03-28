@@ -284,16 +284,16 @@ section.first-section.no-padding-top{
   }
 }
 
-section#radial-background {
-  animation: moveBackground 30s infinite linear;
-  background-image: url('./dist/img/gradient.png');
-  position: relative;
-}
+// section#radial-background {
+//   animation: moveBackground 30s infinite linear;
+//   background-image: url('./dist/img/gradient.png');
+//   position: relative;
+// }
 
-@keyframes moveBackground {
-  from {background-position: 0;}
-  to {background-position: 3496px;}
-}
+// @keyframes moveBackground {
+//   from {background-position: 0;}
+//   to {background-position: 3496px;}
+// }
 
 section.first-section.less-padding-top{
   padding-top: 90px;
@@ -308,6 +308,7 @@ section.first-section.less-padding-top{
 section.radial-background{
   background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
   @media(min-width:768px){
+    background: none;
     padding-top: 210px;
     padding-bottom: 75px;
   }

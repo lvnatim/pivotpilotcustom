@@ -209,6 +209,7 @@ function asset_pipeline(){
   }
   if(is_home()){
     wp_enqueue_script('landing');
+    wp_enqueue_script('gradient');
   }
   wp_enqueue_style('style', get_stylesheet_uri());
   wp_enqueue_script('index');
