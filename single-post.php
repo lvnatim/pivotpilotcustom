@@ -109,7 +109,7 @@
     <img src="<?php echo get_template_directory_uri() . '/dist/icons/mail.svg' ?>" class="img-responsive svg"/>
     <p class="title">Stay Updated</p>
   </a>
-  <a class="share-button" id="facebook-like">
+  <a class="share-button" id="facebook-like" href="https://www.facebook.com/pivotandpilot/" target="popup">
     <img src="<?php echo get_template_directory_uri() . '/dist/icons/like.svg' ?>" class="img-responsive svg"/>
     <p class="title">Like Us On Facebook</p>
   </a>
