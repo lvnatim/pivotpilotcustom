@@ -20,6 +20,7 @@
   }
   @media(min-width:1024px){
     width: 55%;
+    font-weight: 600;
   }
 }
 
@@ -75,7 +76,7 @@
     background: transparent !important;
     display: block;
     padding-top: 0;
-    padding-bottom: 5px;
+    padding-bottom: 9px;
     overflow: hidden;
     text-align: left;
   }
@@ -151,36 +152,41 @@
     }
     .default-content-desktop {
       display: block;
-      font-size: 42px;
     }
   }
 }
 
+.default-content-desktop > h1{
+  font-weight: 600;
+}
+
 a#change-landing {
   @media(min-width:768px){
-    background: transparent;
+    bottom: 90px;
     cursor: pointer;
-    text-align: left;
-    font-size: 42px;
-    font-weight: 300;
-    padding: 0 0;
     margin-top: 0px;
     position: absolute;
-    text-transform: capitalize;
     transition: 1s;
     transform: translate(0px, 0px);
     width: 300px;
   }
   @media(min-width:1024px){
+    background: transparent;
+    bottom: 120px;
     font-size: 46px;
-    margin-top: -15px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: capitalize;
+    width: auto;
   }
 }
 
 a#change-landing.state-alternate {
   @media(min-width:768px){
+    transform: translate(0px, 15px);
+  }
+  @media(min-width:1024px){
     color: white;
-    transform: translate(0px, 50px);
   }
 }
 
@@ -191,6 +197,9 @@ a#change-landing.state-alternate {
     position: absolute;
     bottom: 30px;
     right: 30px;
+  }
+  @media(min-width:1200px){
+    right: calc((100vw - 1110px) / 2);
   }
 }
 
@@ -221,16 +230,9 @@ a#change-landing.state-alternate {
   transform: translate(0px, 5px);
 }
 
-section#radial-background {
-  @media(min-width:768px){
-    height: 600px;
-  }
-}
-
 section.state-alternate{
   background: $blue !important;
   @media(min-width:768px){
-    height: 600px;
     .button h3 {
       transform: translate(0, 0);
     }
@@ -256,8 +258,11 @@ section.state-alternate .alternate-content{
   transition: opacity 0.6s linear 0.9s, max-height 0.3s linear 0.6s;
   @media(min-width:768px){
     position: relative;
+      top: -45px;
     transition: opacity 0.6s linear 0s;
-    top: -45px;
+  }
+  @media(min-width:1024px){
+    top: -90px;
   }
 }
 

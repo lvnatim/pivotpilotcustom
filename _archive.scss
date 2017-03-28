@@ -1,8 +1,7 @@
 #blog-page{
-  position: relative;
-  // If we choose to make the gradient the same as the first section on home page.
-  // animation: moveBackground 30s infinite linear;
-  // background-image: url('./dist/img/gradient.png');
+  @media(min-width:1024px){
+    padding-top: 120px;
+  }
 }
 
 #blog-page > .search-bar {
@@ -301,10 +300,10 @@
 .post.blog-post{
   text-align: center;
   @media(min-width:768px){
-    padding-top: 75px;
+    padding-top: 60px;
   }
   @media(min-width:1024px){
-    padding-top: 150px;
+    padding-top: 90px;
   }
 }
 
@@ -407,6 +406,9 @@
 .client-post > .image-cont{
   @media(min-width:768px){
     height: 26.5vw;
+  }
+  @media(min-width:1200px){
+    height: 318px;
   }
 }
 
@@ -540,6 +542,9 @@
     margin-left: -45px;
     margin-right: -45px;
   }
+  @media(min-width:1200px){
+    margin-left: calc((100vw - 1110px) / -2);
+  }
 }
 
 .filter-menu > a{
@@ -560,6 +565,12 @@
     -webkit-box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.5);
     -moz-box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.5);
     box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.5);
+  }
+}
+
+.filter-menu > a:first-of-type{
+  @media(min-width:1200px){
+    padding-left: calc((100vw - 1110px) / 2);
   }
 }
 
@@ -688,13 +699,16 @@
   z-index: 0;
   @media(min-width:768px){
     top:125px;
-    left: 30px;
+    left: auto;
     right: 30px;
+    width: 375px;
   }
   @media(min-width:1024px){
-    top: 167.5px;
+    top: 120.5px;
     right: 45px;
-    left: 45px;
+  }
+  @media(min-width:1200px){
+    right: calc((100vw - 1110px) / 2);
   }
 }
 

@@ -15,11 +15,14 @@
     display: block;
     position: absolute;
       right: 30px;
-      bottom: 120px;
+      bottom: 90px;
     z-index: 1;
   }
   @media(min-width:1024px){
     bottom: 130px;
+  }
+  @media(min-width:1200px){
+    right: calc((100vw - 1110px) / 2);
   }
 }
 
@@ -32,6 +35,9 @@
 .featured-case-studies-face > img:first-of-type{
   height: 45px;
   position: initial;
+  @media(min-width:1024px){
+    height: 60px;
+  }
 }
 
 .featured-case-studies-face > img.eyeball {
@@ -287,13 +293,18 @@
 
 #featured-case-studies h3{
   @media(min-width:768px){
-    position: absolute;
-    top: 45px;
+    padding-top: 60px;
+    padding-bottom: 15px;
+    font-weight: 600;
     transition: 1s;
     -webkit-transform: translate(0px, 45px);
         -ms-transform: translate(0px, 45px);
             transform: translate(0px, 45px);
     width: 60%;
+  }
+  @media(min-width:1024px){
+    font-size: 42px;
+    line-height: 1.1;
   }
 }
 
@@ -331,9 +342,6 @@
   @media(min-width:768px){
     transform: translate(0px, 0px);
   }
-  @media(min-width:1024px){
-    line-height: 40px;
-  }
 }
 
 #featured-case-studies .slick-active > .slide-inner-cont > ul > li > span{
@@ -366,11 +374,6 @@
 #featured-case-studies ul{
   @media(min-width:768px){
     max-width: 50%;
-    position: absolute;
-    top: 140px;
-  }
-  @media(min-width:1024px){
-    top: 100px;
   }
 }
 
@@ -381,12 +384,28 @@
   }
 }
 
+#featured-case-studies .slide-inner-cont {
+  @media(min-width:768px){
+    height: 50vw;
+  }
+  @media(min-width:1200px){
+    height: 600px;
+  }
+}
+
 #featured-case-studies .slide-image-cont {
   height: 50vw;
   @media(min-width:768px){
     margin: 0 45px 0 45px;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     transition: 1s;
+  }
+  @media(min-width:1200px){
+    height: 600px;
   }
 }
 
@@ -401,8 +420,8 @@
 
 #home-case-studies  {
   @media(min-width:768px) {
-    padding-top: 75px;
-    padding-bottom: 120px;
+    padding-top: 60px;
+    padding-bottom: 75px;
     position: relative;
     span {
       display: inline-block;
@@ -420,6 +439,10 @@
           -ms-flex-direction: column;
               flex-direction: column;
     }
+  }
+  @media(min-width:1024px){
+    padding-top: 90px;
+    padding-bottom: 120px;
   }
 }
 
@@ -457,6 +480,10 @@
   @media(min-width:1024px){
     margin-left: -45px;
     margin-right: -45px;
+  }
+  @media(min-width:1200px){
+    margin-left: calc((100vw - 1110px) / -2);
+    margin-right: calc((100vw - 1110px) / -2);
   }
 }
 

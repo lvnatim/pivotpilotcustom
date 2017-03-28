@@ -53,7 +53,7 @@
 
 <?php  
 
-if(is_home()){
+if(is_home() || is_page('blog')){
   $menu_is_see_through = true;
 }
 
@@ -121,6 +121,7 @@ jQuery(document).ready(function($){
 
   $('#open-services').on('click', function(){
     $('#services-dropdown').toggleClass('state-active');
+    $('#menu').toggleClass('force-state-toggled');
   });
 
   // Placeholder-menu to be replaced by services button on real menu.

@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <section class="first-section radial-background" id="radial-background">
+
   <div class="dynamic-content-cont">
     <div class="default-content">
       <h1>We use strategic</h1>

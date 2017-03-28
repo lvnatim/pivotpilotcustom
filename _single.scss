@@ -3,7 +3,7 @@ blockquote{
   padding: 0px 0px 60px 0px;
   margin: 0;
   @media(min-width:1024px){
-    padding-bottom:60px;
+    padding-bottom:90px;
   }
 }
 
@@ -16,6 +16,9 @@ blockquote p {
     font-size:20px;
     margin: 0 auto;
     width: 80%;
+  }
+  @media(min-width:1024px){
+    font-size: 24px;
   }
 }
 
@@ -36,10 +39,10 @@ blockquote p.title {
 #animation{
   padding-bottom: 60px;
   @media(min-width:768px){
-    padding-bottom: 90px;
+    padding-bottom: 60px;
   }
   @media(min-width:1024px){
-    padding-bottom: 120px;
+    padding-bottom: 90px;
   }
 }
 
@@ -111,16 +114,19 @@ blockquote p.title {
     font-size: 16px;
     padding-right: 15px;
   }
+  @media(min-width:1200px){
+    font-size: 18px;
+  }
 }
 
 
 .field-content{
   margin-bottom: 30px;
   @media(min-width:768px){
-    margin-bottom: 45px;
+    margin-bottom: 30px;
   }
   @media(min-width:1024px){
-    margin-bottom: 60px;
+    margin-bottom: 45px;
   }
 }
 
@@ -140,6 +146,10 @@ blockquote p.title {
 .gallery{
   margin-top: 30px;
   margin-bottom: 30px;
+  @media(min-width:1024px){
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
 }
 
 .gallery-sub-cont{
@@ -172,12 +182,12 @@ blockquote p.title {
     display: flex;
     margin-left: -30px;
     margin-right: -30px;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
   }
   @media(min-width:1024px){
     margin-left: -45px;
     margin-right: -45px;
-    margin-bottom: 60px;
+    margin-bottom: 45px;
   }
 }
 
@@ -218,7 +228,7 @@ blockquote p.title {
   width: 50%;
   padding-top: 50%;
   @media(min-width:768px){
-    padding-top: 30%;
+    padding-top: 35%;
     width: calc(50% - 7.5px);
   }
 }
@@ -366,10 +376,10 @@ blockquote p.title {
 #print-and-packaging > p.title {
   margin-top: 30px;
   @media(min-width:768px){
-    margin-top: 45px;
+    margin-top: 30px;
   }
   @media(min-width:1024px){
-    margin-top: 60px;
+    margin-top: 45px;
   }
 }
 
@@ -419,7 +429,13 @@ blockquote p.title {
     padding-left: 45px;
     padding-right: 45px;
     padding-bottom: 60px;
-    margin-top: calc(75px + 17.5vw);
+    margin-top: calc(90px + 17.5vw);
+  }
+  @media(min-width:1200px){
+    margin-left: calc((100vw - 1110px) / -2);
+    margin-right: calc((100vw - 1110px) / -2);
+    padding-left: calc((100vw - 1110px) / 2);
+    padding-right: calc((100vw - 1110px) / 2);
   }
 }
 
@@ -439,11 +455,18 @@ blockquote p.title {
   position: relative;
     top: -30vw;
   @media(min-width:768px){
-    margin-bottom: calc(-17.5vw + 60px);
+    margin-bottom: calc(-17.5vw + 30px);
     margin-left: auto;
     margin-right: auto;
     top: -17.5vw;
     width: calc(75% - 60px);
+  }
+  @media(min-width:1024px){
+    margin-bottom: calc(-17.5vw + 45px);
+  }
+  @media(min-width:1200px){
+    margin-bottom: calc(-210px + 45px);
+    top: -210px;
   }
 }
 
@@ -453,6 +476,9 @@ blockquote p.title {
   overflow: scroll;
   @media(min-width: 768px){
     height: 35vw;
+  }
+  @media(min-width:1200px){
+    height: 420px;
   }
 }
 
@@ -475,7 +501,7 @@ blockquote p.title {
     width: 33%;
   }
   @media(min-width:1024px){
-    padding-top: 60px;
+    padding-top: 45px;
   }
 }
 

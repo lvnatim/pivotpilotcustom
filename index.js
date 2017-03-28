@@ -1,12 +1,13 @@
 $('#change-landing').on('click', function(){
   if($(this).parent().hasClass('state-alternate')){
     $(this).html('How Exactly?')
-  } else {
+  } else if($(window).width() < 1024) {
     $(this).html('Go Back')
   }
 
   $(this).parent().toggleClass('state-alternate');
   $(this).toggleClass('state-alternate');
+  $('#menu').toggleClass('force-state-toggled');
   $('.landing-face').toggleClass('state-alternate');
 });
 
@@ -360,7 +361,7 @@ $('#featured-team-members').slick({
   arrows: true,
   appendArrows: $('#featured-team-members-controller'),
   centerMode: true,
-  centerPadding: '180px',
+  centerPadding: '25vw',
   slidesToShow: 1,
   responsive: [
     {
@@ -411,6 +412,7 @@ $(window).scroll(function(e){
   if($(window).scrollTop() > $('#menu').outerHeight()){
     $('#menu').addClass('state-toggled');
   } else {
+    if($(''))
     $('#menu').removeClass('state-toggled');
   }
 });
