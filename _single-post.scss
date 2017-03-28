@@ -7,6 +7,7 @@
   }
   @media(min-width:1024px){
     padding-top: 30px;
+    width: 66%;
   }
 }
 
@@ -19,6 +20,9 @@
   margin: 30px 0 0 0;
   padding: 30px 0 30px 0;
   position: relative;
+  @media(min-width:1024px){
+    padding: 50px 50px;
+  }
   &:before{
     background-color: #ecebfe;
     content: "";
@@ -29,6 +33,12 @@
       top: 0;
     width: 100%;
     z-index: -1;
+    @media(min-width:1024px){
+      height: 60%;
+      left: -100px;
+      top: -20px;
+      width: 60%;
+    }
   }
   &:after {
     content: "";
@@ -45,6 +55,12 @@
     @media(min-width:768px){
       top: -25px;
     }
+    @media(min-width:1024px){
+      right: 0;
+      top: 0;
+      left: auto;
+      bottom: auto;
+    }
   }
 }
 
@@ -55,6 +71,12 @@
   @media(min-width:768px){
     font-size: 20px;
     padding: 0px 30px;
+  }
+  @media(min-width:1024px){
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0;
+    width: 100%;
   }
 }
 
@@ -97,6 +119,10 @@
   @media(min-width:768px){
     margin-top: 60px;
   }
+  @media(min-width:1024px){
+    font-size: 12px;
+    margin-top: 75px;
+  }
 }
 
 #blog-post-content > p{
@@ -105,6 +131,7 @@
   }
   @media(min-width:1024px){
     margin-top: 30px;
+    font-size: 22px;
   }
 }
 
@@ -151,12 +178,18 @@
   font-weight: 600;
   margin-top: 12px;
   text-align: left;
+  @media(min-width: 1024px){
+    font-size: 18px;
+  }
 }
 
 #blog-post-custom-fields{
   @media(min-width:768px){
     margin: 0 auto;
     width: 75%;
+  }
+  @media(min-width:1024px){
+    width: 66%;
   }
 }
 
@@ -168,6 +201,12 @@
     display: block;
     margin: 45px auto 0px auto;
     width: 300px;
+  }
+  @media(min-width:1024px){
+    font-size: 14px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 350px;
   }
 }
 
@@ -181,6 +220,9 @@
 #blog-post-custom-fields .citation-cont > p.title{
   color: $blue;
   opacity: 0.75;
+  @media(min-width:1024px){
+    font-size: 13px;
+  }
 }
 
 #blog-post-custom-fields .citation:not(:first-of-type){
@@ -193,6 +235,9 @@
   @media(min-width: 768px){
     font-size: 16px;
   }
+  @media(min-width:1024px){
+    font-size: 18px;
+  }
 }
 
 #blog-post-custom-fields .citation > a{
@@ -204,7 +249,7 @@
 
 #blog-post-title {
   @media(min-width:1024px){
-    width: 55%;
+    width: 66%;
   }
 }
 
@@ -426,6 +471,7 @@
   width: 100% !important;
   @media(min-width:1024px){
     margin-top: 30px;
+    padding-bottom: 100px;
   }
 }
 
@@ -438,4 +484,7 @@
   font-size: 13px;
   font-style: italic;
   font-weight: 600;
+  @media(min-width:1024px){
+    font-size: 18px;
+  }
 }

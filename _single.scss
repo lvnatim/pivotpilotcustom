@@ -52,6 +52,10 @@ blockquote p.title {
     max-height: 400px;
     margin: 0 auto;
   }
+  @media(min-width:1024px){
+    max-height: 600px;
+    max-width: 600px;
+  }
 }
 
 #font-section > div {
