@@ -237,12 +237,14 @@
 
 #menu > ul > a:hover:after,
 #menu > ul > a.state-hover:after{
-  animation: slideIn 1s infinite linear;
-  -webkit-animation: slideIn 1s infinite linear;
+  animation: slideIn 0.9s infinite linear;
+  -webkit-animation: slideIn 0.9s infinite linear;
+  height: 2px;
 }
 
 #menu > ul > a.state-active:after{
   animation: 0;
+  height: 2px;
   -webkit-animation: 0;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
@@ -617,7 +619,7 @@
 
 #portfolio-menu.state-opened > a {
   min-width: 200px;
-  text-align: center;
+  text-align: left;
 }
 
 #portfolio-menu.state-opened > a > .full_url{
@@ -774,8 +776,8 @@
     color: white;
     font-weight: 300;
     margin-top: 0;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 15px;
     padding-right: 15px;
     white-space: nowrap;

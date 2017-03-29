@@ -114,7 +114,6 @@ jQuery(document).ready(function($){
   //=============    Desktop Menu    ===================
 
   $('.service-subterm-button').on('click', function(){
-    $('.first-section').css({'transform': 'translate(0px, 92px)'});
     $('.service-term-button-cont').removeClass('state-active');
     $(this).parent().addClass('state-active');
   })
@@ -123,9 +122,11 @@ jQuery(document).ready(function($){
     $('#open-services').toggleClass('state-hover');
     $('#services-dropdown').toggleClass('state-active');
     $('#menu').toggleClass('force-state-toggled');
+    $('.first-section').toggleClass('state-dropdown-opened');
   });
 
   $('.service-subterm-button').hover(function(){
+    $('.first-section').addClass('extra-toggle-spacing');
     $('.service-term-button-cont').removeClass('state-active');
     $(this).parent().addClass('state-active');
   })
@@ -136,7 +137,7 @@ jQuery(document).ready(function($){
       $('#services-dropdown *').removeClass('active');
     } else {
       $('.service-term-button-cont').removeClass('state-active');
-      $('.first-section').css({'transform': 'translate(0px, 0px)'});
+      $('.first-section').css({'transform': 'translate(0px, 56px)'});
     }
   });
 

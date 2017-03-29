@@ -44,7 +44,7 @@ Version: 1.0;
   0%{
     -webkit-transform: translate(-100%, 0px);
         -ms-transform: translate(-100%, 0px);
-            transform: translate(-100%, 0px);    
+            transform: translate(-100%, 0px);
   }
   100%{
     -webkit-transform: translate(100%, 0px);
@@ -238,6 +238,7 @@ p.blue{
 }
 
 p.date {
+  font-size: 18px;
   font-style: italic;
 }
 
@@ -270,7 +271,7 @@ li.term{
     content: " |";
   }
   @media(min-width:1024px){
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -296,6 +297,7 @@ section {
 
 section.first-section{
   padding-top: 110px;
+  transition: 0.3s;
   @media(min-width:768px){
     padding-top: 150px;
   }
@@ -345,6 +347,14 @@ section.first-section.less-padding-top{
   @media(min-width:1024px){
     padding-top: 170px;
   }
+}
+
+section.first-section.state-dropdown-opened{
+  margin-top: 56px;
+}
+
+section.first-section.state-dropdown-opened.extra-toggle-spacing{
+  margin-top: 112px;
 }
 
 section.last-section{
