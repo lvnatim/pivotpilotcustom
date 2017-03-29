@@ -159,12 +159,12 @@
     -webkit-transform: translate(0px, 0px);
         -ms-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
-    &:nth-of-type(1){transition-delay:0s}
-    &:nth-of-type(2){transition-delay:0.3s}
-    &:nth-of-type(3){transition-delay:0.6s}
-    &:nth-of-type(4){transition-delay:0.9s}
-    &:nth-of-type(5){transition-delay:1.2s}
-    &:nth-of-type(6){transition-delay:1.5s}
+    &:nth-of-type(1){transition-delay:0.3s}
+    &:nth-of-type(2){transition-delay:0.6s}
+    &:nth-of-type(3){transition-delay:0.9s}
+    &:nth-of-type(4){transition-delay:1.2s}
+    &:nth-of-type(5){transition-delay:1.5s}
+    &:nth-of-type(6){transition-delay:1.8s}
   }
 }
 
@@ -313,7 +313,7 @@
     padding-top: 60px;
   }
   @media(min-width:1024px){
-    padding-top: 90px;
+    padding-top: 100px;
   }
 }
 
@@ -324,7 +324,7 @@
     margin-bottom: 20px;
   }
   @media(min-width:1024px){
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }
 
@@ -665,12 +665,14 @@
   @media(min-width:768px){
     animation: slideIn 1s infinite linear;
     -webkit-animation: slideIn 1s infinite linear;
+    height: 2px;
   }
 }
 
 #portfolio-page > .search-bar > ul > li.state-active > a:after{
   @media(min-width:768px){
     animation: none;
+    height: 2px;
     -webkit-animation: none;
     -webkit-transform: translate(0px, 0px);
         -ms-transform: translate(0px, 0px);
