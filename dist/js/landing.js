@@ -1,3 +1,7 @@
+$('.featured-case-studies-face').hover( function(){
+  $('.featured-case-studies-face').toggleClass('active');
+});
+
 $('.landing-face').on('click', function(event) {
   event.preventDefault();
   $('html, body').animate({

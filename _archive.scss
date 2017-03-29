@@ -578,9 +578,9 @@
 .filter-menu > a:not(.active):focus,
 .filter-menu > a:not(.active):hover{
   @media(min-width:768px){
-    -webkit-box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.5);
-    -moz-box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.5);
-    box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.5);
+    -webkit-box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.3);
+    -moz-box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.3);
+    box-shadow: inset 0px 0px 35px 0px rgba(68,60,255,0.3);
   }
 }
 
@@ -637,6 +637,7 @@
     font-size: 13px;
     font-family: Walsheim;
     overflow:hidden;
+    padding-bottom: 3px;
     position: relative;
   }
   @media(min-width:1024px){
@@ -648,7 +649,7 @@
   0%{
     -webkit-transform: translate(-150px, 0px);
         -ms-transform: translate(-150px, 0px);
-            transform: translate(-150px, 0px);    
+            transform: translate(-150px, 0px);
   }
   100%{
     -webkit-transform: translate(150px, 0px);
@@ -691,7 +692,7 @@
 
 #portfolio-page > .search-bar > ul > li > a:hover:after{
   @media(min-width:768px){
-    animation: slideIn 2s infinite linear;
+    animation: slideIn 1.2s infinite linear;
   }
 }
 

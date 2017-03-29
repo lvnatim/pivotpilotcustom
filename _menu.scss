@@ -642,6 +642,7 @@
   }
 
   #services-dropdown.state-active:before{
+    animation: sway 1s;
     -webkit-transform: translate(0px, 0px) rotateZ(45deg);
         -ms-transform: translate(0px, 0px) rotate(45deg);
             transform: translate(0px, 0px) rotateZ(45deg);
@@ -674,6 +675,9 @@
     cursor:pointer;
   }
 
+  #services-dropdown p.title.second-dropdown:hover {
+    background: #a19ffc;
+  }
 }
 
 #services-dropdown .service-subterm-cont {

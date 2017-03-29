@@ -86,7 +86,7 @@ $posts = get_posts(
   <div class="featured-case-studies-face">
     <img class="img-responsive facepart eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face2/eyeball.svg' ?>"/>
     <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face2/eyelid.svg' ?>"/>
-    <img class="img-responsive facepart" src="<?php echo get_template_directory_uri() . '/dist/animation/face2/arrow.svg' ?>"/>
+    <img class="img-responsive facepart nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face2/arrow.svg' ?>"/>
 
   </div>
 </section>

@@ -51,7 +51,7 @@
   </div>
 </div>
 
-<?php  
+<?php
 
 if(is_home() || is_page('blog')){
   $menu_is_see_through = true;
@@ -93,7 +93,7 @@ if(is_home() || is_page('blog')){
         <?php $term_children_ids = get_term_children($term->term_id, 'services'); ?>
         <?php foreach($term_children_ids as $term_id): ?>
           <a href="<?php echo get_site_url() . '/services?category=' . $term_id ?>">
-            <p class="title"><?php echo get_term($term_id)->name; ?></p>
+            <p class="title second-dropdown"><?php echo get_term($term_id)->name; ?></p>
           </a>
         <?php endforeach ?>
       </ul>
@@ -107,26 +107,21 @@ if(is_home() || is_page('blog')){
 
 jQuery(document).ready(function($){
 
-  //=============    Mobile Menu    ===================
-
-
   //=============    Desktop Menu    ===================
-  // Each #desktop-_________ is a specific button.
-  // Clicking that button toggles 'active' on its child UL, aka level-2.
 
-  $('.service-subterm-button').on('click', function(){
-    $('.service-term-button-cont').removeClass('state-active');
-    $(this).parent().addClass('state-active');
-  })
+  // Need to fix hover situation -> currently the menu is only triggered by mouseenter on the word 'Services'
 
-  $('#open-services').on('click', function(){
+  $('#open-services').mouseenter(function(){
     $('#services-dropdown').toggleClass('state-active');
     $('#menu').toggleClass('force-state-toggled');
   });
 
-  // Placeholder-menu to be replaced by services button on real menu.
+  $('.service-subterm-button').hover(function(){
+    $('.service-term-button-cont').removeClass('state-active');
+    $(this).parent().addClass('state-active');
+  })
 
-  $('.placeholder-menu').on('click', function(event) {
+  $('.placeholder-menu').hover(function(event) {
     if ($(this).hasClass('active')) {
       $(this).removeClass('active')
       $('#services-dropdown *').removeClass('active');
