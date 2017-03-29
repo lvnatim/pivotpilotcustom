@@ -703,6 +703,9 @@
     top: -50px;
   height: 50px;
   width: 65px;
+  @media(min-width:1200px){
+    left: calc(((100vw - 1110px) / 2) + 217px);
+  }
 }
 
 #services-dropdown:before {
