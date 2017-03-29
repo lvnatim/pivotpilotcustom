@@ -203,6 +203,7 @@
   display: inline-block;
   font-size: 18px;
   overflow:hidden;
+  padding-bottom: 3px;
   position: relative;
   &:first-of-type{
     margin-left: 15px;
@@ -370,7 +371,7 @@
   0%{
     -webkit-transform: rotateZ(0deg);
         -ms-transform: rotate(0deg);
-            transform: rotateZ(0deg); 
+            transform: rotateZ(0deg);
   }
   100%{
     -webkit-transform: rotateZ(360deg);
@@ -704,9 +705,9 @@
     left: 265px;
     top: -50px;
   height: 50px;
-  width: 65px;
+  width: 700px;
   @media(min-width:1200px){
-    left: calc(((100vw - 1110px) / 2) + 217px);
+    left: calc((100vw - 1110px) / 2);
   }
 }
 
