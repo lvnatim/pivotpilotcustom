@@ -1,4 +1,6 @@
-<div id="mobile-menu">
+<div id="mobile-menu" class="loading">
+
+  <div id="mobile-menu-loader"></div>
 
   <a id="mobile-menu-logo" href="<?php echo get_site_url(); ?>">
     <h1>Pivot</h1>
@@ -59,7 +61,8 @@ if(is_home() || is_page('blog')){
 
 ?>
 
-<div id="menu" class="state-active <?php if($menu_is_see_through){echo "state-see-through";} ?>">
+<div id="menu" class="loading state-active <?php if($menu_is_see_through){echo "state-see-through";} ?>">
+  <div id="menu-loader"></div>
   <div class="overlay"></div>
   <a href="<?php echo get_site_url(); ?>">
     <h1>Pivot</h1>
@@ -83,6 +86,7 @@ if(is_home() || is_page('blog')){
 
 <!-- Desktop Menu -->
 <div id="services-dropdown">
+  <div id="hover-box"></div>
   <div class="service-term-cont">
   <?php foreach($terms as $term): ?>
     <div class="service-term-button-cont">
@@ -115,7 +119,8 @@ jQuery(document).ready(function($){
     $(this).parent().addClass('state-active');
   })
 
-  $('#open-services').mouseenter(function(){
+  $('#open-services, #services-dropdown').hover(function(){
+    $('#open-services').toggleClass('state-hover');
     $('#services-dropdown').toggleClass('state-active');
     $('#menu').toggleClass('force-state-toggled');
   });

@@ -208,8 +208,8 @@ function asset_pipeline(){
     wp_enqueue_script('gradient');
   }
   wp_enqueue_style('style', get_stylesheet_uri());
-  wp_enqueue_script('index');
   wp_enqueue_script('portfolio');
+  wp_enqueue_script('index');
 }
 
 function remove_admin_login_header() {

@@ -57,13 +57,45 @@
     letter-spacing: 1.5px;
     padding-left:2px;
     text-transform: uppercase;
+    transition: 0.3s;
+  }
+}
+
+@-webkit-keyframes scrub{
+  0%{
+  -webkit-transform: translate(0px, 5px);
+      -ms-transform: translate(0px, 5px);
+          transform: translate(0px, 5px);
+  }
+  25%{
+  -webkit-transform: translate(0px, -2.5px);
+      -ms-transform: translate(0px, -2.5px);
+          transform: translate(0px, -2.5px);
+  }
+  50%{
+  -webkit-transform: translate(0px, 2.5px);
+      -ms-transform: translate(0px, 2.5px);
+          transform: translate(0px, 2.5px);
+  }
+  75%{
+  -webkit-transform: translate(0px, -1px);
+      -ms-transform: translate(0px, -1px);
+          transform: translate(0px, -1px);
+  }
+  100%{
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
   }
 }
 
 #blog-page > .search-bar > ul > li:hover > a,
 #blog-page > .search-bar > ul > li.state-active > a {
   @media(min-width:768px){
+    animation: scrub 1s linear;
+    -webkit-animation: scrub 1s linear;
     color: $blue;
+    display:inline-block;
   }
 }
 

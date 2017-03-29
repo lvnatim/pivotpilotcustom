@@ -12,6 +12,7 @@
 .featured-case-studies-face {
   display: none;
   @media(min-width:768px){
+    cursor: pointer;
     display: block;
     position: absolute;
       right: 50px;

@@ -436,3 +436,13 @@ $(window).scroll(function(event){
     }
   })
 })
+
+$(document).ready(function(){
+  setTimeout(
+    function(){
+      $('#mobile-menu').removeClass('loading');
+      $('#menu').removeClass('loading');
+    },
+    1000
+  );
+})
