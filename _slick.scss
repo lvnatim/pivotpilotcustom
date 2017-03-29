@@ -14,15 +14,27 @@
   @media(min-width:768px){
     display: block;
     position: absolute;
-      right: 30px;
+      right: 50px;
       bottom: 90px;
     z-index: 1;
+    img.nose {
+      transition: 0.3s;
+    }
   }
   @media(min-width:1024px){
     bottom: 130px;
   }
   @media(min-width:1200px){
     right: calc((100vw - 1110px) / 2);
+  }
+}
+
+.featured-case-studies-face.active {
+  img.nose {
+  -webkit-transform: translate(30px, 0);
+      -ms-transform: translate(30px, 0);
+          transform: translate(30px, 0);
+          transition: 0.3s;
   }
 }
 
@@ -44,7 +56,6 @@
   -webkit-animation: lookaround 3s infinite ease-in-out;
           animation: lookaround 3s infinite ease-in-out;
 }
-
 
 #featured-team-members .slick-list{
   @media(min-width:768px){

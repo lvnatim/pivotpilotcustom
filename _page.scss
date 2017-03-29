@@ -233,10 +233,14 @@ a#change-landing.state-alternate {
           animation: lookaround 3s infinite ease-in-out;
 }
 
+.landing-face > img.nose {
+  top: -10px;
+}
+
 .landing-face:hover > img.nose {
-  -webkit-transform: translate(0, 5px);
-      -ms-transform: translate(0, 5px);
-          transform: translate(0, 5px);
+  -webkit-transform: translate(0, 15px);
+      -ms-transform: translate(0, 15px);
+          transform: translate(0, 15px);
 }
 
 section.state-alternate{
