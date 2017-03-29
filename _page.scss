@@ -100,7 +100,9 @@
 .alternate-content-buttons > a > h3 {
   @media(min-width:768px){
     font-size: 26px;
-    transform: translate(0px, 100px);
+    -webkit-transform: translate(0px, 100px);
+        -ms-transform: translate(0px, 100px);
+            transform: translate(0px, 100px);
     transition: 0.3s;
     transition-delay: 0s;
   }
@@ -167,7 +169,9 @@ a#change-landing {
     margin-top: 0px;
     position: absolute;
     transition: 1s;
-    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
     width: 300px;
   }
   @media(min-width:1024px){
@@ -183,7 +187,9 @@ a#change-landing {
 
 a#change-landing.state-alternate {
   @media(min-width:768px){
-    transform: translate(0px, 15px);
+    -webkit-transform: translate(0px, 15px);
+        -ms-transform: translate(0px, 15px);
+            transform: translate(0px, 15px);
   }
   @media(min-width:1024px){
     color: white;
@@ -236,8 +242,10 @@ a#change-landing.state-alternate {
 section.state-alternate{
   background: $blue !important;
   @media(min-width:768px){
-    .button h3 {
-      transform: translate(0, 0);
+    .button > h3 {
+      -webkit-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+              transform: translate(0, 0);
     }
   }
 }

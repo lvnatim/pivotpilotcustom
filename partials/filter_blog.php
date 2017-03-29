@@ -2,19 +2,24 @@
 
 $pagenum = 1;
 $category = 0;
+$searchterm = '';
 
 if($_GET['pagenum']){
-  $pagenum = $_GET['pagenum'];
+  $pagenum = intval($_GET['pagenum']);
 }
 
 if($_GET['term_id']){
   $category = $_GET['term_id'];
 }
 
+if($_GET['searchterm']){
+  $searchterm = $_GET['searchterm'];
+}
+
 $offset = ($pagenum - 1) * 4;
 
 $args = array(
-  'posts_per_page'   => '',
+  'posts_per_page'   => -1,
   'offset'           => '',
   'category'         => $category,
   'orderby'          => 'date',
@@ -29,7 +34,8 @@ $args = array(
   'author'           => '',
   'author_name'      => '',
   'post_status'      => 'publish',
-  'suppress_filters' => true
+  'suppress_filters' => true,
+  's'                => $searchterm,
 );
 
 $posts_array = get_posts($args);
@@ -40,21 +46,24 @@ $next_query_str = '';
 $prev_query_str = '';
 
 if($pagenum < $total_posts && $pagenum > 0){
-  $page_num_str = '?pagenum=' . ($pagenum + 1); 
+  $page_num_str = '?pagenum=' . ($pagenum + 1);
   $category_query_str = $category ? '&category=' . $category : '';
-  $next_query_str = $page_num_str . $category_query_str;
+  $searchterm_str = $searchterm ? '&searchterm=' . $searchterm : '';
+  $next_query_str = $page_num_str . $category_query_str . $searchterm_str;
 }
 
 if($pagenum <= $total_posts && $pagenum > 1){
-  $page_num_str = '?pagenum=' . ($pagenum - 1); 
+  $page_num_str = '?pagenum=' . ($pagenum - 1);
   $category_query_str = $category ? '&category=' . $category : '';
-  $prev_query_str = $page_num_str . $category_query_str;
+  $searchterm_str = $searchterm ? '&searchterm=' . $searchterm : '';
+  $prev_query_str = $page_num_str . $category_query_str . $searchterm_str;
 }
 
 function generate_dropdown_str($num){
   $page_num_str = '?pagenum=' . $num;
   $category_query_str = $category ? '&category=' . $category : '';
-  return $page_num_str . $category_query_str;
+  $searchterm_str = $searchterm ? '&searchterm=' . $searchterm : '';
+  return $page_num_str . $category_query_str . $searchterm_str;
 }
 
 function generate_rotation(){
@@ -108,7 +117,12 @@ function generate_top(){
 </div>
 
 <div class="pagination">
-  <a class="previous" href="<?php echo $prev_query_str ?>" data-category="<?php echo $category ?>">
+  <a 
+    class="previous" 
+    href="<?php echo $prev_query_str ?>" 
+    data-category="<?php echo $category ?>" 
+    data-search-term="<?php echo $searchterm ?>"
+  >
     <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/arrow-left.svg' ?>"/>
   </a>
   <div class="pagenums">
@@ -123,11 +137,17 @@ function generate_top(){
         class="dropdown <?php if($number == $pagenum){ echo 'active';} ?>" 
         href="<?php echo generate_dropdown_str($number) ?>" 
         data-category="<?php echo $category ?>" 
-        data-pagenum="<?php echo $number ?>"><?php echo $number ?></a>
+        data-pagenum="<?php echo $number ?>"
+        data-search-term="<?php echo $searchterm ?>"><?php echo $number ?></a>
       <?php endforeach ?>
     </ul>
   </div>
-  <a class="next" href="<?php echo $next_query_str ?>" data-category="<?php echo $category ?>">
+  <a 
+    class="next" 
+    href="<?php echo $next_query_str ?>"  
+    data-category="<?php echo $category ?>"
+    data-search-term="<?php echo $searchterm ?>"
+  >
     <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/arrow-right.svg' ?>"/>
   </a>
 </div>

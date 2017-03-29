@@ -152,8 +152,12 @@
 }
 
 .service-overlay {
-  align-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: rgba(68,60,255,0.95);
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   opacity: 0;
   transition: opacity 0.5s;
@@ -201,10 +205,16 @@
 
 .service-overlay > section.first-section {
   @media(min-width:768px){
-    align-items: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
-    justify-content: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding-top: 0;
   }
 }
@@ -217,7 +227,9 @@
 
 .service-overlay-content{
   position: relative;
-  transform: translate(0px, 100vh);
+  -webkit-transform: translate(0px, 100vh);
+      -ms-transform: translate(0px, 100vh);
+          transform: translate(0px, 100vh);
   transition: 1s;
   @media(min-width:768px){
     left: 15%;
@@ -225,7 +237,9 @@
 }
 
 .service-overlay.active .service-overlay-content{
-  transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
 }
 
 .service-overlay-content > p {
@@ -255,10 +269,18 @@
       font-size: 16px;
     }
     .image-container {
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       margin: 0 -15px;
       a {
         width: 50%;

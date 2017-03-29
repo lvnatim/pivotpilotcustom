@@ -446,8 +446,8 @@
     margin: 0 auto;
   }
   @media(min-width:1024px){
-    max-height: 700px;
-    max-width: 700px;
+    max-height: 500px;
+    max-width: 500px;
   }
 }
 
@@ -644,32 +644,6 @@
   }
 }
 
-@-webkit-keyframes slideIn{
-  0%{
-    -webkit-transform: translate(-150px, 0px);
-        -ms-transform: translate(-150px, 0px);
-            transform: translate(-150px, 0px);    
-  }
-  100%{
-    -webkit-transform: translate(150px, 0px);
-        -ms-transform: translate(150px, 0px);
-            transform: translate(150px, 0px);
-  }
-}
-
-@-webkit-keyframes slideInWider{
-  0%{
-    -webkit-transform: translate(-180px, 0px);
-        -ms-transform: translate(-180px, 0px);
-            transform: translate(-180px, 0px);
-  }
-  100%{
-    -webkit-transform: translate(-180px, 0px);
-        -ms-transform: translate(-180px, 0px);
-            transform: translate(-180px, 0px);
-  }
-}
-
 #portfolio-page > .search-bar > ul > li > a:after{
   @media(min-width:768px){
     animation: none;
@@ -679,25 +653,24 @@
     position: absolute;
       bottom: 0;
       left: 0;
-    -webkit-transform: translate(-150px, 0px);
-        -ms-transform: translate(-150px, 0px);
-            transform: translate(-150px, 0px);
+    -webkit-transform: translate(-100%, 0px);
+        -ms-transform: translate(-100%, 0px);
+            transform: translate(-100%, 0px);
     width: 100%;
-  }
-  @media(min-width:1024px){
-    transform: translate(-180px, 0px);
   }
 }
 
 #portfolio-page > .search-bar > ul > li > a:hover:after{
   @media(min-width:768px){
-    animation: slideIn 2s infinite linear;
+    animation: slideIn 1s infinite linear;
+    -webkit-animation: slideIn 1s infinite linear;
   }
 }
 
 #portfolio-page > .search-bar > ul > li.state-active > a:after{
   @media(min-width:768px){
     animation: none;
+    -webkit-animation: none;
     -webkit-transform: translate(0px, 0px);
         -ms-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
@@ -749,7 +722,8 @@
 }
 
  #search-by-title:hover,
- #search-by-title:focus{
+ #search-by-title:focus,
+ #search-by-title.state-active{
   z-index: 1;
   transition-delay: 0s;
 }
@@ -771,7 +745,8 @@
 }
 
 #search-by-title:hover > form > div,
- #search-by-title:focus > form > div {
+ #search-by-title:focus > form > div,
+ #search-by-title.state-active > form > div {
   height: 0;
   transition-delay: 0.3s;
 }
@@ -786,7 +761,8 @@
 }
 
 #search-by-title:hover > form > input[type="text"],
-#search-by-title:focus > form > input[type="text"] {
+#search-by-title:focus > form > input[type="text"],
+#search-by-title.state-active > form > input[type="text"] {
   padding-left: 10px;
   width: calc(100% - 40px);
   transition-delay: 0.3s;
@@ -816,7 +792,8 @@
 }
 
 #search-by-title:hover > form > input[type="submit"],
-#search-by-title:focus > form > input[type="submit"] {
+#search-by-title:focus > form > input[type="submit"],
+#search-by-title.state-active > form > input[type="submit"] {
   border-radius: 0;
   transition-delay: 0s;
 }

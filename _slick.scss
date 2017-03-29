@@ -318,7 +318,7 @@
     width: 60%;
   }
   @media(min-width:1024px){
-    font-size: 42px;
+    font-size: 50px;
     line-height: 1.1;
   }
 }
@@ -394,6 +394,7 @@
 
 #featured-case-studies ul{
   @media(min-width:768px){
+    line-height: 2.4;
     max-width: 50%;
   }
 }
@@ -442,7 +443,7 @@
 #home-case-studies  {
   @media(min-width:768px) {
     padding-top: 60px;
-    padding-bottom: 75px;
+    padding-bottom: 90px;
     position: relative;
     span {
       display: inline-block;
@@ -474,12 +475,12 @@
 }
 
 .slick-dots li {
-  margin: 0px 10px;
+  margin: 0px 10px 5px 10px;
 }
 
 .slick-dots li button:before{
   color: white;
-  font-size: 15px;
+  font-size: 20px;
   opacity: 1;
 }
 

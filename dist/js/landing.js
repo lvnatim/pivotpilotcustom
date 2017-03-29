@@ -1,53 +1,17 @@
 $('.landing-face').on('click', function(event) {
   event.preventDefault();
-  $('html, body').animate({
-    scrollTop: $('#home-case-studies').offset().top
-    }, 500);
-})
-
-$('#switch-landing').on('click', function(){
-  $('.primary-menu').toggleClass('white');
-  $('#primary-menu-mobile').toggleClass('alternate');
-  $('#landing-container').toggleClass('alternate');
-  $('#mobile-menu-open').toggleClass('active');
-  $('#mobile-menu-open').data('controls', 'landing')
-  $('#mobile-menu-open').attr('data-controls', 'landing')
-})
-$('#close-landing').on('click', function(){
-  $('.primary-menu').toggleClass('white');
-  $('#primary-menu-mobile').toggleClass('alternate');
-  $('#landing-container').toggleClass('alternate');
-  $('#mobile-menu-open').toggleClass('active');
-  $('#mobile-menu-open').data('controls', 'menu')
-  $('#mobile-menu-open').attr('data-controls', 'menu')
-})
-$('#mobile-menu-open').on('click', function(){
-  if($(this).data('controls')==='landing'){
-    $('#primary-menu-mobile').toggleClass('alternate');
-    $('#landing-container').toggleClass('alternate');
-    $('#mobile-menu-open').toggleClass('active');
-    $('#mobile-menu-open').data('controls', 'menu')
-    $('#mobile-menu-open').attr('data-controls', 'menu')
+  const window_width = $(window).width();
+  if(window_width >= 768){
+    $('html, body').animate({
+      scrollTop: $('#featured-case-studies-button').offset().top - $('#menu').outerHeight()
+    }, 1000);
+  } else {
+    $('html, body').animate({
+    scrollTop: $('#featured-case-studies-button').offset().top - $('#mobile-menu').outerHeight()
+    }, 1000);
   }
-})
-$('.facepart').on('click', function(){
-  const offset = $('#section-showcase').offset().top;
-  $('body').animate({scrollTop: offset}, 500);
-});
 
-$('.service-title-container').on('mouseover', function(){
-  const term_id = $(this).data('termId');
-  $.ajax({
-    url: my_ajax_object.ajax_url,
-    data: {
-        'action':'return_term_description',
-        'term_id': term_id,
-    },
-    success:function(data){
-      $('#landing-description').html(data);
-    },
-    error: function(){}
-  });
+
 })
 
 $("#main-landing").on('mousemove', function(e){

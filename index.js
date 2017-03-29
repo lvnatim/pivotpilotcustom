@@ -7,7 +7,9 @@ $('#change-landing').on('click', function(){
 
   $(this).parent().toggleClass('state-alternate');
   $(this).toggleClass('state-alternate');
-  $('#menu').toggleClass('force-state-toggled');
+  if(!$('#services-dropdown').hasClass('state-active')){
+    $('#menu').toggleClass('force-state-toggled');
+  }
   $('.landing-face').toggleClass('state-alternate');
 });
 
@@ -50,6 +52,10 @@ $('.search-bar').on('click', function(){
   $(this).toggleClass('state-opened');
 });
 
+$('#search-by-title').on('click', function(){
+  $(this).toggleClass('state-opened');
+})
+
 $('.inner-button > h1').on('click', function(){
   if($(this).parent().hasClass('active')){
     $('.inner-inner-button').removeClass('active');
@@ -90,6 +96,7 @@ $('#dynamic-content').on('click', '.previous', function(e){
   const curpage = parseInt($('#curpage').html());
   const maxpage = parseInt($('#maxpage').html());
   const category = $(this).data('category');
+  const searchterm = $(this).data('searchTerm');
   const pagenum = curpage - 1;
 
   if(curpage > 1){
@@ -98,7 +105,8 @@ $('#dynamic-content').on('click', '.previous', function(e){
       data: {
           'action':'filter_blog',
           'term_id': category,
-          'pagenum': pagenum
+          'pagenum': pagenum,
+          'searchterm': searchterm
       },
       success:function(data){
         $('body').animate({scrollTop: 0}, 1000, 'swing', function(){
@@ -115,6 +123,7 @@ $('#dynamic-content').on('click', '.next', function(e){
   const curpage = parseInt($('#curpage').html());
   const maxpage = parseInt($('#maxpage').html());
   const category = $(this).data('category');
+  const searchterm = $(this).data('searchTerm');
   const pagenum = curpage + 1;
   if(curpage < maxpage){
     $.ajax({
@@ -123,6 +132,7 @@ $('#dynamic-content').on('click', '.next', function(e){
           'action':'filter_blog',
           'term_id': category,
           'pagenum': pagenum,
+          'searchterm': searchterm
       },
       success:function(data){
         $('body').animate({scrollTop: 0}, 1000, 'swing', function(){

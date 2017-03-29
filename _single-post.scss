@@ -2,11 +2,11 @@
   padding-top: 18px;
   @media(min-width:768px){
     margin: 0 auto;
-    padding-top: 45px;
+    padding-top: 30px;
     width: 75%;
   }
   @media(min-width:1024px){
-    padding-top: 30px;
+    padding-top: 45px;
     width: 66%;
   }
 }
@@ -124,7 +124,7 @@
 
 #blog-post-content > p{
   @media(min-width:768px){
-    margin-top: 20px;
+    margin-top: 15px;
   }
   @media(min-width:1024px){
     margin-top: 30px;
@@ -135,8 +135,8 @@
 #blog-post-content .gallery {
   margin-top: 20px;
   @media(min-width:768px){
-    margin-top: 45px;
-    margin-bottom: 45px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
 
@@ -259,7 +259,7 @@
 
 #blog-related-posts-cont > p.title{
   color: $blue;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 #blog-related-posts-cont .slide-inner-cont > h3 {

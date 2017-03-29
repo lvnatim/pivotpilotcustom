@@ -65,16 +65,16 @@ if(is_home() || is_page('blog')){
     <h1>Pivot</h1>
   </a>
   <ul>
-    <a href="<?php echo get_site_url() . '/portfolio' ?>">Portfolio</a>
-    <a id="open-services">Services</a>
+    <a class="<?php if(is_page('portfolio')){echo 'state-active';} ?>" href="<?php echo get_site_url() . '/portfolio' ?>">Portfolio</a>
+    <a class="<?php if(is_page('services')){echo 'state-active';} ?>" id="open-services">Services</a>
   </ul>
     <div id="ampersand-cont">
       <img id="purple-ampersand" src="<?php echo get_template_directory_uri() . '/dist/animation/ampersand/ampersand-purple.svg' ?>"/>
       <img id="white-ampersand" src="<?php echo get_template_directory_uri() . '/dist/animation/ampersand/ampersand-white.svg' ?>"/>
     </div>
   <ul>
-    <a href="<?php echo get_site_url() . '/blog' ?>">Blog</a>
-    <a href="<?php echo get_site_url() . '/about' ?>">About</a>
+    <a class="<?php if(is_page('blog')){echo 'state-active';} ?>" href="<?php echo get_site_url() . '/blog' ?>">Blog</a>
+    <a class="<?php if(is_page('about')){echo 'state-active';} ?>" href="<?php echo get_site_url() . '/about' ?>">About</a>
   </ul>
   <a href="<?php echo get_site_url(); ?>">
     <h1>Pilot</h1>
@@ -115,26 +115,23 @@ jQuery(document).ready(function($){
   // Clicking that button toggles 'active' on its child UL, aka level-2.
 
   $('.service-subterm-button').on('click', function(){
+    $('.first-section').css({'transform': 'translate(0px, 92px)'});
     $('.service-term-button-cont').removeClass('state-active');
     $(this).parent().addClass('state-active');
   })
 
   $('#open-services').on('click', function(){
     $('#services-dropdown').toggleClass('state-active');
-    $('#menu').toggleClass('force-state-toggled');
-  });
+    $('#menu').addClass('force-state-toggled');
 
-  // Placeholder-menu to be replaced by services button on real menu.
-
-  $('.placeholder-menu').on('click', function(event) {
-    if ($(this).hasClass('active')) {
-      $(this).removeClass('active')
-      $('#services-dropdown *').removeClass('active');
+    if($('#services-dropdown').hasClass('state-active')){
+      $('.first-section').css({'transform': 'translate(0px, 46px)'});
     } else {
-      $(this).toggleClass('active');
-      $('.level-1').toggleClass('active');
+      $('.service-term-button-cont').removeClass('state-active');
+      $('.first-section').css({'transform': 'translate(0px, 0px)'});
     }
   });
+
 
 });
 </script>

@@ -219,9 +219,11 @@
 
   .submit-container .icon-button{
     position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
     pointer-events: none;
-    bottom: 10px;
-    width: 100%;
   }
 
   </style>
