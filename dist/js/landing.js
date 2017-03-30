@@ -1,4 +1,4 @@
-$('.featured-case-studies-face').hover( function(){
+$('#home-case-studies h3, #home-case-studies span, #home-case-studies .slide-image-cont').hover( function(){
   $('.featured-case-studies-face').toggleClass('active');
 });
 

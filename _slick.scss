@@ -31,6 +31,7 @@
 }
 
 .featured-case-studies-face.active {
+  pointer-events: none;
   img.nose {
   -webkit-transform: translate(30px, 0);
       -ms-transform: translate(30px, 0);
@@ -325,6 +326,7 @@
   @media(min-width:768px){
     padding-top: 60px;
     padding-bottom: 15px;
+    pointer-events: none;
     font-weight: 600;
     transition: 1s;
     -webkit-transform: translate(0px, 45px);
@@ -462,6 +464,7 @@
     position: relative;
     span {
       display: inline-block;
+      pointer-events: none;
       -webkit-transform: translate(0px, 150px);
           -ms-transform: translate(0px, 150px);
               transform: translate(0px, 150px);
