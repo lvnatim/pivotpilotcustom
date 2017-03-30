@@ -40,6 +40,34 @@ Version: 1.0;
   }
 }
 
+@-webkit-keyframes scrub{
+  0%{
+  -webkit-transform: translate(0px, 5px);
+      -ms-transform: translate(0px, 5px);
+          transform: translate(0px, 5px);
+  }
+  25%{
+  -webkit-transform: translate(0px, -2.5px);
+      -ms-transform: translate(0px, -2.5px);
+          transform: translate(0px, -2.5px);
+  }
+  50%{
+  -webkit-transform: translate(0px, 2.5px);
+      -ms-transform: translate(0px, 2.5px);
+          transform: translate(0px, 2.5px);
+  }
+  75%{
+  -webkit-transform: translate(0px, -1px);
+      -ms-transform: translate(0px, -1px);
+          transform: translate(0px, -1px);
+  }
+  100%{
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  }
+}
+
 @-webkit-keyframes slideIn{
   0%{
     -webkit-transform: translate(-100%, 0px);
@@ -347,14 +375,6 @@ section.first-section.less-padding-top{
   @media(min-width:1024px){
     padding-top: 170px;
   }
-}
-
-section.first-section.state-dropdown-opened{
-  margin-top: 56px;
-}
-
-section.first-section.state-dropdown-opened.extra-toggle-spacing{
-  margin-top: 112px;
 }
 
 section.last-section{

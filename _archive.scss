@@ -13,6 +13,13 @@
   }
 }
 
+#blog-page .pagination{
+  @media(min-width:768px){
+    padding-top: 90px;
+    padding-bottom: 30px;
+  }
+}
+
 #blog-page > .search-bar {
   width: calc(100% - 55px);
   z-index: 1;
@@ -58,34 +65,6 @@
     padding-left:2px;
     text-transform: uppercase;
     transition: 0.3s;
-  }
-}
-
-@-webkit-keyframes scrub{
-  0%{
-  -webkit-transform: translate(0px, 5px);
-      -ms-transform: translate(0px, 5px);
-          transform: translate(0px, 5px);
-  }
-  25%{
-  -webkit-transform: translate(0px, -2.5px);
-      -ms-transform: translate(0px, -2.5px);
-          transform: translate(0px, -2.5px);
-  }
-  50%{
-  -webkit-transform: translate(0px, 2.5px);
-      -ms-transform: translate(0px, 2.5px);
-          transform: translate(0px, 2.5px);
-  }
-  75%{
-  -webkit-transform: translate(0px, -1px);
-      -ms-transform: translate(0px, -1px);
-          transform: translate(0px, -1px);
-  }
-  100%{
-  -webkit-transform: translate(0px, 0px);
-      -ms-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
   }
 }
 
@@ -440,6 +419,15 @@
     height: auto;
     width: auto;
     margin: 0 auto;
+    transition: 1s;
+  }
+}
+
+.blog-post > .image-cont:hover > .desktop-image:not(.icon){
+  @media(min-width:768px){
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
   }
 }
 
@@ -473,10 +461,27 @@
     max-height: 400px;
     max-width: 400px;
     margin: 0 auto;
+    transition: 1s;
   }
   @media(min-width:1024px){
     max-height: 500px;
     max-width: 500px;
+  }
+}
+
+.post > .image-cont > img.desktop-image:not(.icon){
+  opacity: 0;
+  -webkit-transform: translate(0px, 60px);
+      -ms-transform: translate(0px, 60px);
+          transform: translate(0px, 60px);
+}
+
+.post > .image-cont > img.desktop-image.state-active {
+  @media(min-width:768px){
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
   }
 }
 
@@ -804,7 +809,7 @@
   color: rgba(68,60,255, 0.4);
 }
 
-#search-by-title > form > input[type="text"]:hover::-webkit-input-placeholder {
+#search-by-title > form > input[type="text"]:active::-webkit-input-placeholder {
   color: transparent;
 }
 

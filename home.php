@@ -13,7 +13,7 @@
     </div>
     <div class="alternate-content">
       <div class="alternate-content-text">
-        <p>Beautiful designs are useless without substance. For this reason, we research your competition and industry gaps before we design and create marketing strategies to help your company stand out in a competitive market.</p>
+        <p id ="landing-service-description">Beautiful designs are useless without substance. For this reason, we research your competition and industry gaps before we design and create marketing strategies to help your company stand out in a competitive market.</p>
         <p class="include">Our services include:</p>
       </div>
       <ul class="alternate-content-buttons">
@@ -21,12 +21,13 @@
         <?php foreach($terms as $term): ?>
           <a class="button" href="<?php echo get_site_url() . '/portfolio?taxonomy=services&category=' . $term->term_id ?>">
             <h3><?php echo $term->name ?></h3>
+            <span style="display:none;"><?php echo $term->description ?></span>
           </a>
         <?php endforeach ?>
       </ul>
     </div>
   </div>
-  <a id="change-landing" class="button">How Exactly?</a>
+  <a id="change-landing" class="button"><span>How Exactly?</span></a>
   <a href="#home-case-studies" class="landing-face">
     <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
     <img class="img-responsive eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>

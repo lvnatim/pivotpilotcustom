@@ -1,6 +1,8 @@
 $('#change-landing').on('click', function(){
   if($(this).parent().hasClass('state-alternate')){
-    $(this).html('How Exactly?')
+    if($(window).width() < 1024){
+      $(this).html('How Exactly?')
+    }
   } else if($(window).width() < 1024) {
     $(this).html('Go Back')
   }
@@ -30,6 +32,8 @@ $('#mobile-open').on('click', function(){
 
 $('#mobile-close').on('click', function(){
   $('#mobile-menu-sidebar').removeClass('state-opened');
+  $('.inner-button').removeClass('active');
+  $('.inner-inner-button').removeClass('active');
 });
 
 $('#mobile-menu-sidebar > .overlay').on('click', function(){
@@ -70,6 +74,10 @@ $('.inner-inner-button > h1').on('click', function(){
   $('.inner-inner-button').not(el).removeClass('active');
   el.toggleClass('active');
 });
+
+$('.alternate-content-buttons > a').on('mouseenter', function(){
+  $('#landing-service-description').html($(this).find('span').html());
+})
 
 $('.filter-blog').on('click', function(e){
   e.preventDefault();
@@ -437,12 +445,29 @@ $(window).scroll(function(event){
   })
 })
 
+$(window).scroll(function(event){
+  $('.desktop-image:not(.icon)').each(function(){
+    if($(this).offset().top + $(this).outerHeight() < $(window).scrollTop() + $(window).outerHeight()){
+      $(this).addClass('state-active');
+    } else {
+      $(this).removeClass('state-active');
+    }
+  })
+})
+
 $(document).ready(function(){
   setTimeout(
     function(){
+      $('#loader').removeClass('loading');
       $('#mobile-menu').removeClass('loading');
-      $('#menu').removeClass('loading');
+      $('#menu').removeClass('white');
     },
     1000
+  );
+  setTimeout(
+    function(){
+      $('#menu').removeClass('loading');
+      $('#menu').addClass('state-active');
+    }, 2000
   );
 })

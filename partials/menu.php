@@ -1,10 +1,9 @@
+<div id="loader" class="loading"></div>
 <div id="mobile-menu" class="loading">
-
-  <div id="mobile-menu-loader"></div>
 
   <a id="mobile-menu-logo" href="<?php echo get_site_url(); ?>">
     <h1>Pivot</h1>
-    <img src="<?php echo get_template_directory_uri() . '/dist/animation/ampersand/ampersand-purple.svg' ?>"/>
+    <img class="svg" src="<?php echo get_template_directory_uri() . '/dist/animation/ampersand/ampersand-white.svg' ?>"/>
     <h1>Pilot</h1>
   </a>
 
@@ -61,8 +60,7 @@ if(is_home() || is_page('blog')){
 
 ?>
 
-<div id="menu" class="loading state-active <?php if($menu_is_see_through){echo "state-see-through";} ?>">
-  <div id="menu-loader"></div>
+<div id="menu" class="loading white <?php if($menu_is_see_through){echo "state-see-through";} ?>">
   <div class="overlay"></div>
   <a href="<?php echo get_site_url(); ?>">
     <h1>Pivot</h1>
@@ -118,15 +116,25 @@ jQuery(document).ready(function($){
     $(this).parent().addClass('state-active');
   })
 
-  $('#open-services, #services-dropdown').hover(function(){
-    $('#open-services').toggleClass('state-hover');
-    $('#services-dropdown').toggleClass('state-active');
-    $('#menu').toggleClass('force-state-toggled');
-    $('.first-section').toggleClass('state-dropdown-opened');
-  });
+  $('#open-services, #services-dropdown').hover(
+    function(){
+      $('#open-services').toggleClass('state-hover');
+      $('#services-dropdown').toggleClass('state-active');
+      if(!$('#radial-background').hasClass('state-alternate')){
+        $('#menu').addClass('force-state-toggled');
+      }
+    },
+    function(){
+      $('#open-services').toggleClass('state-hover');
+      $('#services-dropdown').toggleClass('state-active');
+      $('.service-term-button-cont').removeClass('state-active');
+      if(!$('#radial-background').hasClass('state-alternate')){
+        $('#menu').removeClass('force-state-toggled');
+      }
+    }
+  );
 
   $('.service-subterm-button').hover(function(){
-    $('.first-section').addClass('extra-toggle-spacing');
     $('.service-term-button-cont').removeClass('state-active');
     $(this).parent().addClass('state-active');
   })
