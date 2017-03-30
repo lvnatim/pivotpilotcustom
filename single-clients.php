@@ -2,7 +2,7 @@
 
 <div id="portfolio-menu" class="state-opened">
   <div id="portfolio-header">
-    <div id="portfolio-menu-open" class="hamburger portfolio-hamburger">
+    <div id="portfolio-menu-open" class="hamburger portfolio-hamburger state-closed">
       <span></span>
       <span></span>
       <span></span>

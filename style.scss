@@ -320,7 +320,6 @@ section.first-section.no-padding-top{
 }
 
 section#radial-background {
-  background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
   background-image: url('./dist/img/gradient.png');
   position: relative;
   @media(min-width:768px){
@@ -329,6 +328,7 @@ section#radial-background {
     padding-bottom: 120px;
   }
   @media(min-width:1024px){
+    // background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
     padding-top:270px;
     padding-bottom: 150px;
     height: 674px;

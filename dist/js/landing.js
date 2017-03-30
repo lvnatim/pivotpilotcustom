@@ -14,13 +14,19 @@ $('.landing-face').on('click', function(event) {
     scrollTop: $('#featured-case-studies-button').offset().top - $('#mobile-menu').outerHeight()
     }, 1000);
   }
-
-
 })
 
-$("#main-landing").on('mousemove', function(e){
- var parentOffset = $(this).parent().offset();
- var relX = e.pageX - parentOffset.left;
- var relY = e.pageY - parentOffset.top;
- $(this).attr({style: 'background: radial-gradient(circle farthest-corner at ' + relX + 'px ' + relY + 'px' + ', #FFFFFF 0%, #443CFF 95%);'});
+$(window).on('resize load',function(){
+  const window_width = $(window).width();
+
+  if (window_width < 1024) {
+    $("#radial-background").attr({style: "background-image: url('./dist/img/gradient.png');"});
+  } else {
+    $("#radial-background").on('mousemove', function(e){
+      var parentOffset = $(this).parent().offset();
+      var relX = e.pageX - parentOffset.left;
+      var relY = e.pageY - parentOffset.top;
+      $(this).attr({style: 'background: radial-gradient(circle farthest-corner at ' + relX + 'px ' + relY + 'px' + ', #FFFFFF 0%, #443CFF 95%);'});
+    });
+  };
 });
