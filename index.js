@@ -437,6 +437,12 @@ $(window).scroll(function(event){
   })
 })
 
+$(window).scroll(function(e){
+  if($(window).scrollTop() > 100) {
+    $('#portfolio-menu').removeClass('state-opened');
+  }
+});
+
 $(document).ready(function(){
   setTimeout(
     function(){
