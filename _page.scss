@@ -161,6 +161,7 @@
 
 .default-content-desktop > h1{
   font-weight: 600;
+  font-size: 50px;
 }
 
 a#change-landing {
@@ -176,7 +177,8 @@ a#change-landing {
     width: 300px;
   }
   @media(min-width:1024px){
-    bottom: 120px;
+    bottom: auto;
+    box-shadow: 5px 5px 10px rgba(68,20,255,0.8);
     font-size: 46px;
     font-weight: 600;
     letter-spacing: 0;
@@ -187,6 +189,35 @@ a#change-landing {
     text-transform: capitalize;
     width: 425px;
     white-space: nowrap;
+    top: 440px;
+  }
+}
+
+a#change-landing:hover{
+  @media(min-width:1024px){
+    background: #443cff;
+    box-shadow: 5px 5px 10px rgba(68,20,255,0);
+    transition: 0.5s;
+    -webkit-transform: translate(5px, 5px);
+        -ms-transform: translate(5px, 5px);
+            transform: translate(5px, 5px);
+  }
+}
+
+a#change-landing.loading{
+  @media(min-width:1024px){
+    box-shadow: 5px 5px 10px rgba(68,20,255,0);
+    opacity: 0;
+    -webkit-transform: translate(5px, 5px);
+        -ms-transform: translate(5px, 5px);
+            transform: translate(5px, 5px);
+  }
+}
+
+a#change-landing:hover > span{
+  @media(min-width:1024px){
+    color: #ecebfe;
+    transition: 0.5s;
   }
 }
 

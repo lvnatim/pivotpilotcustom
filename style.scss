@@ -347,9 +347,28 @@ section.first-section.no-padding-top{
   }
 }
 
+#circle-gradient{
+  background: radial-gradient(circle farthest-corner at 50% 50%, #ECEBFE 0%, rgba(68, 60, 255, 0) 95%);
+  display:none;
+  position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  margin-top: -675px;
+  margin-left: -100vw;
+  height: 1350px;
+  width: 200vw;
+  @media(min-width:1024px){
+    display:block;
+  }
+}
+
 section#radial-background {
-  background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
-  background-image: url('./dist/img/gradient.png');
+  // background: url('./dist/img/gradient.png');
+  // background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
+  background: #443CFF;
+  transition: 1s;
   position: relative;
   @media(min-width:768px){
     height: 587px;
@@ -383,6 +402,7 @@ section.last-section{
 
 section.light-purple-background{
   background: $light-purple;
+  position: relative;
 }
 
 section.portfolio-section{

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<div id="portfolio-menu">
+<div id="portfolio-menu" class="state-opened">
   <div id="portfolio-header">
-    <div id="portfolio-menu-open" class="hamburger portfolio-hamburger">
+    <div id="portfolio-menu-open" class="hamburger portfolio-hamburger state-closed">
       <span></span>
       <span></span>
       <span></span>
@@ -25,7 +25,7 @@
   <?php endif ?>
 </div>
 
-<section class="first-section portfolio-section" 
+<section class="first-section portfolio-section"
   style="background-color: <?php the_field('background_color') ?>;color: <?php the_field('text_color') ?>;">
   <?php get_template_part('partials/portfolio_default', 'portfolio_default'); ?>
   <?php get_template_part('partials/portfolio_branding', 'branding_and_logo'); ?>

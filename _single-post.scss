@@ -291,7 +291,7 @@
   transition: 1s;
   z-index: 30003;
   @media(min-width:768px){
-    background:rgba(68,60,255,1);
+    background: #8f8aff;
     opacity: 1;
     max-width: 340px;
     padding: 75px 30px 45px 30px;
@@ -304,12 +304,11 @@
 }
 
 .form-cont:after{
-  background: $blue;
+  background: #8f8aff;
   bottom: 0;
   content: "";
   height: 15px;
   width: 15px;
-  margin-left: -7.5px;
   position: absolute;
     left: 50%;
   -webkit-transform: rotateZ(45deg) translate(0px, -7.5px);
@@ -365,6 +364,15 @@
       display:none;
     }
   }
+}
+
+.form-cont .submit-container .title{
+  color: #8f8aff;
+}
+
+.form-cont .submit-container svg path,
+.form-cont .submit-container svg polygon, {
+  fill: #8f8aff;
 }
 
 #mc_embed_signup{

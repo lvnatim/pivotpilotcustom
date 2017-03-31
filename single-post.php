@@ -251,8 +251,8 @@
         <div class="submit-container">
           <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="button">
           <a class="icon-button alternate">
-            <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/submit.svg' ?>"/>
-            <p class="title blue">Submit</p>
+            <img class="img-responsive svg" src="<?php echo get_template_directory_uri() . '/dist/icons/submit.svg' ?>"/>
+            <p class="title">Submit</p>
           </a>
         </div>
       </div>

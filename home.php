@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 <section class="first-section radial-background" id="radial-background">
 
+  <div id="circle-gradient"></div>
+
   <div class="dynamic-content-cont">
     <div class="default-content">
       <h1>We use strategic</h1>
@@ -27,13 +29,13 @@
       </ul>
     </div>
   </div>
-  <a id="change-landing" class="button"><span>How Exactly?</span></a>
-  <a href="#home-case-studies" class="landing-face">
+  <a id="change-landing" class="button loading"><span>How Exactly?</span></a>
+  <!-- <a href="#home-case-studies" class="landing-face">
     <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
     <img class="img-responsive eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
     <img class="img-responsive nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face/nose.svg' ?>"/>
     <img class="img-responsive mouth" src="<?php echo get_template_directory_uri() . '/dist/animation/face/mouth.svg' ?>"/>
-  </a>
+  </a> -->
 
 </section>
 
