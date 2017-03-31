@@ -73,6 +73,7 @@ function generate_side(){
   }
 }
 
+
 function generate_top(){
   return rand(0, 50) . "%";
 }
@@ -126,6 +127,10 @@ function generate_top(){
                   left: <?php echo generate_side(); ?>;
                   top: <?php echo generate_top(); ?>";
               />
+
+
+
+
             <?php endforeach?>
             <img class="img-responsive desktop-image" src="<?php echo get_the_post_thumbnail_url($post); ?>" />
             <img alt="Click for more!" class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/plus.svg' ?>"/>
@@ -134,11 +139,11 @@ function generate_top(){
       <?php endforeach ?>
     </div>
 
-    <?php if(count($displayed_posts) > 0): ?> 
+    <?php if(count($displayed_posts) > 0): ?>
 
     <div class="pagination">
-      <a 
-        class="previous" 
+      <a
+        class="previous"
         href="<?php echo $prev_query_str ?>"
         data-category="<?php echo $category ?>"
         data-search-term="<?php echo $searchterm ?>"
@@ -162,8 +167,8 @@ function generate_top(){
           <?php endforeach ?>
         </ul>
       </div>
-      <a 
-        class="next" 
+      <a
+        class="next"
         href="<?php echo $next_query_str ?>"
         data-category="<?php echo $category ?>"
         data-search-term="<?php echo $searchterm ?>"
