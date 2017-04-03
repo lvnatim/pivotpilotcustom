@@ -153,6 +153,12 @@
   }
 }
 
+// .menu-link-wrapper {
+//   @media(min-width:1024px){
+//     display: none;
+//   }
+// }
+
 #menu.loading h1{
   color: white;
 }
@@ -207,19 +213,31 @@
   padding-top: 10px;
   position: relative;
   &:first-of-type{
-    margin-left: 15px;
-    margin-right: 7.5px;
+    // margin-left: 15px;
+    // margin-right: 7.5px;
+
+    padding-left: 15px;
+    padding-right: 7.5px;
     @media(min-width:1024px){
-      margin-right: 7.5px;
-      margin-left: 20px;
+      // // margin-right: 7.5px;
+      // margin-left: 20px;
+
+      padding-right: 7.5px;
+      padding-left: 20px;
     }
   }
   &:last-of-type{
-    margin-left: 7.5px;
-    margin-right: 15px;
+    // margin-left: 7.5px;
+    // margin-right: 15px;
+
+    padding-left: 7.5px;
+    padding-right: 15px;
     @media(min-width:1024px){
-      margin-left: 7.5px;
-      margin-right: 20px;
+      // margin-left: 7.5px;
+      // margin-right: 20px;
+
+      padding-left: 7.5px;
+      padding-right: 20px;
     }
   }
 }
