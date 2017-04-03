@@ -220,35 +220,24 @@
   font-size: 18px;
   overflow:hidden;
   padding-bottom: 3px;
-  padding-top: 10px;
+  border-top: 10px solid transparent;
+  border-bottom: 5px solid transparent;
   position: relative;
   transition: 1s;
   &:first-of-type{
-    margin-left: 15px;
-    margin-right: 7.5px;
-
-    // padding-left: 15px;
-    // padding-right: 7.5px;
+    border-left: 15px solid transparent;
+    border-right: 7.5px solid transparent;
     @media(min-width:1024px){
-      margin-right: 7.5px;
-      margin-left: 20px;
-
-      // padding-right: 7.5px;
-      // padding-left: 20px;
+      border-left: 20px solid transparent;
+      border-left: 15px solid transparent;
     }
   }
   &:last-of-type{
-    margin-left: 7.5px;
-    margin-right: 15px;
-
-    // padding-left: 7.5px;
-    // padding-right: 15px;
+    border-left: 7.5px solid transparent;
+    border-right: 7.5px solid transparent;
     @media(min-width:1024px){
-      margin-left: 7.5px;
-      margin-right: 20px;
-
-      // padding-left: 7.5px;
-      // padding-right: 20px;
+      border-left: 7.5px solid transparent;
+      border-right: 20px solid transparent;
     }
   }
 }
