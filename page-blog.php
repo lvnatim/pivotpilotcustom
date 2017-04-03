@@ -132,7 +132,7 @@ function generate_top(){
 
 
             <?php endforeach?>
-            <img class="img-responsive desktop-image" src="<?php echo get_the_post_thumbnail_url($post); ?>" />
+            <img class="img-responsive desktop-image state-active" src="<?php echo get_the_post_thumbnail_url($post); ?>" />
             <img alt="Click for more!" class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/icons/plus.svg' ?>"/>
           </a>
         </div>

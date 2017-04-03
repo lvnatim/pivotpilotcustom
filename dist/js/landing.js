@@ -83,19 +83,46 @@ var color2 = "rgb("+r2+","+g2+","+b2+")";
   }
 }
 
-$(window).on('resize load',function(){
-  const window_width = $(window).width();
+var mouseX = 0;
+var mouseY = 0;
+var circleSize = 0;
 
-  if (window_width < 1024) {
-    $("#radial-background").attr({style: "background: none;"});
-    setInterval(updateGradient,10);
-  } else if (window_width > 1024) {
-    $("#radial-background").on('mousemove', function(e){
-      var parentOffset = $(this).parent().offset();
-      var relX = e.pageX - parentOffset.left;
-      var relY = e.pageY - parentOffset.top;
-      $(this).attr({style: 'background: radial-gradient(circle farthest-corner at ' + relX + 'px ' + relY + 'px' + ', #FFFFFF 0%, #443CFF 95%);'});
-    });
-  };
+$("#radial-background").on('mousemove', function(e){
+  var parentOffset = $(this).parent().offset();
+  mouseX = e.pageX - parentOffset.left;
+  mouseY = e.pageY - parentOffset.top;
+  var str = "translate(" + mouseX + "px, " + mouseY + "px)"
+  $('#circle-gradient').css({'transform' : str});
 });
+
+
+
+function setCircleGradient(ind){
+  var css_property = 'radial-gradient(circle farthest-corner at 50% 50%, #ECEBFE ' + ind + '%, rgba(68, 60, 255, 0) 95%)';
+  $('#circle-gradient').css({'background': css_property});
+}
+
+$('#change-landing').hover(
+  function(){
+  for(var i = 0; i <= 100; i++){
+    (function(ind){
+      setTimeout(function(){console.log(ind);setCircleGradient(ind);}, 5 * ind);
+    })(i);
+  }},
+  function(){
+  for(var i = 0; i <= 100; i++){
+    (function(ind){
+      setTimeout(function(){console.log(100 - ind);setCircleGradient(100 - ind);}, 5 * ind);
+    })(i);
+  }}
+  );
+// $(window).on('resize load',function(){
+//   const window_width = $(window).width();
+
+//   if (window_width < 1024) {
+//     $("#radial-background").attr({style: "background: none;"});
+//     setInterval(updateGradient,10);
+//   } else if (window_width > 1024) {
+//   };
+// });
 

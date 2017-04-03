@@ -40,6 +40,34 @@ Version: 1.0;
   }
 }
 
+@-webkit-keyframes scrub{
+  0%{
+  -webkit-transform: translate(0px, 5px);
+      -ms-transform: translate(0px, 5px);
+          transform: translate(0px, 5px);
+  }
+  25%{
+  -webkit-transform: translate(0px, -2.5px);
+      -ms-transform: translate(0px, -2.5px);
+          transform: translate(0px, -2.5px);
+  }
+  50%{
+  -webkit-transform: translate(0px, 2.5px);
+      -ms-transform: translate(0px, 2.5px);
+          transform: translate(0px, 2.5px);
+  }
+  75%{
+  -webkit-transform: translate(0px, -1px);
+      -ms-transform: translate(0px, -1px);
+          transform: translate(0px, -1px);
+  }
+  100%{
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  }
+}
+
 @-webkit-keyframes slideIn{
   0%{
     -webkit-transform: translate(-100%, 0px);
@@ -319,9 +347,28 @@ section.first-section.no-padding-top{
   }
 }
 
+#circle-gradient{
+  background: radial-gradient(circle farthest-corner at 50% 50%, #ECEBFE 0%, rgba(68, 60, 255, 0) 95%);
+  display:none;
+  position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  margin-top: -675px;
+  margin-left: -100vw;
+  height: 1350px;
+  width: 200vw;
+  @media(min-width:1024px){
+    display:block;
+  }
+}
+
 section#radial-background {
   // background: url('./dist/img/gradient.png');
-  background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
+  // background: radial-gradient(circle farthest-corner at 45px 45px, #FFFFFF 0%, #443CFF 95%);
+  background: #443CFF;
+  transition: 1s;
   position: relative;
   @media(min-width:768px){
     height: 587px;
@@ -349,20 +396,13 @@ section.first-section.less-padding-top{
   }
 }
 
-section.first-section.state-dropdown-opened{
-  margin-top: 56px;
-}
-
-section.first-section.state-dropdown-opened.extra-toggle-spacing{
-  margin-top: 112px;
-}
-
 section.last-section{
   padding-bottom: 90px;
 }
 
 section.light-purple-background{
   background: $light-purple;
+  position: relative;
 }
 
 section.portfolio-section{
