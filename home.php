@@ -30,7 +30,7 @@
     </div>
   </div>
   <a id="change-landing" class="button loading"><span>How Exactly?</span></a>
-  <!-- <a href="#home-case-studies" class="landing-face">
+<!--   <a href="#home-case-studies" class="landing-face">
     <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyelid.svg' ?>"/>
     <img class="img-responsive eyeball" src="<?php echo get_template_directory_uri() . '/dist/animation/face/eyeball.svg' ?>"/>
     <img class="img-responsive nose" src="<?php echo get_template_directory_uri() . '/dist/animation/face/nose.svg' ?>"/>

@@ -1,7 +1,3 @@
-$('.search-bar').on('click', function(){
-  $(this).toggleClass('state-opened');
-});
-
 $('.filter-services').on('click', function(e){
   e.preventDefault();
   $('.search-bar > ul > li').removeClass('state-active');
