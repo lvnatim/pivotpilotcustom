@@ -9,7 +9,7 @@
     -ms-transform: translate(0, -100%);
         transform: translate(0, -100%);
   transition: 1s;
-  z-index: 2;
+  z-index: 10000;
 }
 
 #loader.loading{

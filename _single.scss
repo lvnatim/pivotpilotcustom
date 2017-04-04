@@ -456,6 +456,21 @@ blockquote p.title {
   }
 }
 
+#web-and-seo > div.website-icons {
+  margin-top: 30px;
+}
+
+#web-and-seo > div.website-icons > div{
+  display:inline-block;
+  text-align: center;
+  width: 49%;
+}
+
+#web-and-seo > div.website-icons > div > p{
+  font-family: Walsheim;
+  font-size: 15px;
+}
+
 #web-and-seo > div:not(.website-cont){
   @media(min-width:768px){
   display: -webkit-flex;
@@ -491,6 +506,7 @@ blockquote p.title {
   box-shadow: 0px 5px 45px -5px rgba(0,0,0,0.5);
   height: 60vw;
   overflow: scroll;
+  position:relative;
   @media(min-width: 768px){
     height: 35vw;
   }
@@ -503,6 +519,22 @@ blockquote p.title {
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
   box-shadow: 0px -7px 45px -5px rgba(0,0,0,0.5);
+}
+
+.website-cont > img.icon{
+  display:none;
+  @media(min-width:768px){
+    box-shadow: none;
+    height: 100px;
+    position: absolute;
+    right: -18px;
+    bottom: -50px;
+  }
+  @media(min-width:1024px){
+    height: 150px;
+    right: -26px;
+    bottom: -75px;
+  }
 }
 
 .website-mobile-cont{

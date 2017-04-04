@@ -18,6 +18,23 @@
   </div>
 
   <div id="blog-post-content">
+    <div id="share-bar">
+      <div class="social-icons">
+        <a href="" target="_blank" id="fb-icon">
+          <img src="<?php echo get_template_directory_uri() . '/dist/icons/facebook.svg' ?>" class="img-responsive svg"/>
+        </a>
+        <a href="" target="_blank" id="tweet-icon">
+          <img src="<?php echo get_template_directory_uri() . '/dist/icons/twitter.svg' ?>" class="img-responsive svg"/>
+        </a>
+        <a href="" target="_blank" id="linkedin-icon">
+          <img src="<?php echo get_template_directory_uri() . '/dist/icons/linkedin.svg' ?>" class="img-responsive svg"/>
+        </a>
+      </div>
+      <a class="form-prompt" id="form-open">
+        <img src="<?php echo get_template_directory_uri() . '/dist/icons/mail.svg' ?>" class="img-responsive svg"/>
+        <p class="title">Stay Updated</p>
+      </a>
+    </div>
     <?php echo apply_filters("the_content", $post->post_content) ?>
   </div>
 
@@ -93,36 +110,16 @@
 
 </section>
 
-<div id="share-bar">
-  <div class="social-icons">
-    <a href="" target="_blank" id="fb-icon">
-      <img src="<?php echo get_template_directory_uri() . '/dist/icons/facebook.svg' ?>" class="img-responsive svg"/>
-    </a>
-    <a href="" target="_blank" id="tweet-icon">
-      <img src="<?php echo get_template_directory_uri() . '/dist/icons/twitter.svg' ?>" class="img-responsive svg"/>
-    </a>
-    <a href="" target="_blank" id="linkedin-icon">
-      <img src="<?php echo get_template_directory_uri() . '/dist/icons/linkedin.svg' ?>" class="img-responsive svg"/>
-    </a>
-  </div>
-  <a class="form-prompt" id="form-open">
-    <img src="<?php echo get_template_directory_uri() . '/dist/icons/mail.svg' ?>" class="img-responsive svg"/>
-    <p class="title">Stay Updated</p>
-  </a>
-  <a class="share-button" id="facebook-like" href="https://www.facebook.com/pivotandpilot/" target="popup">
-    <img src="<?php echo get_template_directory_uri() . '/dist/icons/like.svg' ?>" class="img-responsive svg"/>
-    <p class="title">Like Us On Facebook</p>
-  </a>
-</div>
-
 <div class="form-cont">
   <div id="form-close" class="alternate hamburger state-closed">
     <span></span>
     <span></span>
     <span></span>
   </div>
-  <h3>Like what you are reading?</h3>
-  <p>Sign up or follow us for the latest design tips and trends!</p>
+  <div class="form-text">
+    <h3>Like what you are reading?</h3>
+    <p>Sign up for the latest design tips and trends!</p>
+  </div>
   <!-- Begin MailChimp Signup Form -->
   <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
   <style>
@@ -137,10 +134,24 @@
     padding: 0 0 0 0;
   }
 
+  @media(min-width:768px){
+    #mc_embed_signup form {
+      white-space: nowrap;
+    }
+  }
+
   #mc_embed_signup .mc-field-group{
     min-height: 0;
     padding-bottom: 0;
     width: 100%;
+  }
+
+  @media(min-width:768px){
+    #mc_embed_signup .mc-field-group{
+      display:inline-block;
+      padding-right: 15px;
+      width: 40%;
+    }
   }
 
   #mc_embed_signup .mc-field-group input {
@@ -151,6 +162,12 @@
     font-size: 18px;
     padding: 15px 0 7.5px 0;
     text-indent: 0;
+  }
+
+  @media(min-width:768px){
+    #mc_embed_signup .mc-field-group input {
+      padding: 7.5px 0 7.5px 0;
+    } 
   }
 
   #mc_embed_signup .mc-field-group input:focus {
@@ -209,12 +226,43 @@
     width: 100%;
   }
 
+  @media(min-width:768px){
+    #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error{
+      bottom: calc(100% + 15px);
+      position: absolute;
+      text-align: center;
+      width: calc(100% - 15px);
+    }
+
+    @media(min-width:768px){
+      #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error:after{
+        background: #fd9c9e;
+        content: "";
+        margin-left: -10px;
+        position: absolute;
+          left: 50%;
+          bottom: -10px;
+        height: 20px;
+        width: 20px;
+        transform: rotateZ(45deg);
+      }
+    }
+  }
+
   #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error::-webkit-input-placeholder{
     color: #fd9c9e;
   }
 
   .submit-container{
     position: relative;
+  }
+
+  @media(min-width:768px){
+    .submit-container{
+      display: inline-block;
+      width: 19%;
+      vertical-align: top;
+    }
   }
 
   .submit-container .icon-button{
@@ -229,7 +277,7 @@
 
   @media(min-width:768px){
     .submit-container .icon-button{
-      padding-top: 30px;
+      padding-top: 0;
     }
   }
 
@@ -252,7 +300,7 @@
           <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="button">
           <a class="icon-button alternate">
             <img class="img-responsive svg" src="<?php echo get_template_directory_uri() . '/dist/icons/submit.svg' ?>"/>
-            <p class="title">Submit</p>
+            <p class="title">Sign Up</p>
           </a>
         </div>
       </div>

@@ -1,0 +1,123 @@
+#contact-form{
+  background: rgba(68, 60, 255, 0.9);
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 30004;
+}
+
+
+#contact-form * {
+  color: white;
+}
+
+#contact-form > div > form {
+  padding-left: 0;
+}
+
+#contact-form .pagination {
+  padding-top: 0;
+}
+
+#contact-form > #contact-form-footer{
+  background: #ecebfe;
+  padding: 30px 15px;
+}
+
+#contact-form > #contact-form-footer  *{
+  color: $blue;
+}
+
+#contact-form > #contact-form-footer > a.button {
+  border: 1px solid $blue;
+}
+
+#contact-form > #mc_embed_signup {
+  background: none;
+}
+
+
+#mc-page-container{
+  width: 100vw;
+}
+
+#mc-page-container > .mc-page-group {
+  padding: 15px 15px 0px 15px;
+  position: absolute;
+    left: 0;
+    right: 0;
+  -webkit-transform: translate(150%, 0);
+      -ms-transform: translate(150%, 0);
+          transform: translate(150%, 0);
+  transition: 1s;
+}
+
+#mc-page-container > .mc-page-group.state-active {
+  position: relative;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+#mc-page-controller{
+  -webkit-align-items:center;
+      -ms-flex-align:center;
+          align-items:center;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  margin-top: 68px;
+  margin-left: 15px;
+  width: 75%;
+}
+
+#mc-page-controller > a {
+  background: #7c77ff;
+  display: inline-block;
+  margin-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 33.3333%;
+}
+
+#mc-page-controller > a.state-active {
+  background: #8f8aff;
+}
+
+#mc_embed_signup .mc-page-group .mc-field-group{
+  width: 100%;
+}
+
+#mc_embed_signup .mc-page-group .mc-field-group.input-group input[type=checkbox]{
+  margin: 0;
+  opacity: 0.5;
+  height: 50px;
+  width: 100%;
+}
+
+#mc_embed_signup .mc-page-group .mc-field-group.input-group > ul > li{
+  border: 1px solid white;
+  margin: 10px 0 10px 0;
+  padding: 0;
+  position: relative;
+}
+
+#mc_embed_signup .mc-page-group .mc-field-group.input-group > ul > li > label{
+  font-size: 11px;
+  height: 50px;
+  letter-spacing: 1.5px;
+  margin: 0;
+  padding-top: 18px;
+  pointer-events: none;
+  position: absolute;
+    top: 0;
+    left: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
