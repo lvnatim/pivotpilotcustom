@@ -1,3 +1,7 @@
+$('div.responsive-container').on('click', function(){
+  $(this).addClass('modified');
+});
+
 $('#change-landing').on('click', function(){
   if($(this).parent().hasClass('state-alternate')){
     if($(window).width() < 1024){

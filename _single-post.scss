@@ -180,6 +180,37 @@
   }
 }
 
+#blog-post-content iframe {
+  height: 400px;
+  width: 100%;
+}
+
+#blog-post-content div.responsive-container {
+  &:before {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: url("http://www.clipartbest.com/cliparts/bcy/xxg/bcyxxgeoi.png") no-repeat center center;
+    cursor: pointer;
+    transition: transform 0.5s;
+  }
+  &.modified:before {
+    background: none;
+    pointer-events: none;
+  }
+  &:hover {
+    cursor: pointer;
+    &:before {
+      transform: scale(1.1);
+      transition: transform 0.5s;
+    }
+  }
+}
+
 #blog-post-custom-fields{
   @media(min-width:768px){
     margin: 0 auto;
