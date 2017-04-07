@@ -12,8 +12,10 @@
   </div>
   <?php if(get_field('quote')): ?>
   <blockquote>
-    <?php echo get_field('quote'); ?>
-    <p class="title"><?php echo get_field('quote_author') ?></p>
+    <span class="blockquote-text">
+      <?php echo get_field('quote'); ?>
+    </span>
+    <p id="blockquote-author" class="title"><?php echo get_field('quote_author') ?></p>
   </blockquote>
   <?php endif ?>
 </div>

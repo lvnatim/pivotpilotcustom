@@ -10,6 +10,8 @@ $('#mobile-close').on('click', function(){
 
 $('#mobile-menu-sidebar > .overlay').on('click', function(){
   $('#mobile-menu-sidebar').removeClass('state-opened');
+  $('.inner-button').removeClass('active');
+  $('.inner-inner-button').removeClass('active');
 });
 
 $('.inner-button > h1').on('click', function(){

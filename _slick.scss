@@ -135,20 +135,20 @@
 }
 
 #featured-team-members .slide-inner-cont > a > h3{
-  font-family: arno-pro;
-  font-size: 26px;
-  font-style: italic;
-  color: white;
-  position: absolute;
-  max-width: none;
-  opacity: 0;
-  padding-top: 45%;
-    top: 0;
-    left:0;
-    right: 0;
-    bottom: 0;
-  text-align: center;
-  transition: 0.3s;
+    font-family: arno-pro;
+    font-size: 26px;
+    font-style: italic;
+    color: white;
+    position: absolute;
+    max-width: none;
+    opacity: 0;
+    padding-top: 45%;
+      top: 0;
+      left:0;
+      right: 0;
+      bottom: 0;
+    text-align: center;
+    transition: 0.3s;
 }
 
 #featured-team-members .slide-inner-cont > a > .overlay {
@@ -158,18 +158,20 @@
 }
 
 #featured-team-members .slick-slide:hover .slide-inner-cont{
-  > a > h3 {
-    opacity: 1;
-  }
-  > a > .overlay {
-    opacity: 1;
-  }
+  @media(min-width:768px){
+    > a > h3 {
+      opacity: 1;
+    }
+    > a > .overlay {
+      opacity: 1;
+    }
 
-  >img.fun-fact {
-    opacity: 1;
-    -webkit-transform: rotateZ(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotateZ(0deg);
+    >img.fun-fact {
+      opacity: 1;
+      -webkit-transform: rotateZ(0deg);
+          -ms-transform: rotate(0deg);
+              transform: rotateZ(0deg);
+    }
   }
 }
 
@@ -556,7 +558,7 @@
 .slide-inner-cont h1{
   font-size: 30px;
   font-weight: 900;
-  &:first-of-type{margin-top: 10px;}
+  &:first-of-type{margin-top: 12px;}
   &:last-of-type{margin-bottom: 10px;}
 }
 
@@ -626,7 +628,7 @@
 }
 
 #featured-case-studies .slick-dots:after {
-  animation: warp 1s;
+  animation: warp 0.5s;
   background: #443cff;
   border-radius: 50%;
   content: "";
@@ -637,15 +639,15 @@
   height: 18px;
   width: 18px;
   transform: translateY(0);
-  transition: 1s;
+  transition: 0.5s;
 }
 
 #featured-case-studies .slick-dots[data-active-dot="1"]:after{
-  animation: warp2 1s;
+  animation: warp2 0.5s;
   transform: translateY(25px);
 }
 
 #featured-case-studies .slick-dots[data-active-dot="2"]:after{
-  animation: warp3 1s;
+  animation: warp3 0.5s;
   transform: translateY(50px);
 }

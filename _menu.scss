@@ -507,7 +507,7 @@
 
 #mobile-menu-sidebar li{
   display: block;
-  padding: 5px 0px;
+  padding: 8px 0px;
 }
 
 #mobile-menu-sidebar > ul{
@@ -848,18 +848,45 @@
   pointer-events: none;
   position: absolute;
   width: 100%;
+  z-index: 1;
   @media(min-width:1200px){
     padding-left: calc((100vw - 1110px) / 2);
     padding-right: calc((100vw - 1110px) / 2);
   }
 }
 
+.service-subterm-background {
+  background: #b4b3fd;
+  display: block;
+  height: 56px;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  transition: 0s;
+}
+
+.service-subterm-background .state-active {
+  opacity: 1;
+  margin-top: 56px;
+  transition: 0s;
+}
+
+
+
 #services-dropdown .service-term-button-cont{
   width: 20%;
 }
 
 #services-dropdown .service-term-button-cont.state-active .service-subterm-cont {
-  transition: opacity 0.3s, pointer-events 0.3s;
+  opacity: 1;
+  pointer-events: auto;
+  transition: 0.5s;
+}
+
+#services-dropdown .service-term-button-cont.state-shifted .service-subterm-cont {
   opacity: 1;
   pointer-events: auto;
 }

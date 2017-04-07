@@ -167,7 +167,7 @@
   @media(min-width:768px){
     #mc_embed_signup .mc-field-group input {
       padding: 7.5px 0 7.5px 0;
-    } 
+    }
   }
 
   #mc_embed_signup .mc-field-group input:focus {
