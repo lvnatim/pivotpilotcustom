@@ -1,3 +1,8 @@
+function outputUpdate(id, val){
+  const output_query = "#" + id + "-output";
+  document.querySelector(output_query).value = val;
+}
+
 $('#mobile-open').on('click', function(){
   $('#mobile-menu-sidebar').addClass('state-opened');
 });
@@ -27,12 +32,119 @@ $('.inner-inner-button > h1').on('click', function(){
   el.toggleClass('active');
 });
 
-$('#mc-page-controller > a').on('click', function(){
-  $('#mc-page-controller > a').removeClass('state-active');
-  $('.mc-page-group').removeClass('state-active');
-  $(this).addClass('state-active');
-  $('.mc-page-group').eq($(this).index()).addClass('state-active');
-})
+$(document).on('click', '.toggle-contact' ,function(){
+  $('#mobile-menu-sidebar').removeClass('state-opened');
+  $('#contact-form').toggleClass('state-active');
+});
+
+(function(){
+
+  function notify_form_success(){
+    $back_button = $('<a>').addClass('button toggle-contact').html('Back to Site');
+    $('#contact-form-footer').remove();
+    $('#contact-form-page-controller').remove();
+    $('#contact-form-page-cont').remove();
+    $('.wpcf7-form').append($back_button);
+  }
+
+  var $form = $('#contact-form > .wpcf7 > form');
+  if ( $form.length > 0 ) {
+
+      $(document).on('wpcf7mailsent', function(){
+        if($('#newsletter-subscription > input').is(':checked')){
+          if ( validate_input($form) ) { register($form); }
+        } 
+        notify_form_success();
+      });
+  }
+
+
+function register($form) {
+    $.ajax({
+        type: 'post',
+        url: '//pivotandpilot.us11.list-manage.com/subscribe/post-json?u=7ddaf618b12da96febfea34ac&id=a1e4c0c38e&c=?',
+        data: $form.serialize(),
+        cache       : false,
+        dataType    : 'json',
+        contentType: "application/json; charset=utf-8",
+        error       : function(err) { alert("Could not connect to the registration server. Please try again later."); },
+        success     : function(data) {
+            if (data.result != "success") {
+              // TODO -- Notify clients to check their email to confirm subscription to the Mailchimp service.
+              console.log('Failed at sending to mailchimp. Error log:');
+              console.log(data);
+            } else {
+              console.log('Succeeded at subscribing to mailchimp. Be sure to check your email.')
+            }
+        }
+    });
+}  
+
+//TODO -- Validate form fields before sending to mailchimp.
+
+function validate_input($form){
+  return true;
+}
+
+function toggle_industry(selector){
+  if(selector.val() === 'false'){
+    selector.val('true')
+  } else {
+    selector.val('false')
+  }
+}
+
+var groups_selected = 0;
+
+$('#contact-form-page-controller > a').on('click', function(){
+  if(groups_selected > 0){
+    $('#contact-form-page-controller > a').removeClass('state-active');
+    $('.contact-form-page').removeClass('state-active');
+    $(this).addClass('state-active');
+    $('.contact-form-page').eq($(this).index()).addClass('state-active');
+    $('#contact-form-page-cont').animate({height: $('.contact-form-page').eq($(this).index()).outerHeight() + 45});
+    $('#mandatory-selection-message').html('');
+  } else {
+    $('#mandatory-selection-message').html('Please select at least one option');
+  }
+});
+
+$('#checkbox-cont > li').on('click',function(){
+  if($(this).hasClass('state-active')){
+    groups_selected -= 1;
+  } else {
+    groups_selected += 1;
+  }
+  $(this).toggleClass('state-active');
+  $('.budget-slider-cont').eq($(this).index()).toggle();
+
+  if ($('.budget-slider-cont').eq($(this).index()).is(':visible')) {
+    $('.budget-slider-cont').eq($(this).index()).css('display','inline-block');
+  } else {
+    $('.budget-slider-cont').eq($(this).index()).css('display','none');
+  }
+
+  toggle_industry($('input[type="hidden"]', this));
+});
+
+$('.switch-form-page').on('click', function(){
+  if(groups_selected > 0){
+    const pageRef = $(this).data('pageRef');
+    $('#contact-form').animate({scrollTop: 0}, 100, 'swing', function(){
+      $('#contact-form-page-controller > a').removeClass('state-active');
+      $('#contact-form-page-controller > a').eq(pageRef).addClass('state-active');
+      $('.contact-form-page').removeClass('state-active');
+      $('.contact-form-page').eq(pageRef).addClass('state-active');
+      $('.contact-form-page').eq($(this).index()).addClass('state-active');
+      $('#contact-form-page-cont').animate({height: $('.contact-form-page').eq(pageRef).outerHeight() + 45});
+      $('#mandatory-selection-message').html('');
+    });
+  } else {
+    $('#mandatory-selection-message').html('Please select at least one option');
+  }
+});
+
+}());
 
 $('img.svg').each(function(){
   var $img = jQuery(this);

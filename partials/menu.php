@@ -46,7 +46,7 @@
       <li><a href="<?php echo get_site_url() . '/portfolio' ?>"><h1>Portfolio</h1></a></li>
       <li><a href="<?php echo get_site_url() . '/blog' ?>"><h1>Blog</h1></a></li>
       <li><a href="<?php echo get_site_url() . '/about' ?>"><h1>About</h1></a></li>
-      <li><a href="<?php echo get_site_url() . '/contact' ?>"><h1>Contact</h1></a></li>
+      <li><a class="toggle-contact"><h1>Contact</h1></a></li>
       <!-- <li><a href="<?php echo get_site_url() . '/shop' ?>"><h1>Shop</h1></a></li> -->
     </ul>
   </div>
@@ -103,6 +103,27 @@ if(is_home() || is_page('blog')){
   <?php endforeach ?>
 
   </div>
+</div>
+
+<div id="contact-form">
+  <div id="contact-form-close" class="alternate hamburger state-closed toggle-contact">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  <!--  BEGIN CONTACT FORM  -->
+
+  <?php echo do_shortcode('[contact-form-7 id="168" title="Contact form 1"]'); ?>
+
+  <div id="contact-form-footer">
+    <h3 class="bold">Don't Like Forms?</h3>
+    <a href="mailto:hello@pivotandpilot.com" class="button">Send us an email</a>
+    <div>
+      <p class="title">Or give us a call:</p>
+      <a href="tel:+17788221408"><h3 class="bold phone">+1 (778) 822 . 1408</h3></a>
+    </div>
+  </div>  
 </div>
 
 <script>
