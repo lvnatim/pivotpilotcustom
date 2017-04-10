@@ -23,6 +23,9 @@
 #blog-page > .search-bar {
   width: calc(100% - 55px);
   z-index: 1;
+  li {
+    font-size: 18px;
+  }
   @media(min-width:768px){
     border-bottom: 0;
   }
@@ -302,7 +305,7 @@
 .search-bar > ul > li {
   border-bottom: 1px solid $blue;
   display: block;
-  padding: 7.5px 0;
+  padding: 9.5px 0;
   font-style: italic;
 }
 
@@ -388,7 +391,7 @@
 .post{
   animation: 1s postappear linear;
   -webkit-animation: 1s postappear linear;
-  padding-top: 30px;
+  padding-top: 60px;
   position: relative;
   -webkit-transform: translate(0px, 0px);
       -ms-transform: translate(0px, 0px);

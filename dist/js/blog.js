@@ -3,6 +3,7 @@ $('.search-bar').on('click', function(){
 });
 
 $('#search-by-title').on('click', function(){
+  $('.search-bar').removeClass('state-opened');
   $(this).toggleClass('state-opened');
 })
 

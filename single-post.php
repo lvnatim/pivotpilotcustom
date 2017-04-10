@@ -167,7 +167,7 @@
   @media(min-width:768px){
     #mc_embed_signup .mc-field-group input {
       padding: 7.5px 0 7.5px 0;
-    } 
+    }
   }
 
   #mc_embed_signup .mc-field-group input:focus {
@@ -322,6 +322,7 @@
 <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 <script>
 jQuery(document).ready(function($){
+
   $("#blog-post-content > blockquote").each(function(index) {
     const default_twitter_url = 'https://twitter.com/intent/tweet?url=';
     const current_url = encodeURIComponent(window.location.href);

@@ -78,7 +78,7 @@ $service_description = $term->description;
               <img src="<?php echo $snippet_icon_inverse ?>"/>
               <p class="title"><?php echo $term->name ?></p>
               <h1 class="bold"><?php echo $snippet_excerpt ?></h1>
-              <p><?php echo $snippet_description ?></p>
+              <p class="snippet-description"><?php echo $snippet_description ?></p>
             </div>
           </section>
         </div>
@@ -86,7 +86,7 @@ $service_description = $term->description;
     <?php endforeach ?>
   </div>
 
-  <p class="title">Selected Logos</p>
+  <p class="title">Featured Work</p>
   <div class="selected-logos">
     <?php foreach(range(1, 6) as $image_counter): ?>
       <a target="_blank" href="<?php the_field('selected_logo_link_' . $image_counter, 'services_' . $category); ?>">

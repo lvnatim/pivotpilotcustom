@@ -100,6 +100,8 @@ if(is_home() || is_page('blog')){
         <?php endforeach ?>
       </ul>
     </div>
+    <div class="service-subterm-background">
+    </div>
   <?php endforeach ?>
 
   </div>
@@ -130,7 +132,7 @@ if(is_home() || is_page('blog')){
 
 jQuery(document).ready(function($){
 
-  //=============    Desktop Menu    ===================
+//=============    Desktop Menu    ===================
 
   $('.service-subterm-button').on('click', function(){
     $('.service-term-button-cont').removeClass('state-active');
@@ -149,6 +151,7 @@ jQuery(document).ready(function($){
       $('#open-services').toggleClass('state-hover');
       $('#services-dropdown').toggleClass('state-active');
       $('.service-term-button-cont').removeClass('state-active');
+      $('.service-term-button-cont').removeClass('state-shifted');
       if(!$('#radial-background').hasClass('state-alternate')){
         $('#menu').removeClass('force-state-toggled');
       }
@@ -156,6 +159,15 @@ jQuery(document).ready(function($){
   );
 
   $('.service-subterm-button').hover(function(){
+    $('.service-subterm-background').toggleClass('state-active');
+
+    // If you're shifting over do this
+    // if ($(".service-term-button-cont").hasClass('state-active')) {
+
+      // $(this).parent().toggleClass('state-shifted');
+      // $('.service-term-button-cont').removeClass('state-active');
+    // }
+    // do this either way
     $('.service-term-button-cont').removeClass('state-active');
     $(this).parent().addClass('state-active');
   })
@@ -169,7 +181,6 @@ jQuery(document).ready(function($){
       $('.first-section').css({'transform': 'translate(0px, 56px)'});
     }
   });
-
 
 });
 </script>

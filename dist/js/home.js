@@ -42,7 +42,10 @@ $('.landing-face').on('click', function(event) {
   }
 })
 
-// ==============================================================================
+
+//==========================================================================================
+// Beginning of crazy linear gradient
+//==========================================================================================
 var colors = new Array(
   [174,174,249],
   [235,235,253],
@@ -110,12 +113,59 @@ var color2 = "rgb("+r2+","+g2+","+b2+")";
 var mouseX = 0;
 var mouseY = 0;
 
+//==========================================================================================
+// End of crazy linear gradient
+//==========================================================================================
+
 function setCircleGradient(ind){
   var css_property = 'radial-gradient(circle farthest-corner at 50% 50%, #ECEBFE ' + ind + '%, rgba(68, 60, 255, 0) 95%)';
   $('#circle-gradient').css({'background': css_property});
 }
 
 var fadeInterval = null;
+
+// function clearInt() {
+//   window.clearInterval(fadeInterval);
+//   console.log("Calling clearInt function.");
+// }
+
+
+
+//================================================================================================================================
+// Stolen from stackOverflow. Calls callback when resize is finished.
+//================================================================================================================================
+
+
+//   var waitForFinalEvent = (function () {
+//         var timers = {};
+//         return function (callback, ms, uniqueId) {
+//             if (!uniqueId) {
+//                 uniqueId = "Don't call this twice without a uniqueId";
+//             }
+//             if (timers[uniqueId]) {
+//                 clearTimeout(timers[uniqueId]);
+//             }
+//             timers[uniqueId] = setTimeout(callback, ms);
+//         };
+//     })();
+
+//   $(function() {
+//     var docWidth = $("#width"),
+//         docHeight = $("#height"),
+//         docWindow = $(window);
+//     docWidth.html(docWindow.width());
+//     docHeight.html(docWindow.height());
+//     docWindow.resize(function () {
+//             console.log("resize event");
+//             waitForFinalEvent(function () {
+//                 console.log("Actual function");
+//                 docWidth.html(docWindow.width());
+//                 docHeight.html(docWindow.height());
+//             }, 500, "some unique id");
+//         });
+// });
+
+//================================================================================================================================
 
 $(window).on('resize load',function(){
 
@@ -140,7 +190,7 @@ $(window).on('resize load',function(){
       .off('mouseleave');
     $('#radial-background')
       .off('mousemove');
-    fadeInterval = window.setInterval(updateGradient,100);
+    fadeInterval = window.setInterval(updateGradient,10);
   }
 
 })
