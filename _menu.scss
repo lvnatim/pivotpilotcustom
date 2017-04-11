@@ -855,7 +855,7 @@
   }
 }
 
-.service-subterm-background {
+.false-background {
   background: #b4b3fd;
   display: block;
   height: 56px;
@@ -865,13 +865,13 @@
   position: absolute;
   width: 100%;
   z-index: 0;
-  transition: 0s;
+  transition: 0.3s;
 }
 
-.service-subterm-background .state-active {
+.false-background.state-active {
   opacity: 1;
-  margin-top: 56px;
-  transition: 0s;
+  // margin-top: 56px;
+  // transition: 0s;
 }
 
 

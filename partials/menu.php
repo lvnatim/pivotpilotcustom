@@ -31,6 +31,7 @@
             <h1><?php echo $term->name; ?></h1>
             <ul class="inner-inner-menu">
               <?php $term_children_ids = get_term_children($term->term_id, 'services'); ?>
+              <?php rsort($term_children_ids); ?>
               <?php foreach($term_children_ids as $term_id): ?>
               <li>
                 <a href="<?php echo get_site_url() . '/services?category=' . $term_id ?>">
@@ -93,6 +94,7 @@ if(is_home() || is_page('blog')){
       </a>
       <ul class="service-subterm-cont">
         <?php $term_children_ids = get_term_children($term->term_id, 'services'); ?>
+        <?php rsort($term_children_ids); ?>
         <?php foreach($term_children_ids as $term_id): ?>
           <a href="<?php echo get_site_url() . '/services?category=' . $term_id ?>">
             <p class="title second-dropdown"><?php echo get_term($term_id)->name; ?></p>
@@ -100,10 +102,9 @@ if(is_home() || is_page('blog')){
         <?php endforeach ?>
       </ul>
     </div>
-    <div class="service-subterm-background">
-    </div>
   <?php endforeach ?>
-
+  </div>
+  <div class="false-background">
   </div>
 </div>
 
@@ -125,7 +126,7 @@ if(is_home() || is_page('blog')){
       <p class="title">Or give us a call:</p>
       <a href="tel:+17788221408"><h3 class="bold phone">+1 (778) 822 . 1408</h3></a>
     </div>
-  </div>  
+  </div>
 </div>
 
 <script>
@@ -158,16 +159,15 @@ jQuery(document).ready(function($){
     }
   );
 
+  $('#services-dropdown').find('.service-term-cont, .service-term-button-cont').hover(function() {
+    $('.false-background').addClass('state-active');
+  })
+
+  $('#services-dropdown').not('.service-term-cont, .service-term-button-cont').hover(function(){
+    $('.false-background').removeClass('state-active');
+  })
+
   $('.service-subterm-button').hover(function(){
-    $('.service-subterm-background').toggleClass('state-active');
-
-    // If you're shifting over do this
-    // if ($(".service-term-button-cont").hasClass('state-active')) {
-
-      // $(this).parent().toggleClass('state-shifted');
-      // $('.service-term-button-cont').removeClass('state-active');
-    // }
-    // do this either way
     $('.service-term-button-cont').removeClass('state-active');
     $(this).parent().addClass('state-active');
   })
