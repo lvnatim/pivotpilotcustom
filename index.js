@@ -1,3 +1,24 @@
+$('.navigation-overlay').on('click', function(event) {
+  // event.preventDefault();
+  let circle = $(this).find('svg');
+  let text = $(this).find('p.title');
+  let divBackground = $(this);
+  let divBackgroundColor = $(divBackground).css('backgroundColor');
+  let circleColor = $(circle).css('backgroundColor');
+
+  $(text).css('color',divBackgroundColor);
+  $(divBackground).css('backgroundColor', circleColor);
+  $(circleColor).css('backgroundColor', divbackgroundColor);
+
+  // let divBackgroundColor = $(this).css('backgroundColor');
+  // let circleColor = $(this).find('svg').css('backgroundColor');
+
+  console.log("divBackgroundColor: ", divBackgroundColor);
+  console.log("circleColor: ", circleColor);
+  // $('.navigation-overlay svg').css('backgroundColor', x);
+  // $('.navigation-overlay svg polygon').css('fill', 'blue');
+})
+
 function outputUpdate(id, val){
   const output_query = "#" + id + "-output";
   document.querySelector(output_query).value = val;
@@ -55,7 +76,7 @@ $(document).on('click', '.toggle-contact' ,function(){
       $(document).on('wpcf7mailsent', function(){
         if($('#newsletter-subscription > input').is(':checked')){
           if ( validate_input($form) ) { register($form); }
-        } 
+        }
         notify_form_success();
       });
   }
@@ -80,7 +101,7 @@ function register($form) {
             }
         }
     });
-}  
+}
 
 //TODO -- Validate form fields before sending to mailchimp.
 
